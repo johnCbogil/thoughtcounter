@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		94D8023F20CB254D00EE5076 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D8023E20CB254D00EE5076 /* AppDelegate.swift */; };
-		94D8024120CB254D00EE5076 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D8024020CB254D00EE5076 /* ViewController.swift */; };
+		94D8024120CB254D00EE5076 /* ThoughtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D8024020CB254D00EE5076 /* ThoughtViewController.swift */; };
 		94D8024420CB254D00EE5076 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94D8024220CB254D00EE5076 /* Main.storyboard */; };
 		94D8024620CB254F00EE5076 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94D8024520CB254F00EE5076 /* Assets.xcassets */; };
 		94D8024920CB254F00EE5076 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94D8024720CB254F00EE5076 /* LaunchScreen.storyboard */; };
 		94D8025420CB254F00EE5076 /* ThoughtCounterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D8025320CB254F00EE5076 /* ThoughtCounterTests.swift */; };
 		94D8025F20CB254F00EE5076 /* ThoughtCounterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D8025E20CB254F00EE5076 /* ThoughtCounterUITests.swift */; };
+		94D8026D20CB299A00EE5076 /* ListOfThoughtsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D8026C20CB299A00EE5076 /* ListOfThoughtsViewController.swift */; };
+		94D8026F20CB39CD00EE5076 /* Thought.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D8026E20CB39CD00EE5076 /* Thought.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +38,7 @@
 /* Begin PBXFileReference section */
 		94D8023B20CB254D00EE5076 /* ThoughtCounter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThoughtCounter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94D8023E20CB254D00EE5076 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		94D8024020CB254D00EE5076 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		94D8024020CB254D00EE5076 /* ThoughtViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThoughtViewController.swift; sourceTree = "<group>"; };
 		94D8024320CB254D00EE5076 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		94D8024520CB254F00EE5076 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		94D8024820CB254F00EE5076 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +49,8 @@
 		94D8025A20CB254F00EE5076 /* ThoughtCounterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThoughtCounterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		94D8025E20CB254F00EE5076 /* ThoughtCounterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThoughtCounterUITests.swift; sourceTree = "<group>"; };
 		94D8026020CB254F00EE5076 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		94D8026C20CB299A00EE5076 /* ListOfThoughtsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfThoughtsViewController.swift; sourceTree = "<group>"; };
+		94D8026E20CB39CD00EE5076 /* Thought.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thought.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,11 +102,13 @@
 			isa = PBXGroup;
 			children = (
 				94D8023E20CB254D00EE5076 /* AppDelegate.swift */,
-				94D8024020CB254D00EE5076 /* ViewController.swift */,
+				94D8026C20CB299A00EE5076 /* ListOfThoughtsViewController.swift */,
+				94D8024020CB254D00EE5076 /* ThoughtViewController.swift */,
 				94D8024220CB254D00EE5076 /* Main.storyboard */,
 				94D8024520CB254F00EE5076 /* Assets.xcassets */,
 				94D8024720CB254F00EE5076 /* LaunchScreen.storyboard */,
 				94D8024A20CB254F00EE5076 /* Info.plist */,
+				94D8026E20CB39CD00EE5076 /* Thought.swift */,
 			);
 			path = ThoughtCounter;
 			sourceTree = "<group>";
@@ -256,8 +262,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94D8024120CB254D00EE5076 /* ViewController.swift in Sources */,
+				94D8024120CB254D00EE5076 /* ThoughtViewController.swift in Sources */,
+				94D8026D20CB299A00EE5076 /* ListOfThoughtsViewController.swift in Sources */,
 				94D8023F20CB254D00EE5076 /* AppDelegate.swift in Sources */,
+				94D8026F20CB39CD00EE5076 /* Thought.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
