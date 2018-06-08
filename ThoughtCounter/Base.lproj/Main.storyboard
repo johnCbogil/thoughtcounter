@@ -42,14 +42,21 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tTi-ND-aOO"/>
                     </view>
-                    <navigationItem key="navigationItem" id="NLR-6H-Y9g"/>
+                    <navigationItem key="navigationItem" id="NLR-6H-Y9g">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ati-tt-aMt">
+                            <connections>
+                                <action selector="addThought:" destination="SMl-a6-uSq" id="gip-Gp-kMg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="addThoughtButton" destination="ati-tt-aMt" id="u2E-bL-aXP"/>
                         <outlet property="tableView" destination="gEI-Lf-ZcV" id="gzT-LI-Ctj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xrf-KE-IGa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="191" y="132"/>
+            <point key="canvasLocation" x="189.59999999999999" y="131.78410794602701"/>
         </scene>
         <!--Thought View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -73,20 +80,34 @@
                                     <action selector="decreaseThoughtCount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cWs-L1-msM"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ThoughtCount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D4P-PC-Eit">
-                                <rect key="frame" x="131.5" y="333" width="111.5" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ThoughtCount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D4P-PC-Eit">
+                                <rect key="frame" x="131.5" y="463" width="111.5" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3RB-rG-3M6">
+                                <rect key="frame" x="0.0" y="20" width="375" height="305"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DateCell" id="wmX-07-OVS">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wmX-07-OVS" id="Sax-8g-nMF">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ZC3-Vi-cny" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="F68-c6-Yfr"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ZC3-Vi-cny" secondAttribute="bottom" constant="20" id="GRK-l9-WiS"/>
-                            <constraint firstItem="D4P-PC-Eit" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="NiZ-JW-mYu"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="nx3-pg-bGC" secondAttribute="bottom" constant="20" id="Rgg-ds-fa9"/>
-                            <constraint firstItem="D4P-PC-Eit" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Uyb-8Z-Jad"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nx3-pg-bGC" secondAttribute="trailing" constant="16" id="gou-cx-Oz9"/>
                             <constraint firstItem="nx3-pg-bGC" firstAttribute="leading" secondItem="ZC3-Vi-cny" secondAttribute="trailing" constant="219" id="wRy-c0-mkp"/>
                         </constraints>
@@ -95,6 +116,7 @@
                     <connections>
                         <outlet property="decreaseThoughtCountButton" destination="ZC3-Vi-cny" id="k2x-IH-sXi"/>
                         <outlet property="increaseThoughtCountButton" destination="nx3-pg-bGC" id="0bR-TZ-aDb"/>
+                        <outlet property="tableView" destination="3RB-rG-3M6" id="K2u-Ku-ghx"/>
                         <outlet property="thoughtCountLabel" destination="D4P-PC-Eit" id="k9p-3L-i5u"/>
                     </connections>
                 </viewController>

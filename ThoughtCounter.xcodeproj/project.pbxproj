@@ -15,7 +15,6 @@
 		94D8025420CB254F00EE5076 /* ThoughtCounterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D8025320CB254F00EE5076 /* ThoughtCounterTests.swift */; };
 		94D8025F20CB254F00EE5076 /* ThoughtCounterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D8025E20CB254F00EE5076 /* ThoughtCounterUITests.swift */; };
 		94D8026D20CB299A00EE5076 /* ListOfThoughtsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D8026C20CB299A00EE5076 /* ListOfThoughtsViewController.swift */; };
-		94D8026F20CB39CD00EE5076 /* Thought.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D8026E20CB39CD00EE5076 /* Thought.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +49,6 @@
 		94D8025E20CB254F00EE5076 /* ThoughtCounterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThoughtCounterUITests.swift; sourceTree = "<group>"; };
 		94D8026020CB254F00EE5076 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		94D8026C20CB299A00EE5076 /* ListOfThoughtsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfThoughtsViewController.swift; sourceTree = "<group>"; };
-		94D8026E20CB39CD00EE5076 /* Thought.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thought.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +106,6 @@
 				94D8024520CB254F00EE5076 /* Assets.xcassets */,
 				94D8024720CB254F00EE5076 /* LaunchScreen.storyboard */,
 				94D8024A20CB254F00EE5076 /* Info.plist */,
-				94D8026E20CB39CD00EE5076 /* Thought.swift */,
 			);
 			path = ThoughtCounter;
 			sourceTree = "<group>";
@@ -265,7 +262,6 @@
 				94D8024120CB254D00EE5076 /* ThoughtViewController.swift in Sources */,
 				94D8026D20CB299A00EE5076 /* ListOfThoughtsViewController.swift in Sources */,
 				94D8023F20CB254D00EE5076 /* AppDelegate.swift in Sources */,
-				94D8026F20CB39CD00EE5076 /* Thought.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

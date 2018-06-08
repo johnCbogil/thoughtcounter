@@ -11,7 +11,9 @@ import UIKit
 class ListOfThoughtsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
-    let listOfThoughts = ["thought one","thought two","thought three"]
+    @IBOutlet weak var addThoughtButton: UIBarButtonItem!
+    
+    var listOfThoughts = ["thought one","thought two","thought three"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +22,13 @@ class ListOfThoughtsViewController: UIViewController, UITableViewDataSource, UIT
         tableView.delegate = self
         tableView.tableFooterView = UIView()
         title = "List of thoughts"
+    }
+    
+    @IBAction func addThought(_ sender: Any) {
+        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "ThoughtCell")
+        tableView.insertSubview(cell, at: 0)
+        listOfThoughts.insert("", at: 0)
+        tableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -38,6 +47,13 @@ class ListOfThoughtsViewController: UIViewController, UITableViewDataSource, UIT
             if let navigator = navigationController {
                 navigator.pushViewController(viewController, animated: true)
             }
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            listOfThoughts.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
 }
