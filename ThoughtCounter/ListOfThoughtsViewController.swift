@@ -56,4 +56,9 @@ class ListOfThoughtsViewController: UIViewController, UITableViewDataSource, UIT
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+    
 }

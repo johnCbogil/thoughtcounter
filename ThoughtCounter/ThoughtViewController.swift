@@ -17,11 +17,6 @@ class ThoughtViewController: UIViewController, UITableViewDelegate, UITableViewD
     var thoughtCount = 0
     var listOfDates = [Date]()
     
-
-    // CREATE LIST OF DATES
-    // COUNT AND SORT THE LIST
-    // PRESENT LIST IN TABLVIEW
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
