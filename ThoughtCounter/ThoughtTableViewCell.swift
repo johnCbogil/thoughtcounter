@@ -11,7 +11,8 @@ import UIKit
 class ThoughtTableViewCell: UITableViewCell, UITextFieldDelegate {
 
     @IBOutlet weak var textField: UITextField!
-    
+    var thought: Thought?
+
     override func awakeFromNib() {
         super.awakeFromNib()
      
@@ -20,5 +21,12 @@ class ThoughtTableViewCell: UITableViewCell, UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         print("Did begin editing")
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        print("did finish editing")
+        textField.resignFirstResponder()
+        
+        thought?.title = textField.text
     }
 }

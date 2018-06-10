@@ -13,24 +13,34 @@ class ListOfThoughtsViewController: UIViewController, UITableViewDataSource, UIT
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addThoughtButton: UIBarButtonItem!
     
-    var listOfThoughts = ["thought one","thought two","thought three"]
+    var listOfThoughts = [Thought]()
+    let thoughtCell = "ThoughtTableViewCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        configureTableView()
+        title = "List of thoughts"
+    }
+    
+    fileprivate func configureTableView() {
+        tableView.register(UINib(nibName: thoughtCell, bundle: nil), forCellReuseIdentifier: thoughtCell)
         tableView.dataSource = self
         tableView.delegate = self
         tableView.tableFooterView = UIView()
-        title = "List of thoughts"
-        tableView.register(UINib(nibName: "ThoughtTableViewCell", bundle: nil), forCellReuseIdentifier: "ThoughtTableViewCell")
     }
     
     @IBAction func addThought(_ sender: Any) {
-        listOfThoughts.insert("", at: 0)
+        let newThought = Thought.init(text: "")
+        listOfThoughts.insert(newThought, at: 0)
         tableView.reloadData()
-        if let cell = tableView.visibleCells[0] as? ThoughtTableViewCell {
-            if let textfield = cell.textField {
-                textfield.becomeFirstResponder()
+        var editCell: ThoughtTableViewCell
+        let visibleCells = tableView.visibleCells as! [ThoughtTableViewCell]
+        for cell in visibleCells {
+            if (cell.thought === newThought) {
+                editCell = cell
+                editCell.textField.becomeFirstResponder()
+                break
             }
         }
     }
@@ -40,9 +50,10 @@ class ListOfThoughtsViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //let cell = ThoughtTableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "ThoughtTableViewCell")
-        let cell = tableView .dequeueReusableCell(withIdentifier: "ThoughtTableViewCell", for: indexPath)
-        cell.textLabel?.text = listOfThoughts[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: thoughtCell, for: indexPath) as! ThoughtTableViewCell
+        let thought = listOfThoughts[indexPath.row]
+        cell.thought = thought
+        cell.textField?.text = thought.title
         cell.accessoryType = .disclosureIndicator
         return cell
     }
