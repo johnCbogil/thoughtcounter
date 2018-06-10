@@ -16,9 +16,13 @@ class ThoughtViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var increaseThoughtCountButton: UIButton!
     var thoughtCount = 0
     var listOfDates = [Date]()
+    var thought: Thought?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let vcTitle = thought?.title {
+            title = vcTitle
+        }
     }
     
     @IBAction func increaseThoughtCount(_ sender: Any) {

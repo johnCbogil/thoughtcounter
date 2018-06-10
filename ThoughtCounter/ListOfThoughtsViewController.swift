@@ -54,7 +54,6 @@ class ListOfThoughtsViewController: UIViewController, UITableViewDataSource, UIT
         let thought = listOfThoughts[indexPath.row]
         cell.thought = thought
         cell.textField?.text = thought.title
-        cell.accessoryType = .disclosureIndicator
         return cell
     }
     
@@ -62,6 +61,7 @@ class ListOfThoughtsViewController: UIViewController, UITableViewDataSource, UIT
         tableView.deselectRow(at: indexPath, animated: true)
         if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ThoughtViewController") as? ThoughtViewController {
             if let navigator = navigationController {
+                viewController.thought = listOfThoughts[indexPath.row]
                 navigator.pushViewController(viewController, animated: true)
             }
         }
