@@ -15,6 +15,8 @@
 		94D8025420CB254F00EE5076 /* ThoughtCounterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D8025320CB254F00EE5076 /* ThoughtCounterTests.swift */; };
 		94D8025F20CB254F00EE5076 /* ThoughtCounterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D8025E20CB254F00EE5076 /* ThoughtCounterUITests.swift */; };
 		94D8026D20CB299A00EE5076 /* ListOfThoughtsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D8026C20CB299A00EE5076 /* ListOfThoughtsViewController.swift */; };
+		94ECE68920CC6ECD00E6A8D9 /* ThoughtTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94ECE68820CC6ECD00E6A8D9 /* ThoughtTableViewCell.xib */; };
+		94ECE68B20CC6EE200E6A8D9 /* ThoughtTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94ECE68A20CC6EE200E6A8D9 /* ThoughtTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		94D8025E20CB254F00EE5076 /* ThoughtCounterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThoughtCounterUITests.swift; sourceTree = "<group>"; };
 		94D8026020CB254F00EE5076 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		94D8026C20CB299A00EE5076 /* ListOfThoughtsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfThoughtsViewController.swift; sourceTree = "<group>"; };
+		94ECE68820CC6ECD00E6A8D9 /* ThoughtTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThoughtTableViewCell.xib; sourceTree = "<group>"; };
+		94ECE68A20CC6EE200E6A8D9 /* ThoughtTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThoughtTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,8 @@
 				94D8026C20CB299A00EE5076 /* ListOfThoughtsViewController.swift */,
 				94D8024020CB254D00EE5076 /* ThoughtViewController.swift */,
 				94D8024220CB254D00EE5076 /* Main.storyboard */,
+				94ECE68820CC6ECD00E6A8D9 /* ThoughtTableViewCell.xib */,
+				94ECE68A20CC6EE200E6A8D9 /* ThoughtTableViewCell.swift */,
 				94D8024520CB254F00EE5076 /* Assets.xcassets */,
 				94D8024720CB254F00EE5076 /* LaunchScreen.storyboard */,
 				94D8024A20CB254F00EE5076 /* Info.plist */,
@@ -235,6 +241,7 @@
 				94D8024920CB254F00EE5076 /* LaunchScreen.storyboard in Resources */,
 				94D8024620CB254F00EE5076 /* Assets.xcassets in Resources */,
 				94D8024420CB254D00EE5076 /* Main.storyboard in Resources */,
+				94ECE68920CC6ECD00E6A8D9 /* ThoughtTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +269,7 @@
 				94D8024120CB254D00EE5076 /* ThoughtViewController.swift in Sources */,
 				94D8026D20CB299A00EE5076 /* ListOfThoughtsViewController.swift in Sources */,
 				94D8023F20CB254D00EE5076 /* AppDelegate.swift in Sources */,
+				94ECE68B20CC6EE200E6A8D9 /* ThoughtTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

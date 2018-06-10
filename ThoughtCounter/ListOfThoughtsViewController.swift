@@ -22,13 +22,17 @@ class ListOfThoughtsViewController: UIViewController, UITableViewDataSource, UIT
         tableView.delegate = self
         tableView.tableFooterView = UIView()
         title = "List of thoughts"
+        tableView.register(UINib(nibName: "ThoughtTableViewCell", bundle: nil), forCellReuseIdentifier: "ThoughtTableViewCell")
     }
     
     @IBAction func addThought(_ sender: Any) {
-        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "ThoughtCell")
-        tableView.insertSubview(cell, at: 0)
         listOfThoughts.insert("", at: 0)
         tableView.reloadData()
+        if let cell = tableView.visibleCells[0] as? ThoughtTableViewCell {
+            if let textfield = cell.textField {
+                textfield.becomeFirstResponder()
+            }
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -36,8 +40,10 @@ class ListOfThoughtsViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "ThoughtCell")
+        //let cell = ThoughtTableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "ThoughtTableViewCell")
+        let cell = tableView .dequeueReusableCell(withIdentifier: "ThoughtTableViewCell", for: indexPath)
         cell.textLabel?.text = listOfThoughts[indexPath.row]
+        cell.accessoryType = .disclosureIndicator
         return cell
     }
     
@@ -60,5 +66,4 @@ class ListOfThoughtsViewController: UIViewController, UITableViewDataSource, UIT
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
-    
 }
