@@ -26,7 +26,11 @@ class ThoughtTableViewCell: UITableViewCell, UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         print("did finish editing")
         textField.resignFirstResponder()
-        
         thought?.title = textField.text
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
