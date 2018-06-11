@@ -24,6 +24,8 @@ class ListOfThoughtsViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     fileprivate func configureTableView() {
+        let tap = UITapGestureRecognizer.init(target: self, action: #selector(hideKeyboard))
+        tableView.addGestureRecognizer(tap)
         tableView.register(UINib(nibName: thoughtCell, bundle: nil), forCellReuseIdentifier: thoughtCell)
         tableView.dataSource = self
         tableView.delegate = self
@@ -43,6 +45,10 @@ class ListOfThoughtsViewController: UIViewController, UITableViewDataSource, UIT
                 break
             }
         }
+    }
+    
+    @objc func hideKeyboard() {
+        view.endEditing(true)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
