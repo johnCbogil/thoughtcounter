@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ThoughtsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ThoughtsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addThoughtButton: UIBarButtonItem!
@@ -26,6 +26,7 @@ class ThoughtsViewController: UIViewController, UITableViewDataSource, UITableVi
     
     fileprivate func configureTableView() {
         let tap = UITapGestureRecognizer.init(target: self, action: #selector(hideKeyboard))
+        tap.delegate = self
         tableView.addGestureRecognizer(tap)
         tableView.register(UINib(nibName: thoughtCell, bundle: nil), forCellReuseIdentifier: thoughtCell)
         tableView.dataSource = self
@@ -84,5 +85,13 @@ class ThoughtsViewController: UIViewController, UITableViewDataSource, UITableVi
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
+    }
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        if gestureRecognizer is UITapGestureRecognizer {
+            let location = touch.location(in: tableView)
+            return (tableView.indexPathForRow(at: location) == nil)
+        }
+        return true
     }
 }
