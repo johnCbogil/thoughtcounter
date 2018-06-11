@@ -22,6 +22,7 @@ class ThoughtsViewController: UIViewController, UITableViewDataSource, UITableVi
 
         configureTableView()
         title = "Thoughts"
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
     
     fileprivate func configureTableView() {

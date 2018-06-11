@@ -22,18 +22,32 @@ class ThoughtDetailViewController: UIViewController, UITableViewDelegate, UITabl
     let dateCell = "DateCell"
     let dateFormat = "dd.MM.yyyy"
     
+    // TODO: NEED TO CREATE FAKE DATE OBJECTS FOR TESTING
+    
+    func parseDates() {
+        
+        // THIS WHAT I NEED
+        //https://stackoverflow.com/questions/42981122/swift-map-array-of-objects-alphabetically-by-namestring-into-separate-letter
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureTableView()
         if let vcTitle = thought?.title {
             title = vcTitle
         }
+    }
+    
+    func configureTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
     @IBAction func increaseThoughtCount(_ sender: Any) {
         listOfDates.append(Date())
         thoughtCount += 1
         thoughtCountLabel.text = String(thoughtCount)
-        print(thoughtCount)
+        tableView.reloadData()
     }
     
     @IBAction func decreaseThoughtCount(_ sender: Any) {
@@ -41,8 +55,8 @@ class ThoughtDetailViewController: UIViewController, UITableViewDelegate, UITabl
             listOfDates.removeLast()
             thoughtCount -= 1
             thoughtCountLabel.text = String(thoughtCount)
+            tableView.reloadData()
         }
-        print(thoughtCount)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -59,6 +73,10 @@ class ThoughtDetailViewController: UIViewController, UITableViewDelegate, UITabl
         let dateString = formatter.string(from: date)
         cell.textLabel?.text = dateString
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
