@@ -1,5 +1,5 @@
 //
-//  ThoughtViewController
+//  ThoughtDetailViewController
 //  ThoughtCounter
 //
 //  Created by John Bogil on 6/8/18.
@@ -8,15 +8,19 @@
 
 import UIKit
 
-class ThoughtViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ThoughtDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var thoughtCountLabel: UILabel!
     @IBOutlet weak var decreaseThoughtCountButton: UIButton!
     @IBOutlet weak var increaseThoughtCountButton: UIButton!
+    
     var thoughtCount = 0
     var listOfDates = [Date]()
     var thought: Thought?
+    
+    let dateCell = "DateCell"
+    let dateFormat = "dd.MM.yyyy"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,10 +50,10 @@ class ThoughtViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "DateCell")
+        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: dateCell)
         let date = listOfDates[indexPath.row]
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd.MM.yyyy"
+        formatter.dateFormat = dateFormat
         formatter.timeStyle = .none
         formatter.dateStyle = .medium
         let dateString = formatter.string(from: date)

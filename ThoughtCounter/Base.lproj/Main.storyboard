@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--List Of Thoughts View Controller-->
+        <!--Thoughts View Controller-->
         <scene sceneID="0Tu-Hs-CtM">
             <objects>
-                <viewController storyboardIdentifier="ListOfThoughtsViewController" id="SMl-a6-uSq" customClass="ListOfThoughtsViewController" customModule="ThoughtCounter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ThoughtsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="SMl-a6-uSq" customClass="ThoughtsViewController" customModule="ThoughtCounter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="o8d-Pz-SiG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -48,10 +48,10 @@
             </objects>
             <point key="canvasLocation" x="189.59999999999999" y="131.78410794602701"/>
         </scene>
-        <!--Thought View Controller-->
+        <!--Thought Detail View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="ThoughtViewController" id="BYZ-38-t0r" customClass="ThoughtViewController" customModule="ThoughtCounter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ThoughtDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ThoughtDetailViewController" customModule="ThoughtCounter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -1,5 +1,5 @@
 //
-//  ListOfThoughtsViewController.swift
+//  ThoughtsViewController
 //  ThoughtCounter
 //
 //  Created by John Bogil on 6/8/18.
@@ -8,19 +8,20 @@
 
 import UIKit
 
-class ListOfThoughtsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ThoughtsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addThoughtButton: UIBarButtonItem!
     
     var listOfThoughts = [Thought]()
     let thoughtCell = "ThoughtTableViewCell"
+    let thoughtDetailVC = "ThoughtDetailViewController"
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         configureTableView()
-        title = "List of thoughts"
+        title = "Thoughts"
     }
     
     fileprivate func configureTableView() {
@@ -34,7 +35,8 @@ class ListOfThoughtsViewController: UIViewController, UITableViewDataSource, UIT
     
     @IBAction func addThought(_ sender: Any) {
         let newThought = Thought.init(text: "")
-        listOfThoughts.insert(newThought, at: 0)
+        let topOfList = 0
+        listOfThoughts.insert(newThought, at: topOfList)
         tableView.reloadData()
         var editCell: ThoughtTableViewCell
         let visibleCells = tableView.visibleCells as! [ThoughtTableViewCell]
@@ -65,7 +67,7 @@ class ListOfThoughtsViewController: UIViewController, UITableViewDataSource, UIT
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ThoughtViewController") as? ThoughtViewController {
+        if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: thoughtDetailVC) as? ThoughtDetailViewController {
             if let navigator = navigationController {
                 viewController.thought = listOfThoughts[indexPath.row]
                 navigator.pushViewController(viewController, animated: true)
