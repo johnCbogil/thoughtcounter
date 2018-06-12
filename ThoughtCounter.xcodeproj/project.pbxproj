@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		942BE1F520D015D700D622E4 /* DateCountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 942BE1F420D015D700D622E4 /* DateCountTableViewCell.xib */; };
+		942BE1F720D015ED00D622E4 /* DateCountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942BE1F620D015ED00D622E4 /* DateCountTableViewCell.swift */; };
 		94D8023F20CB254D00EE5076 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D8023E20CB254D00EE5076 /* AppDelegate.swift */; };
 		94D8024120CB254D00EE5076 /* ThoughtDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D8024020CB254D00EE5076 /* ThoughtDetailViewController.swift */; };
 		94D8024420CB254D00EE5076 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94D8024220CB254D00EE5076 /* Main.storyboard */; };
@@ -38,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		942BE1F420D015D700D622E4 /* DateCountTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DateCountTableViewCell.xib; sourceTree = "<group>"; };
+		942BE1F620D015ED00D622E4 /* DateCountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCountTableViewCell.swift; sourceTree = "<group>"; };
 		94D8023B20CB254D00EE5076 /* ThoughtCounter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThoughtCounter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94D8023E20CB254D00EE5076 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94D8024020CB254D00EE5076 /* ThoughtDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThoughtDetailViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +116,8 @@
 				94ECE68820CC6ECD00E6A8D9 /* ThoughtTableViewCell.xib */,
 				94ECE68A20CC6EE200E6A8D9 /* ThoughtTableViewCell.swift */,
 				94ECE68C20CD73D000E6A8D9 /* Thought.swift */,
+				942BE1F420D015D700D622E4 /* DateCountTableViewCell.xib */,
+				942BE1F620D015ED00D622E4 /* DateCountTableViewCell.swift */,
 				94D8024520CB254F00EE5076 /* Assets.xcassets */,
 				94D8024720CB254F00EE5076 /* LaunchScreen.storyboard */,
 				94D8024A20CB254F00EE5076 /* Info.plist */,
@@ -244,6 +250,7 @@
 				94D8024920CB254F00EE5076 /* LaunchScreen.storyboard in Resources */,
 				94D8024620CB254F00EE5076 /* Assets.xcassets in Resources */,
 				94D8024420CB254D00EE5076 /* Main.storyboard in Resources */,
+				942BE1F520D015D700D622E4 /* DateCountTableViewCell.xib in Resources */,
 				94ECE68920CC6ECD00E6A8D9 /* ThoughtTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,6 +279,7 @@
 				94D8024120CB254D00EE5076 /* ThoughtDetailViewController.swift in Sources */,
 				94ECE68D20CD73D000E6A8D9 /* Thought.swift in Sources */,
 				94D8026D20CB299A00EE5076 /* ThoughtsViewController.swift in Sources */,
+				942BE1F720D015ED00D622E4 /* DateCountTableViewCell.swift in Sources */,
 				94D8023F20CB254D00EE5076 /* AppDelegate.swift in Sources */,
 				94ECE68B20CC6EE200E6A8D9 /* ThoughtTableViewCell.swift in Sources */,
 			);

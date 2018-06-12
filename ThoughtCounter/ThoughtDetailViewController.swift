@@ -9,7 +9,7 @@
 import UIKit
 
 class ThoughtDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var thoughtCountLabel: UILabel!
     @IBOutlet weak var decreaseThoughtCountButton: UIButton!
@@ -17,18 +17,12 @@ class ThoughtDetailViewController: UIViewController, UITableViewDelegate, UITabl
     
     var thoughtCount = 0
     var listOfDates = [Date]()
+    var listOfFormattedDates = [DateCount]()
     var thought: Thought?
     
-    let dateCell = "DateCell"
+    let dateCell = "DateCountTableViewCell"
     let dateFormat = "dd.MM.yyyy"
     
-    // TODO: NEED TO CREATE FAKE DATE OBJECTS FOR TESTING
-    
-    func parseDates() {
-        
-        // THIS WHAT I NEED
-        //https://stackoverflow.com/questions/42981122/swift-map-array-of-objects-alphabetically-by-namestring-into-separate-letter
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,12 +35,14 @@ class ThoughtDetailViewController: UIViewController, UITableViewDelegate, UITabl
     func configureTableView() {
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.register(UINib(nibName: dateCell, bundle: nil), forCellReuseIdentifier: dateCell)
     }
     
     @IBAction func increaseThoughtCount(_ sender: Any) {
         listOfDates.append(Date())
         thoughtCount += 1
         thoughtCountLabel.text = String(thoughtCount)
+        listOfFormattedDates = formatListOfDates(listOfDates: listOfDates)
         tableView.reloadData()
     }
     
@@ -55,28 +51,49 @@ class ThoughtDetailViewController: UIViewController, UITableViewDelegate, UITabl
             listOfDates.removeLast()
             thoughtCount -= 1
             thoughtCountLabel.text = String(thoughtCount)
+            listOfFormattedDates = formatListOfDates(listOfDates: listOfDates)
             tableView.reloadData()
         }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listOfDates.count
+        return listOfFormattedDates.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: dateCell)
-        let date = listOfDates[indexPath.row]
-        let formatter = DateFormatter()
-        formatter.dateFormat = dateFormat
-        formatter.timeStyle = .none
-        formatter.dateStyle = .medium
-        let dateString = formatter.string(from: date)
-        cell.textLabel?.text = dateString
+        let cell = tableView.dequeueReusableCell(withIdentifier: dateCell, for: indexPath) as! DateCountTableViewCell
+        let dateCount = listOfFormattedDates[indexPath.row]
+        cell.dateLabel.text = dateCount.dateString
+        cell.countLabel.text = String(dateCount.count)
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func formatListOfDates(listOfDates:[Date]) -> [DateCount] {
+        
+        let dateCounts = listOfDates.reduce(into: [String: Int]()) { counts, date in
+            let year = Calendar.current.component(.year, from: date)
+            let month = Calendar.current.component(.month, from: date)
+            let day = Calendar.current.component(.day, from: date)
+            let key = "\(year)-\(month)-\(day)"
+            counts[key, default: 0] += 1
+        }
+        
+        var array = [DateCount]()
+        for (key,value) in dateCounts {
+//            let dict = [key:value]
+            let dateCountStruct = DateCount.init(dateString: key, count: value)
+            array.append(dateCountStruct)
+        }
+        return array
+    }
+    
+    struct DateCount {
+        var dateString: String
+        var count: Int
     }
 }
 
