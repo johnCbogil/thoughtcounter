@@ -23,6 +23,10 @@ class ThoughtDetailViewController: UIViewController, UITableViewDelegate, UITabl
     let dateCell = "DateCountTableViewCell"
     let dateFormat = "dd.MM.yyyy"
     
+    struct DateCount {
+        var dateString: String
+        var count: Int
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,26 +78,22 @@ class ThoughtDetailViewController: UIViewController, UITableViewDelegate, UITabl
     
     func formatListOfDates(listOfDates:[Date]) -> [DateCount] {
         
-        let dateCounts = listOfDates.reduce(into: [String: Int]()) { counts, date in
+        // CREATE A DICT OF DATES AND COUNTS
+        let dateCounts = listOfDates.reduce(into: [String: Int]()) { dict, date in
             let year = Calendar.current.component(.year, from: date)
             let month = Calendar.current.component(.month, from: date)
             let day = Calendar.current.component(.day, from: date)
             let key = "\(year)-\(month)-\(day)"
-            counts[key, default: 0] += 1
+            dict[key, default: 0] += 1
         }
         
+        // BREAK DICT INTO ARRAY OF OBJECTS
         var array = [DateCount]()
-        for (key,value) in dateCounts {
-//            let dict = [key:value]
-            let dateCountStruct = DateCount.init(dateString: key, count: value)
+        for (date, count) in dateCounts {
+            let dateCountStruct = DateCount.init(dateString: date, count: count)
             array.append(dateCountStruct)
         }
         return array
-    }
-    
-    struct DateCount {
-        var dateString: String
-        var count: Int
     }
 }
 
