@@ -25,14 +25,9 @@ class ThoughtTableViewCell: UITableViewCell, UITextFieldDelegate {
         textField.delegate = self
     }
     
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        print("Did begin editing")
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        updateThought()
-        print("did finish editing")
-        textField.resignFirstResponder()
+    func configureWithThought(thought:Thought) {
+        self.thought = thought
+        textField.text = self.thought?.title
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

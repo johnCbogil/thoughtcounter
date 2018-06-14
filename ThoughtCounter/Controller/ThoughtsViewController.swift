@@ -52,17 +52,20 @@ class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate, Sav
     }
     
     func saveThoughts() {
-        DispatchQueue.main.async {
-            let encodedData: Data = NSKeyedArchiver.archivedData(withRootObject: self.listOfThoughts)
-            self.userDefaults.set(encodedData, forKey: self.listOfThoughtsKey)
-            self.userDefaults.synchronize()
-        }
+        let encodedData: Data = NSKeyedArchiver.archivedData(withRootObject: listOfThoughts)
+        userDefaults.set(encodedData, forKey: listOfThoughtsKey)
+        print("Saving \(listOfThoughts.count) thoughts")
+        userDefaults.synchronize()
+        
     }
     
     func getThoughts() {
-        if let decodedData  = userDefaults.object(forKey: listOfThoughtsKey) as! Data? {
+        if let decodedData = userDefaults.object(forKey: listOfThoughtsKey) as! Data? {
             listOfThoughts = NSKeyedUnarchiver.unarchiveObject(with: decodedData) as! [Thought]
             tableView.reloadData()
+            print("Getting \(listOfThoughts.count) thoughts")
+            userDefaults.synchronize()
+            
         }
     }
 }
@@ -76,8 +79,7 @@ extension ThoughtsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: thoughtCell, for: indexPath) as! ThoughtTableViewCell
         let thought = listOfThoughts[indexPath.row]
-        cell.thought = thought
-        cell.textField?.text = thought.title
+        cell.configureWithThought(thought: thought)
         cell.saveThoughtsDelegate = self
         return cell
     }
