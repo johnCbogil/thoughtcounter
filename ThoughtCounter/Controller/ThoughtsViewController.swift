@@ -8,14 +8,13 @@
 
 import UIKit
 
-class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate, SaveThoughtsDelegate, UpdateThoughtModelDelegate {
+class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addThoughtButton: UIBarButtonItem!
     
     var listOfThoughts = [Thought]()
     let thoughtCell = "ThoughtTableViewCell"
-    let thoughtDetailVC = "ThoughtDetailViewController"
     let listOfThoughtsKey = "ListOfThoughts"
     let userDefaults = UserDefaults.standard
     
@@ -36,7 +35,7 @@ class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate, Sav
     }
     
     @IBAction func addThought(_ sender: Any) {
-        let newThought = Thought.init(text: "")
+        let newThought = Thought.init(title: "")
         let topOfList = 0
         listOfThoughts.insert(newThought, at: topOfList)
         tableView.reloadData()
@@ -68,10 +67,6 @@ class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate, Sav
             
         }
     }
-    
-    func updateThoughtModel() {
-        
-    }
 }
 
 extension ThoughtsViewController: UITableViewDataSource, UITableViewDelegate {
@@ -84,19 +79,11 @@ extension ThoughtsViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: thoughtCell, for: indexPath) as! ThoughtTableViewCell
         let thought = listOfThoughts[indexPath.row]
         cell.configureWithThought(thought: thought)
-        cell.saveThoughtsDelegate = self
-        cell.updateThoughtModelDelegate = self
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: thoughtDetailVC) as? ThoughtDetailViewController {
-            if let navigator = navigationController {
-                viewController.thought = listOfThoughts[indexPath.row]
-                navigator.pushViewController(viewController, animated: true)
-            }
-        }
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {

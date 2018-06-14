@@ -8,19 +8,9 @@
 
 import UIKit
 
-protocol SaveThoughtsDelegate {
-    func saveThoughts()
-}
-
-protocol UpdateThoughtModelDelegate {
-    func updateThoughtModel()
-}
-
 class ThoughtTableViewCell: UITableViewCell, UITextFieldDelegate {
 
     @IBOutlet weak var textField: UITextField!
-    var saveThoughtsDelegate: SaveThoughtsDelegate!
-    var updateThoughtModelDelegate: UpdateThoughtModelDelegate!
     
     var thought: Thought?
 
@@ -36,14 +26,7 @@ class ThoughtTableViewCell: UITableViewCell, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        updateThought()
         textField.resignFirstResponder()
         return true
-    }
-    
-    // TODO: THIS VIEW SHOULD NOT BE UPDATING THE MODEL
-    func updateThought() {
-        thought?.title = textField.text
-        saveThoughtsDelegate.saveThoughts()
     }
 }

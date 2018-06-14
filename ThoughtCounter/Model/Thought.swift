@@ -10,13 +10,13 @@ import Foundation
 
 class Thought: NSObject, NSCoding {
     var title: String?
-    init(text: String) {
-     title = text
+    init(title: String) {
+     self.title = title
     }
     
     required convenience init(coder decoder: NSCoder) {        
         let title = decoder.decodeObject(forKey: "title") as! String
-        self.init(text: title)
+        self.init(title: title)
     }
     
     func encode(with coder: NSCoder) {

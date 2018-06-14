@@ -48,62 +48,6 @@
             </objects>
             <point key="canvasLocation" x="189.59999999999999" y="131.78410794602701"/>
         </scene>
-        <!--Thought Detail View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController storyboardIdentifier="ThoughtDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ThoughtDetailViewController" customModule="ThoughtCounter" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nx3-pg-bGC">
-                                <rect key="frame" x="300" y="617" width="59" height="30"/>
-                                <state key="normal" title="Increase"/>
-                                <connections>
-                                    <action selector="increaseThoughtCount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="78B-IT-zh5"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZC3-Vi-cny">
-                                <rect key="frame" x="16" y="617" width="65" height="30"/>
-                                <state key="normal" title="Decrease"/>
-                                <connections>
-                                    <action selector="decreaseThoughtCount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cWs-L1-msM"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ThoughtCount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D4P-PC-Eit">
-                                <rect key="frame" x="131.5" y="463" width="111.5" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3RB-rG-3M6">
-                                <rect key="frame" x="0.0" y="20" width="375" height="305"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="ZC3-Vi-cny" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="F68-c6-Yfr"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ZC3-Vi-cny" secondAttribute="bottom" constant="20" id="GRK-l9-WiS"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="nx3-pg-bGC" secondAttribute="bottom" constant="20" id="Rgg-ds-fa9"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nx3-pg-bGC" secondAttribute="trailing" constant="16" id="gou-cx-Oz9"/>
-                            <constraint firstItem="nx3-pg-bGC" firstAttribute="leading" secondItem="ZC3-Vi-cny" secondAttribute="trailing" constant="219" id="wRy-c0-mkp"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                    <connections>
-                        <outlet property="decreaseThoughtCountButton" destination="ZC3-Vi-cny" id="k2x-IH-sXi"/>
-                        <outlet property="increaseThoughtCountButton" destination="nx3-pg-bGC" id="0bR-TZ-aDb"/>
-                        <outlet property="tableView" destination="3RB-rG-3M6" id="K2u-Ku-ghx"/>
-                        <outlet property="thoughtCountLabel" destination="D4P-PC-Eit" id="k9p-3L-i5u"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1024.8" y="131.78410794602701"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="dbM-BW-WaG">
             <objects>
