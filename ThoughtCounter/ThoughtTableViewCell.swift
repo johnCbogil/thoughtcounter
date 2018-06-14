@@ -41,6 +41,7 @@ class ThoughtTableViewCell: UITableViewCell, UITextFieldDelegate {
         return true
     }
     
+    // TODO: THIS VIEW SHOULD NOT BE UPDATING THE MODEL
     func updateThought() {
         thought?.title = textField.text
         saveThoughtsDelegate.saveThoughts()
