@@ -8,9 +8,14 @@
 
 import UIKit
 
+protocol SaveThoughtsDelegate {
+    func saveThoughts()
+}
+
 class ThoughtTableViewCell: UITableViewCell, UITextFieldDelegate {
 
     @IBOutlet weak var textField: UITextField!
+    var saveThoughtsDelegate: SaveThoughtsDelegate!
     
     var thought: Thought?
 
@@ -25,14 +30,19 @@ class ThoughtTableViewCell: UITableViewCell, UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
+        updateThought()
         print("did finish editing")
         textField.resignFirstResponder()
-        thought?.title = textField.text
-        
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        updateThought()
         textField.resignFirstResponder()
         return true
+    }
+    
+    func updateThought() {
+        thought?.title = textField.text
+        saveThoughtsDelegate.saveThoughts()
     }
 }

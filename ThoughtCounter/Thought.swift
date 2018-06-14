@@ -8,9 +8,18 @@
 
 import Foundation
 
-class Thought {
+class Thought: NSObject, NSCoding {
     var title: String?
     init(text: String) {
      title = text
+    }
+    
+    required convenience init(coder decoder: NSCoder) {        
+        let title = decoder.decodeObject(forKey: "title") as! String
+        self.init(text: title)
+    }
+    
+    func encode(with coder: NSCoder) {
+        coder.encode(title, forKey: "title")
     }
 }

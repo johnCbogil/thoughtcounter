@@ -8,27 +8,27 @@
 
 import UIKit
 
-class ThoughtsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate {
-
+class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate, SaveThoughtsDelegate {
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addThoughtButton: UIBarButtonItem!
     
     var listOfThoughts = [Thought]()
     let thoughtCell = "ThoughtTableViewCell"
     let thoughtDetailVC = "ThoughtDetailViewController"
+    let listOfThoughtsKey = "ListOfThoughts"
+    let userDefaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         configureTableView()
         title = "Thoughts"
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        getThoughts()
     }
     
     fileprivate func configureTableView() {
-        let tap = UITapGestureRecognizer.init(target: self, action: #selector(hideKeyboard))
-        tap.delegate = self
-        tableView.addGestureRecognizer(tap)
         tableView.register(UINib(nibName: thoughtCell, bundle: nil), forCellReuseIdentifier: thoughtCell)
         tableView.dataSource = self
         tableView.delegate = self
@@ -51,9 +51,27 @@ class ThoughtsViewController: UIViewController, UITableViewDataSource, UITableVi
         }
     }
     
+    func saveThoughts() {
+        DispatchQueue.main.async {
+            let encodedData: Data = NSKeyedArchiver.archivedData(withRootObject: self.listOfThoughts)
+            self.userDefaults.set(encodedData, forKey: self.listOfThoughtsKey)
+            self.userDefaults.synchronize()
+        }
+    }
+    
+    func getThoughts() {
+        if let decodedData  = userDefaults.object(forKey: listOfThoughtsKey) as! Data? {
+            listOfThoughts = NSKeyedUnarchiver.unarchiveObject(with: decodedData) as! [Thought]
+            tableView.reloadData()
+        }
+    }
+    
     @objc func hideKeyboard() {
         view.endEditing(true)
     }
+}
+
+extension ThoughtsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return listOfThoughts.count
@@ -64,6 +82,7 @@ class ThoughtsViewController: UIViewController, UITableViewDataSource, UITableVi
         let thought = listOfThoughts[indexPath.row]
         cell.thought = thought
         cell.textField?.text = thought.title
+        cell.saveThoughtsDelegate = self
         return cell
     }
     
@@ -81,18 +100,12 @@ class ThoughtsViewController: UIViewController, UITableViewDataSource, UITableVi
         if editingStyle == .delete {
             listOfThoughts.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+            saveThoughts()
         }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
-    
-    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
-        if gestureRecognizer is UITapGestureRecognizer {
-            let location = touch.location(in: tableView)
-            return (tableView.indexPathForRow(at: location) == nil)
-        }
-        return true
-    }
 }
+

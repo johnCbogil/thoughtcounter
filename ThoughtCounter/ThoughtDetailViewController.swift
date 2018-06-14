@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ThoughtDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ThoughtDetailViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var thoughtCountLabel: UILabel!
@@ -60,22 +60,6 @@ class ThoughtDetailViewController: UIViewController, UITableViewDelegate, UITabl
         }
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listOfFormattedDates.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: dateCell, for: indexPath) as! DateCountTableViewCell
-        let dateCount = listOfFormattedDates[indexPath.row]
-        cell.dateLabel.text = dateCount.dateString
-        cell.countLabel.text = String(dateCount.count)
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
-    
     func formatListOfDates(listOfDates:[Date]) -> [DateCount] {
         
         // CREATE A DICT OF DATES AND COUNTS
@@ -95,5 +79,26 @@ class ThoughtDetailViewController: UIViewController, UITableViewDelegate, UITabl
         }
         return array
     }
+}
+
+extension ThoughtDetailViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return listOfFormattedDates.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: dateCell, for: indexPath) as! DateCountTableViewCell
+        let dateCount = listOfFormattedDates[indexPath.row]
+        cell.dateLabel.text = dateCount.dateString
+        cell.countLabel.text = String(dateCount.count)
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+   
 }
 
