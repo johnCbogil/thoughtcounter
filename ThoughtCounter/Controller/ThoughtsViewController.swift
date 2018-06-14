@@ -65,10 +65,6 @@ class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate, Sav
             tableView.reloadData()
         }
     }
-    
-    @objc func hideKeyboard() {
-        view.endEditing(true)
-    }
 }
 
 extension ThoughtsViewController: UITableViewDataSource, UITableViewDelegate {

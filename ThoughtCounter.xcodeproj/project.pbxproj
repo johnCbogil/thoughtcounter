@@ -86,6 +86,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		941294DB20D203370076B88F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				94D8026C20CB299A00EE5076 /* ThoughtsViewController.swift */,
+				94D8024020CB254D00EE5076 /* ThoughtDetailViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		941294DC20D2034A0076B88F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				94D8024220CB254D00EE5076 /* Main.storyboard */,
+				94ECE68820CC6ECD00E6A8D9 /* ThoughtTableViewCell.xib */,
+				94ECE68A20CC6EE200E6A8D9 /* ThoughtTableViewCell.swift */,
+				942BE1F420D015D700D622E4 /* DateCountTableViewCell.xib */,
+				942BE1F620D015ED00D622E4 /* DateCountTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		941294DD20D203610076B88F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				94ECE68C20CD73D000E6A8D9 /* Thought.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		94D8023220CB254D00EE5076 = {
 			isa = PBXGroup;
 			children = (
@@ -110,14 +139,9 @@
 			isa = PBXGroup;
 			children = (
 				94D8023E20CB254D00EE5076 /* AppDelegate.swift */,
-				94D8026C20CB299A00EE5076 /* ThoughtsViewController.swift */,
-				94D8024020CB254D00EE5076 /* ThoughtDetailViewController.swift */,
-				94D8024220CB254D00EE5076 /* Main.storyboard */,
-				94ECE68820CC6ECD00E6A8D9 /* ThoughtTableViewCell.xib */,
-				94ECE68A20CC6EE200E6A8D9 /* ThoughtTableViewCell.swift */,
-				94ECE68C20CD73D000E6A8D9 /* Thought.swift */,
-				942BE1F420D015D700D622E4 /* DateCountTableViewCell.xib */,
-				942BE1F620D015ED00D622E4 /* DateCountTableViewCell.swift */,
+				941294DD20D203610076B88F /* Model */,
+				941294DC20D2034A0076B88F /* View */,
+				941294DB20D203370076B88F /* Controller */,
 				94D8024520CB254F00EE5076 /* Assets.xcassets */,
 				94D8024720CB254F00EE5076 /* LaunchScreen.storyboard */,
 				94D8024A20CB254F00EE5076 /* Info.plist */,
