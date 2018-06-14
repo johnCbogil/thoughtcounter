@@ -12,10 +12,15 @@ protocol SaveThoughtsDelegate {
     func saveThoughts()
 }
 
+protocol UpdateThoughtModelDelegate {
+    func updateThoughtModel()
+}
+
 class ThoughtTableViewCell: UITableViewCell, UITextFieldDelegate {
 
     @IBOutlet weak var textField: UITextField!
     var saveThoughtsDelegate: SaveThoughtsDelegate!
+    var updateThoughtModelDelegate: UpdateThoughtModelDelegate!
     
     var thought: Thought?
 

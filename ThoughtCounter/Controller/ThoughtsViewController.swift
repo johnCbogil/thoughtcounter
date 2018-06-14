@@ -8,8 +8,8 @@
 
 import UIKit
 
-class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate, SaveThoughtsDelegate {
-    
+class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate, SaveThoughtsDelegate, UpdateThoughtModelDelegate {
+
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addThoughtButton: UIBarButtonItem!
     
@@ -68,6 +68,10 @@ class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate, Sav
             
         }
     }
+    
+    func updateThoughtModel() {
+        
+    }
 }
 
 extension ThoughtsViewController: UITableViewDataSource, UITableViewDelegate {
@@ -81,6 +85,7 @@ extension ThoughtsViewController: UITableViewDataSource, UITableViewDelegate {
         let thought = listOfThoughts[indexPath.row]
         cell.configureWithThought(thought: thought)
         cell.saveThoughtsDelegate = self
+        cell.updateThoughtModelDelegate = self
         return cell
     }
     
