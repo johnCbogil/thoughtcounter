@@ -32,6 +32,7 @@ class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.tableFooterView = UIView()
+        tableView.isScrollEnabled = false
     }
     
     @IBAction func addThought(_ sender: Any) {
@@ -55,7 +56,6 @@ class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate {
         userDefaults.set(encodedData, forKey: listOfThoughtsKey)
         print("Saving \(listOfThoughts.count) thoughts")
         userDefaults.synchronize()
-        
     }
     
     func getThoughts() {
@@ -64,7 +64,6 @@ class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate {
             tableView.reloadData()
             print("Getting \(listOfThoughts.count) thoughts")
             userDefaults.synchronize()
-            
         }
     }
 }

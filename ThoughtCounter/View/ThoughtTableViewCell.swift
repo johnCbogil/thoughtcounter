@@ -11,12 +11,18 @@ import UIKit
 class ThoughtTableViewCell: UITableViewCell, UITextFieldDelegate {
 
     @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var countLabel: UILabel!
+    var thoughtCount:Int = 0
     
     var thought: Thought?
 
     override func awakeFromNib() {
         super.awakeFromNib()
      
+        let rightSwipe = UISwipeGestureRecognizer.init(target: self, action: #selector(increaseCount))
+        rightSwipe.direction = .right
+//        self.addSubview(rightSwipe)
+        self.addGestureRecognizer(rightSwipe)
         textField.delegate = self
     }
     
@@ -28,5 +34,10 @@ class ThoughtTableViewCell: UITableViewCell, UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+    
+    @objc func increaseCount() {
+        thoughtCount += 1
+        countLabel.text = String(thoughtCount)
     }
 }

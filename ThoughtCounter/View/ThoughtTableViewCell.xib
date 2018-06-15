@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -18,21 +19,30 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gLN-Un-BhY">
-                        <rect key="frame" x="0.0" y="0.0" width="264" height="44"/>
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gLN-Un-BhY">
+                        <rect key="frame" x="16" y="0.0" width="293" height="44"/>
                         <nil key="textColor"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0SD-Hf-DAm">
+                        <rect key="frame" x="317" y="11" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="gLN-Un-BhY" secondAttribute="bottom" id="ByV-Bq-qpf"/>
-                    <constraint firstAttribute="trailing" secondItem="gLN-Un-BhY" secondAttribute="trailing" constant="111" id="ld1-Oa-Ibw"/>
-                    <constraint firstItem="gLN-Un-BhY" firstAttribute="top" secondItem="dFC-ZR-T7t" secondAttribute="top" id="rtu-hW-FIL"/>
-                    <constraint firstItem="gLN-Un-BhY" firstAttribute="leading" secondItem="dFC-ZR-T7t" secondAttribute="leading" id="shu-bm-YNL"/>
+                    <constraint firstItem="0SD-Hf-DAm" firstAttribute="trailing" secondItem="dFC-ZR-T7t" secondAttribute="trailingMargin" id="C98-dV-lZS"/>
+                    <constraint firstItem="0SD-Hf-DAm" firstAttribute="top" secondItem="dFC-ZR-T7t" secondAttribute="topMargin" id="DxO-WR-0hh"/>
+                    <constraint firstItem="gLN-Un-BhY" firstAttribute="top" secondItem="dFC-ZR-T7t" secondAttribute="top" id="UPS-26-Hli"/>
+                    <constraint firstItem="gLN-Un-BhY" firstAttribute="leading" secondItem="dFC-ZR-T7t" secondAttribute="leadingMargin" id="VEs-5Z-4L8"/>
+                    <constraint firstItem="gLN-Un-BhY" firstAttribute="centerY" secondItem="0SD-Hf-DAm" secondAttribute="centerY" id="agG-B5-Bli"/>
+                    <constraint firstItem="0SD-Hf-DAm" firstAttribute="leading" secondItem="gLN-Un-BhY" secondAttribute="trailing" constant="8" symbolic="YES" id="ukA-UG-RIY"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="countLabel" destination="0SD-Hf-DAm" id="4ta-Uw-c5L"/>
                 <outlet property="textField" destination="gLN-Un-BhY" id="iby-HH-g6e"/>
             </connections>
             <point key="canvasLocation" x="88.5" y="40"/>
