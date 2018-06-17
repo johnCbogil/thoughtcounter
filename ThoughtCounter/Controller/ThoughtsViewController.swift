@@ -24,7 +24,7 @@ class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate {
         configureTableView()
         title = "Thoughts"
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-        getThoughts()
+//        getThoughts()
     }
     
     fileprivate func configureTableView() {
@@ -40,32 +40,26 @@ class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate {
         let topOfList = 0
         listOfThoughts.insert(newThought, at: topOfList)
         tableView.reloadData()
-        var editCell: ThoughtTableViewCell
         let visibleCells = tableView.visibleCells as! [ThoughtTableViewCell]
-        for cell in visibleCells {
-            if (cell.thought === newThought) {
-                editCell = cell
-                editCell.textField.becomeFirstResponder()
-                break
-            }
-        }
+        let topCell = visibleCells[0]
+        topCell.textField.becomeFirstResponder()
     }
     
-    func saveThoughts() {
-        let encodedData: Data = NSKeyedArchiver.archivedData(withRootObject: listOfThoughts)
-        userDefaults.set(encodedData, forKey: listOfThoughtsKey)
-        print("Saving \(listOfThoughts.count) thoughts")
-        userDefaults.synchronize()
-    }
-    
-    func getThoughts() {
-        if let decodedData = userDefaults.object(forKey: listOfThoughtsKey) as! Data? {
-            listOfThoughts = NSKeyedUnarchiver.unarchiveObject(with: decodedData) as! [Thought]
-            tableView.reloadData()
-            print("Getting \(listOfThoughts.count) thoughts")
-            userDefaults.synchronize()
-        }
-    }
+//    func saveThoughts() {
+//        let encodedData: Data = NSKeyedArchiver.archivedData(withRootObject: listOfThoughts)
+//        userDefaults.set(encodedData, forKey: listOfThoughtsKey)
+//        print("Saving \(listOfThoughts.count) thoughts")
+//        userDefaults.synchronize()
+//    }
+//
+//    func getThoughts() {
+//        if let decodedData = userDefaults.object(forKey: listOfThoughtsKey) as! Data? {
+//            listOfThoughts = NSKeyedUnarchiver.unarchiveObject(with: decodedData) as! [Thought]
+//            tableView.reloadData()
+//            print("Getting \(listOfThoughts.count) thoughts")
+//            userDefaults.synchronize()
+//        }
+//    }
 }
 
 extension ThoughtsViewController: UITableViewDataSource, UITableViewDelegate {

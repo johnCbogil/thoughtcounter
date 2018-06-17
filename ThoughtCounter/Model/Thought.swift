@@ -10,6 +10,8 @@ import Foundation
 
 class Thought: NSObject, NSCoding {
     var title: String?
+    var count = 0
+    
     init(title: String) {
      self.title = title
     }
