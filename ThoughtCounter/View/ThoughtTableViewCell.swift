@@ -21,7 +21,6 @@ class ThoughtTableViewCell: UITableViewCell, UITextFieldDelegate {
      
         let rightSwipe = UISwipeGestureRecognizer.init(target: self, action: #selector(increaseCount))
         rightSwipe.direction = .right
-//        self.addSubview(rightSwipe)
         self.addGestureRecognizer(rightSwipe)
         textField.delegate = self
     }
@@ -33,6 +32,7 @@ class ThoughtTableViewCell: UITableViewCell, UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+        thought?.title = textField.text
         return true
     }
     
