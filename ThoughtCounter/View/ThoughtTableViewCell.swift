@@ -26,7 +26,16 @@ class ThoughtTableViewCell: UITableViewCell, UITextFieldDelegate {
         let rightSwipe = UISwipeGestureRecognizer.init(target: self, action: #selector(increaseCount))
         rightSwipe.direction = .right
         self.addGestureRecognizer(rightSwipe)
-        
+        configureThoughtCount()
+    }
+    
+    func configureWithThought(thought:Thought) {
+        self.thought = thought
+        textField.text = thought.title
+        configureThoughtCount()
+    }
+    
+    func configureThoughtCount() {
         todaysCount = 0
         if let thought = thought {
             for date in thought.listOfOccurrences {
@@ -36,38 +45,13 @@ class ThoughtTableViewCell: UITableViewCell, UITextFieldDelegate {
             }
             countLabel.text = String(todaysCount)
         }
-    }
-    
-    func configureWithThought(thought:Thought) {
-        self.thought = thought
-        textField.text = thought.title
-        
-        todaysCount = 0
-        for date in thought.listOfOccurrences {
-            if Calendar.current.isDateInToday(date) {
-                todaysCount += 1
-            }
-        }
-        countLabel.text = String(todaysCount)
     }
     
     @objc func increaseCount() {
         let generator = UIImpactFeedbackGenerator(style: .heavy)
         generator.prepare()
         generator.impactOccurred()
-        todaysCount = 0
-        print("increase count")
-        if let thought = thought {
-            let currentDate = Date()
-            thought.listOfOccurrences.append(currentDate)
-            for date in thought.listOfOccurrences {
-                if Calendar.current.isDateInToday(date) {
-                    todaysCount += 1
-                }
-            }
-            countLabel.text = String(todaysCount)
-            saveThoughtsDelegate.saveThoughts()
-        }
+        configureThoughtCount()
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
