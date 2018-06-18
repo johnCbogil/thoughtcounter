@@ -26,12 +26,23 @@ class ThoughtTableViewCell: UITableViewCell, UITextFieldDelegate {
         let rightSwipe = UISwipeGestureRecognizer.init(target: self, action: #selector(increaseCount))
         rightSwipe.direction = .right
         self.addGestureRecognizer(rightSwipe)
+        
+        todaysCount = 0
+        if let thought = thought {
+            for date in thought.listOfOccurrences {
+                if Calendar.current.isDateInToday(date) {
+                    todaysCount += 1
+                }
+            }
+            countLabel.text = String(todaysCount)
+        }
     }
     
     func configureWithThought(thought:Thought) {
         self.thought = thought
         textField.text = thought.title
         
+        todaysCount = 0
         for date in thought.listOfOccurrences {
             if Calendar.current.isDateInToday(date) {
                 todaysCount += 1

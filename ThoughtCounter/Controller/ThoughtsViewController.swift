@@ -22,7 +22,7 @@ class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate, Sav
         super.viewDidLoad()
         
         configureTableView()
-
+        
         title = "Today's Thoughts"
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         getThoughts()
