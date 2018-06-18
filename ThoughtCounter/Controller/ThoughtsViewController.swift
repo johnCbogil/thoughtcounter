@@ -74,6 +74,7 @@ extension ThoughtsViewController: UITableViewDataSource, UITableViewDelegate {
         let thought = listOfThoughts[indexPath.row]
         cell.configureWithThought(thought: thought)
         cell.saveThoughtsDelegate = self
+        cell.selectionStyle = .none
         return cell
     }
     
