@@ -52,6 +52,9 @@ class ThoughtTableViewCell: UITableViewCell, UITextFieldDelegate {
     }
     
     @objc func increaseCount() {
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        generator.prepare()
+        generator.impactOccurred()
         todaysCount = 0
         print("increase count")
         if let thought = thought {
