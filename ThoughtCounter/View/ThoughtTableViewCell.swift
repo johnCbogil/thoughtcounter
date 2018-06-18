@@ -9,35 +9,36 @@
 import UIKit
 
 class ThoughtTableViewCell: UITableViewCell, UITextFieldDelegate {
-
+    
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var countLabel: UILabel!
-    var thoughtCount:Int = 0
-    
     var thought: Thought?
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-     
+        textField.delegate = self
         let rightSwipe = UISwipeGestureRecognizer.init(target: self, action: #selector(increaseCount))
         rightSwipe.direction = .right
         self.addGestureRecognizer(rightSwipe)
-        textField.delegate = self
     }
     
     func configureWithThought(thought:Thought) {
         self.thought = thought
-        textField.text = self.thought?.title
+        textField.text = thought.title
+        countLabel.text = String(thought.count)
+    }
+    
+    @objc func increaseCount() {
+        print("increase count")
+        thought?.count += 1
+        if let thought = thought {
+        countLabel.text = String(thought.count)
+        }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         thought?.title = textField.text
         return true
-    }
-    
-    @objc func increaseCount() {
-        thoughtCount += 1
-        countLabel.text = String(thoughtCount)
     }
 }

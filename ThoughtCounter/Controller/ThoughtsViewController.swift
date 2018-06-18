@@ -16,7 +16,6 @@ class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate {
     var listOfThoughts = [Thought]()
     let thoughtCell = "ThoughtTableViewCell"
     let listOfThoughtsKey = "ListOfThoughts"
-    let userDefaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +23,6 @@ class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate {
         configureTableView()
         title = "Thoughts"
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-//        getThoughts()
     }
     
     fileprivate func configureTableView() {
@@ -41,7 +39,7 @@ class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate {
         listOfThoughts.insert(newThought, at: topOfList)
         tableView.reloadData()
         let visibleCells = tableView.visibleCells as! [ThoughtTableViewCell]
-        let topCell = visibleCells[0]
+        let topCell = visibleCells[topOfList]
         topCell.textField.becomeFirstResponder()
     }
     
