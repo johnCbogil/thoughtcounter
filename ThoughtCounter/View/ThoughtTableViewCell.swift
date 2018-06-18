@@ -18,6 +18,7 @@ class ThoughtTableViewCell: UITableViewCell, UITextFieldDelegate {
     @IBOutlet weak var countLabel: UILabel!
     var thought: Thought?
     var saveThoughtsDelegate: SaveThoughtsDelegate!
+    var todaysCount = 0
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,14 +31,27 @@ class ThoughtTableViewCell: UITableViewCell, UITextFieldDelegate {
     func configureWithThought(thought:Thought) {
         self.thought = thought
         textField.text = thought.title
-        countLabel.text = String(thought.count)
+        
+        for date in thought.listOfOccurrences {
+            if Calendar.current.isDateInToday(date) {
+                todaysCount += 1
+            }
+        }
+        countLabel.text = String(todaysCount)
     }
     
     @objc func increaseCount() {
+        todaysCount = 0
         print("increase count")
         if let thought = thought {
-            thought.count += 1
-            countLabel.text = String(thought.count)
+            let currentDate = Date()
+            thought.listOfOccurrences.append(currentDate)
+            for date in thought.listOfOccurrences {
+                if Calendar.current.isDateInToday(date) {
+                    todaysCount += 1
+                }
+            }
+            countLabel.text = String(todaysCount)
             saveThoughtsDelegate.saveThoughts()
         }
     }
