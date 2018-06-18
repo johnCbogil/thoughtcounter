@@ -73,9 +73,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="KTB-yn-b9Y" firstAttribute="centerX" secondItem="48I-cB-KRT" secondAttribute="centerX" id="4jT-YM-107"/>
+                            <constraint firstItem="nez-lc-WvO" firstAttribute="trailing" secondItem="KTB-yn-b9Y" secondAttribute="trailing" constant="167" id="4nj-Ue-WDC"/>
                             <constraint firstAttribute="bottom" secondItem="1Up-a7-zdf" secondAttribute="bottom" constant="20" symbolic="YES" id="YeZ-Vb-Qnj"/>
                             <constraint firstItem="KTB-yn-b9Y" firstAttribute="centerY" secondItem="48I-cB-KRT" secondAttribute="centerY" id="jnR-ox-Mq0"/>
                             <constraint firstItem="KTB-yn-b9Y" firstAttribute="centerX" secondItem="1Up-a7-zdf" secondAttribute="centerX" id="uMK-bu-tUX"/>
+                            <constraint firstItem="KTB-yn-b9Y" firstAttribute="leading" secondItem="nez-lc-WvO" secondAttribute="leading" constant="166" id="xzL-8I-cCa"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nez-lc-WvO"/>
                     </view>
@@ -91,7 +93,6 @@
         <!--Navigation Controller-->
         <scene sceneID="dbM-BW-WaG">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kTD-fU-9qC" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="NavigationController" automaticallyAdjustsScrollViewInsets="NO" id="Pxm-Mo-WWn" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3ia-HH-wct">
@@ -103,6 +104,7 @@
                         <segue destination="SMl-a6-uSq" kind="relationship" relationship="rootViewController" id="HX0-5n-gFO"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kTD-fU-9qC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-642.39999999999998" y="131.78410794602701"/>
         </scene>
