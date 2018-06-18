@@ -9,7 +9,7 @@
 import UIKit
 
 class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate, SaveThoughtsDelegate {
-
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addThoughtButton: UIBarButtonItem!
     
@@ -17,12 +17,12 @@ class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate, Sav
     let thoughtCell = "ThoughtTableViewCell"
     let listOfThoughtsKey = "ListOfThoughts"
     let userDefaults = UserDefaults.standard
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureTableView()
+
         title = "Today's Thoughts"
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         getThoughts()
@@ -52,7 +52,7 @@ class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate, Sav
         print("Saving \(listOfThoughts.count) thoughts")
         userDefaults.synchronize()
     }
-
+    
     func getThoughts() {
         if let decodedData = userDefaults.object(forKey: listOfThoughtsKey) as! Data? {
             listOfThoughts = NSKeyedUnarchiver.unarchiveObject(with: decodedData) as! [Thought]
