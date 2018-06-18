@@ -18,5 +18,8 @@ class OnboardingViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     @IBAction func getStarted(_ sender: Any) {
+        let thoughtsVC = self.storyboard!.instantiateViewController(withIdentifier: "ThoughtsViewController") as! ThoughtsViewController
+        let navController = UINavigationController(rootViewController: thoughtsVC) // Creating a navigation controller with VC1 at the root of the navigation stack.
+        self.present(navController, animated:true, completion: nil)
     }
 }
