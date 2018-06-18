@@ -8,11 +8,16 @@
 
 import UIKit
 
+protocol SaveThoughtsDelegate {
+    func saveThoughts()
+}
+
 class ThoughtTableViewCell: UITableViewCell, UITextFieldDelegate {
     
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var countLabel: UILabel!
     var thought: Thought?
+    var saveThoughtsDelegate: SaveThoughtsDelegate!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,15 +35,17 @@ class ThoughtTableViewCell: UITableViewCell, UITextFieldDelegate {
     
     @objc func increaseCount() {
         print("increase count")
-        thought?.count += 1
         if let thought = thought {
-        countLabel.text = String(thought.count)
+            thought.count += 1
+            countLabel.text = String(thought.count)
+            saveThoughtsDelegate.saveThoughts()
         }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         thought?.title = textField.text
+        saveThoughtsDelegate.saveThoughts()
         return true
     }
 }

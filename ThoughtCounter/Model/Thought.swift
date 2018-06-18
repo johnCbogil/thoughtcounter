@@ -18,10 +18,13 @@ class Thought: NSObject, NSCoding {
     
     required convenience init(coder decoder: NSCoder) {        
         let title = decoder.decodeObject(forKey: "title") as! String
+        let count = decoder.decodeInteger(forKey: "count")
         self.init(title: title)
+        self.count = count
     }
     
     func encode(with coder: NSCoder) {
         coder.encode(title, forKey: "title")
+        coder.encode(count, forKey: "count")
     }
 }

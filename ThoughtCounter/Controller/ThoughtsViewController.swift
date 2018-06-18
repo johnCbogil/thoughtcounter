@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate {
+class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate, SaveThoughtsDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addThoughtButton: UIBarButtonItem!
@@ -16,6 +16,8 @@ class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate {
     var listOfThoughts = [Thought]()
     let thoughtCell = "ThoughtTableViewCell"
     let listOfThoughtsKey = "ListOfThoughts"
+    let userDefaults = UserDefaults.standard
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +25,7 @@ class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate {
         configureTableView()
         title = "Thoughts"
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        getThoughts()
     }
     
     fileprivate func configureTableView() {
@@ -43,21 +46,21 @@ class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate {
         topCell.textField.becomeFirstResponder()
     }
     
-//    func saveThoughts() {
-//        let encodedData: Data = NSKeyedArchiver.archivedData(withRootObject: listOfThoughts)
-//        userDefaults.set(encodedData, forKey: listOfThoughtsKey)
-//        print("Saving \(listOfThoughts.count) thoughts")
-//        userDefaults.synchronize()
-//    }
-//
-//    func getThoughts() {
-//        if let decodedData = userDefaults.object(forKey: listOfThoughtsKey) as! Data? {
-//            listOfThoughts = NSKeyedUnarchiver.unarchiveObject(with: decodedData) as! [Thought]
-//            tableView.reloadData()
-//            print("Getting \(listOfThoughts.count) thoughts")
-//            userDefaults.synchronize()
-//        }
-//    }
+    func saveThoughts() {
+        let encodedData: Data = NSKeyedArchiver.archivedData(withRootObject: listOfThoughts)
+        userDefaults.set(encodedData, forKey: listOfThoughtsKey)
+        print("Saving \(listOfThoughts.count) thoughts")
+        userDefaults.synchronize()
+    }
+
+    func getThoughts() {
+        if let decodedData = userDefaults.object(forKey: listOfThoughtsKey) as! Data? {
+            listOfThoughts = NSKeyedUnarchiver.unarchiveObject(with: decodedData) as! [Thought]
+            tableView.reloadData()
+            print("Getting \(listOfThoughts.count) thoughts")
+            userDefaults.synchronize()
+        }
+    }
 }
 
 extension ThoughtsViewController: UITableViewDataSource, UITableViewDelegate {
@@ -70,6 +73,7 @@ extension ThoughtsViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: thoughtCell, for: indexPath) as! ThoughtTableViewCell
         let thought = listOfThoughts[indexPath.row]
         cell.configureWithThought(thought: thought)
+        cell.saveThoughtsDelegate = self
         return cell
     }
     
