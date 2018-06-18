@@ -28,6 +28,11 @@ class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate, Sav
         getThoughts()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        tableView.reloadData()
+    }
+    
     fileprivate func configureTableView() {
         tableView.register(UINib(nibName: thoughtCell, bundle: nil), forCellReuseIdentifier: thoughtCell)
         tableView.dataSource = self
