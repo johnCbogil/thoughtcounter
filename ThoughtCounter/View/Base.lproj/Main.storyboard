@@ -48,6 +48,46 @@
             </objects>
             <point key="canvasLocation" x="189.59999999999999" y="131.78410794602701"/>
         </scene>
+        <!--Onboarding View Controller-->
+        <scene sceneID="7Sg-ls-rgJ">
+            <objects>
+                <viewController storyboardIdentifier="OnboardingViewController" id="xwp-fC-zQS" customClass="OnboardingViewController" customModule="ThoughtCounter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="48I-cB-KRT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KTB-yn-b9Y">
+                                <rect key="frame" x="166" y="323" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Up-a7-zdf">
+                                <rect key="frame" x="164" y="617" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="getStarted:" destination="xwp-fC-zQS" eventType="touchUpInside" id="5Dv-JT-a72"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="KTB-yn-b9Y" firstAttribute="centerX" secondItem="48I-cB-KRT" secondAttribute="centerX" id="4jT-YM-107"/>
+                            <constraint firstAttribute="bottom" secondItem="1Up-a7-zdf" secondAttribute="bottom" constant="20" symbolic="YES" id="YeZ-Vb-Qnj"/>
+                            <constraint firstItem="KTB-yn-b9Y" firstAttribute="centerY" secondItem="48I-cB-KRT" secondAttribute="centerY" id="jnR-ox-Mq0"/>
+                            <constraint firstItem="KTB-yn-b9Y" firstAttribute="centerX" secondItem="1Up-a7-zdf" secondAttribute="centerX" id="uMK-bu-tUX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="nez-lc-WvO"/>
+                    </view>
+                    <connections>
+                        <outlet property="getStartedButton" destination="1Up-a7-zdf" id="oci-d2-v1p"/>
+                        <outlet property="label" destination="KTB-yn-b9Y" id="Ivb-Lz-xsS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qgy-8H-nIA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1748" y="121"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="dbM-BW-WaG">
             <objects>
