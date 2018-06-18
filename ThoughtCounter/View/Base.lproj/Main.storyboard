@@ -56,14 +56,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KTB-yn-b9Y">
-                                <rect key="frame" x="166" y="323" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KTB-yn-b9Y">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Up-a7-zdf">
-                                <rect key="frame" x="164" y="617" width="46" height="30"/>
+                                <rect key="frame" x="0.0" y="589" width="375" height="58"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58" id="t5M-Xa-U7e"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="getStarted:" destination="xwp-fC-zQS" eventType="touchUpInside" id="5Dv-JT-a72"/>
@@ -72,12 +75,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="KTB-yn-b9Y" firstAttribute="centerX" secondItem="48I-cB-KRT" secondAttribute="centerX" id="4jT-YM-107"/>
-                            <constraint firstItem="nez-lc-WvO" firstAttribute="trailing" secondItem="KTB-yn-b9Y" secondAttribute="trailing" constant="167" id="4nj-Ue-WDC"/>
-                            <constraint firstAttribute="bottom" secondItem="1Up-a7-zdf" secondAttribute="bottom" constant="20" symbolic="YES" id="YeZ-Vb-Qnj"/>
-                            <constraint firstItem="KTB-yn-b9Y" firstAttribute="centerY" secondItem="48I-cB-KRT" secondAttribute="centerY" id="jnR-ox-Mq0"/>
-                            <constraint firstItem="KTB-yn-b9Y" firstAttribute="centerX" secondItem="1Up-a7-zdf" secondAttribute="centerX" id="uMK-bu-tUX"/>
-                            <constraint firstItem="KTB-yn-b9Y" firstAttribute="leading" secondItem="nez-lc-WvO" secondAttribute="leading" constant="166" id="xzL-8I-cCa"/>
+                            <constraint firstItem="KTB-yn-b9Y" firstAttribute="leading" secondItem="nez-lc-WvO" secondAttribute="leading" id="5A8-7u-aQs"/>
+                            <constraint firstItem="nez-lc-WvO" firstAttribute="trailing" secondItem="KTB-yn-b9Y" secondAttribute="trailing" id="OD6-kp-nzT"/>
+                            <constraint firstItem="nez-lc-WvO" firstAttribute="trailing" secondItem="1Up-a7-zdf" secondAttribute="trailing" id="vC8-p5-MrQ"/>
+                            <constraint firstItem="1Up-a7-zdf" firstAttribute="top" secondItem="KTB-yn-b9Y" secondAttribute="bottom" constant="-78" id="vQo-HE-fSI"/>
+                            <constraint firstItem="1Up-a7-zdf" firstAttribute="leading" secondItem="nez-lc-WvO" secondAttribute="leading" id="xPH-dd-LzA"/>
+                            <constraint firstItem="KTB-yn-b9Y" firstAttribute="centerY" secondItem="nez-lc-WvO" secondAttribute="centerY" id="xkc-c7-T2J"/>
+                            <constraint firstItem="KTB-yn-b9Y" firstAttribute="centerX" secondItem="nez-lc-WvO" secondAttribute="centerX" id="xxu-u8-CeL"/>
+                            <constraint firstItem="KTB-yn-b9Y" firstAttribute="top" secondItem="nez-lc-WvO" secondAttribute="top" id="ynD-kK-jXW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nez-lc-WvO"/>
                     </view>
@@ -88,7 +93,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qgy-8H-nIA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1748" y="121"/>
+            <point key="canvasLocation" x="-1748" y="120.98950524737631"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dbM-BW-WaG">
