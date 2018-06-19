@@ -18,13 +18,17 @@ class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate, Sav
     let listOfThoughtsKey = "ListOfThoughts"
     let userDefaults = UserDefaults.standard
 
+    fileprivate func configureNavbar() {
+        title = "Thoughts"
+        navigationController?.isNavigationBarHidden = false
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureTableView()
-        title = "Thoughts"
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        configureNavbar()
         getThoughts()
     }
     

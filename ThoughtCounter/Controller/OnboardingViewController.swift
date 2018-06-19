@@ -12,16 +12,21 @@ class OnboardingViewController: UIViewController {
 
     @IBOutlet weak var getStartedButton: UIButton!
     @IBOutlet weak var label: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        label.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-        
-        // Do any additional setup after loading the view.
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        label.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+}
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = true
     }
+    
     @IBAction func getStarted(_ sender: Any) {
         let thoughtsVC = self.storyboard!.instantiateViewController(withIdentifier: "ThoughtsViewController") as! ThoughtsViewController
-        let navController = UINavigationController(rootViewController: thoughtsVC) // Creating a navigation controller with VC1 at the root of the navigation stack.
-        self.present(navController, animated:true, completion: nil)
+        navigationController?.pushViewController(thoughtsVC, animated: true)
+        UserDefaults.standard.set(true, forKey: "launchedBefore")
     }
 }

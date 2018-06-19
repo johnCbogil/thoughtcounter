@@ -15,17 +15,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
+        let initialViewController: UIViewController
+        
         if launchedBefore  {
             print("Not first launch.")
+            initialViewController = storyboard.instantiateViewController(withIdentifier: "ThoughtsViewController")
         }
         else {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let initialViewController = storyboard.instantiateViewController(withIdentifier: "OnboardingViewController")
-            self.window?.rootViewController = initialViewController
-            self.window?.makeKeyAndVisible()
-            UserDefaults.standard.set(true, forKey: "launchedBefore")
+            initialViewController = storyboard.instantiateViewController(withIdentifier: "OnboardingViewController")
         }
+        
+        let navigationController = UINavigationController(rootViewController: initialViewController)
+        self.window?.rootViewController = navigationController
+        self.window?.makeKeyAndVisible()
         return true
     }
 
