@@ -9,7 +9,7 @@
 import UIKit
 
 class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate, SaveThoughtsDelegate {
-
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addThoughtButton: UIBarButtonItem!
     
@@ -17,19 +17,27 @@ class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate, Sav
     let thoughtCell = "ThoughtTableViewCell"
     let listOfThoughtsKey = "ListOfThoughts"
     let userDefaults = UserDefaults.standard
-
-    fileprivate func configureNavbar() {
-        title = "Thoughts"
-        navigationController?.isNavigationBarHidden = false
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        configureNavBar()
         configureTableView()
-        configureNavbar()
         getThoughts()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        tableView.reloadData()
+    }
+    
+    fileprivate func configureNavBar() {
+        title = "Today's Thoughts"
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        let infoButton = UIButton(type: .infoLight)
+        infoButton.addTarget(self, action: #selector(getInfoAction), for: .touchUpInside)
+        let infoBarButtonItem = UIBarButtonItem(customView: infoButton)
+        navigationItem.leftBarButtonItem = infoBarButtonItem
     }
     
     fileprivate func configureTableView() {
@@ -56,14 +64,18 @@ class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate, Sav
         print("Saving \(listOfThoughts.count) thoughts")
         userDefaults.synchronize()
     }
-
-    func getThoughts() {
+    
+    fileprivate func getThoughts() {
         if let decodedData = userDefaults.object(forKey: listOfThoughtsKey) as! Data? {
             listOfThoughts = NSKeyedUnarchiver.unarchiveObject(with: decodedData) as! [Thought]
             tableView.reloadData()
             print("Getting \(listOfThoughts.count) thoughts")
             userDefaults.synchronize()
         }
+    }
+    
+    @objc fileprivate func getInfoAction() {
+        print("Display info vc, need to find a solution here")
     }
 }
 
@@ -76,8 +88,9 @@ extension ThoughtsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: thoughtCell, for: indexPath) as! ThoughtTableViewCell
         let thought = listOfThoughts[indexPath.row]
-        cell.configureWithThought(thought: thought)
         cell.saveThoughtsDelegate = self
+        cell.configureWithThought(thought: thought)
+        cell.selectionStyle = .none
         return cell
     }
     

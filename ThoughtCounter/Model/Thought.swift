@@ -10,7 +10,7 @@ import Foundation
 
 class Thought: NSObject, NSCoding {
     var title: String?
-    var count = 0
+    var listOfOccurrences = [Date]()
     
     init(title: String) {
      self.title = title
@@ -18,13 +18,13 @@ class Thought: NSObject, NSCoding {
     
     required convenience init(coder decoder: NSCoder) {        
         let title = decoder.decodeObject(forKey: "title") as! String
-        let count = decoder.decodeInteger(forKey: "count")
+        let listOfOccurrences = decoder.decodeObject(forKey: "listOfOccurrences") as! [Date]
         self.init(title: title)
-        self.count = count
+        self.listOfOccurrences = listOfOccurrences
     }
     
     func encode(with coder: NSCoder) {
         coder.encode(title, forKey: "title")
-        coder.encode(count, forKey: "count")
+        coder.encode(listOfOccurrences, forKey: "listOfOccurrences")
     }
 }

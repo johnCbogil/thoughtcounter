@@ -18,6 +18,7 @@ class ThoughtTableViewCell: UITableViewCell, UITextFieldDelegate {
     @IBOutlet weak var countLabel: UILabel!
     var thought: Thought?
     var saveThoughtsDelegate: SaveThoughtsDelegate!
+    var todaysCount = 0
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,19 +26,46 @@ class ThoughtTableViewCell: UITableViewCell, UITextFieldDelegate {
         let rightSwipe = UISwipeGestureRecognizer.init(target: self, action: #selector(increaseCount))
         rightSwipe.direction = .right
         self.addGestureRecognizer(rightSwipe)
+        
+        todaysCount = 0
+        if let thought = thought {
+            for date in thought.listOfOccurrences {
+                if Calendar.current.isDateInToday(date) {
+                    todaysCount += 1
+                }
+            }
+            countLabel.text = String(todaysCount)
+        }
     }
     
     func configureWithThought(thought:Thought) {
         self.thought = thought
         textField.text = thought.title
-        countLabel.text = String(thought.count)
+        
+        todaysCount = 0
+        for date in thought.listOfOccurrences {
+            if Calendar.current.isDateInToday(date) {
+                todaysCount += 1
+            }
+        }
+        countLabel.text = String(todaysCount)
     }
     
     @objc func increaseCount() {
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        generator.prepare()
+        generator.impactOccurred()
+        todaysCount = 0
         print("increase count")
         if let thought = thought {
-            thought.count += 1
-            countLabel.text = String(thought.count)
+            let currentDate = Date()
+            thought.listOfOccurrences.append(currentDate)
+            for date in thought.listOfOccurrences {
+                if Calendar.current.isDateInToday(date) {
+                    todaysCount += 1
+                }
+            }
+            countLabel.text = String(todaysCount)
             saveThoughtsDelegate.saveThoughts()
         }
     }
