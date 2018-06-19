@@ -28,6 +28,7 @@ class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate, Sav
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        navigationController?.isNavigationBarHidden = false
         tableView.reloadData()
     }
     
