@@ -33,7 +33,7 @@ class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate, Sav
     }
     
     fileprivate func configureNavBar() {
-        title = "Today's Thoughts"
+        title = "Today's Thought Count"
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         let infoButton = UIButton(type: .infoLight)
         infoButton.addTarget(self, action: #selector(getInfoAction), for: .touchUpInside)
@@ -76,6 +76,9 @@ class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate, Sav
     }
     
     @objc fileprivate func getInfoAction() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "OnboardingViewController")
+        navigationController?.present(vc, animated: true, completion: nil)
         print("Display info vc, need to find a solution here")
     }
 }
