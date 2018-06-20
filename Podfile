@@ -6,7 +6,8 @@ target 'ThoughtCounter' do
   use_frameworks!
 
   # Pods for ThoughtCounter
-pod 'Firebase/Core'
+  pod 'Firebase/Core'
+  pod 'Instabug'
 
 
 

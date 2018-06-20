@@ -16,6 +16,12 @@ PODS:
   - GoogleToolboxForMac/Defines (2.1.4)
   - "GoogleToolboxForMac/NSData+zlib (2.1.4)":
     - GoogleToolboxForMac/Defines (= 2.1.4)
+  - Instabug (7.14.5):
+    - Instabug/Instabug (= 7.14.5)
+    - Instabug/InstabugCore (= 7.14.5)
+  - Instabug/Instabug (7.14.5):
+    - Instabug/InstabugCore
+  - Instabug/InstabugCore (7.14.5)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
     - nanopb/encode (= 0.3.8)
@@ -24,6 +30,7 @@ PODS:
 
 DEPENDENCIES:
   - Firebase/Core
+  - Instabug
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -32,6 +39,7 @@ SPEC REPOS:
     - FirebaseCore
     - FirebaseInstanceID
     - GoogleToolboxForMac
+    - Instabug
     - nanopb
 
 SPEC CHECKSUMS:
@@ -40,8 +48,9 @@ SPEC CHECKSUMS:
   FirebaseCore: a3c87242451633fff8490183898075ce77d168d2
   FirebaseInstanceID: 05d779cbb97bd5bd5c51a38a903fc9cfe1b2454a
   GoogleToolboxForMac: 91c824d21e85b31c2aae9bb011c5027c9b4e738f
+  Instabug: 7a7fea34bdc40735e8961750a2f9f34b7a8fae4a
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
 
-PODFILE CHECKSUM: 6117367814c81494b6f564b0ce32681a0187f152
+PODFILE CHECKSUM: 8726058bd218dcb812f3058c3cc05cf4b82bcfa8
 
 COCOAPODS: 1.5.0
