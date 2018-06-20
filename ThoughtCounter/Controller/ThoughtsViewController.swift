@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate, SaveThoughtsDelegate {
+class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate, SaveThoughtsDelegate, UpdateThoughtCountDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addThoughtButton: UIBarButtonItem!
@@ -24,6 +24,8 @@ class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate, Sav
         configureNavBar()
         configureTableView()
         getThoughts()
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.updateThoughtCountDelegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -73,6 +75,10 @@ class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate, Sav
             print("Getting \(listOfThoughts.count) thoughts")
             userDefaults.synchronize()
         }
+    }
+    
+    func updateThoughtCount() {
+        tableView.reloadData()
     }
     
     @objc fileprivate func getInfoAction() {

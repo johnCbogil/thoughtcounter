@@ -10,11 +10,16 @@ import UIKit
 import Firebase
 import Instabug
 
+protocol UpdateThoughtCountDelegate {
+    func updateThoughtCount()
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var updateThoughtCountDelegate:UpdateThoughtCountDelegate!
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         FirebaseApp.configure()
@@ -54,6 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        updateThoughtCountDelegate.updateThoughtCount()
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
