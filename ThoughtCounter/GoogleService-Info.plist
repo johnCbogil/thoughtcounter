@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>3166822421-0ds6rcv135jcn95bkqmn9s1fsal12m9c.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.3166822421-0ds6rcv135jcn95bkqmn9s1fsal12m9c</string>
+	<key>API_KEY</key>
+	<string>AIzaSyA1kCaTV9_vL6Cyj5XmY8Lpo9WIZt_RYwA</string>
+	<key>GCM_SENDER_ID</key>
+	<string>3166822421</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.johnbogil.ThoughtCounter</string>
+	<key>PROJECT_ID</key>
+	<string>thoughtcenter-a7138</string>
+	<key>STORAGE_BUCKET</key>
+	<string>thoughtcenter-a7138.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:3166822421:ios:b91e145bc84f560b</string>
+	<key>DATABASE_URL</key>
+	<string>https://thoughtcenter-a7138.firebaseio.com</string>
+</dict>
+</plist>

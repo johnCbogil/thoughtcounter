@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		461C95C9F6B67D8EB2D09AB8 /* Pods_ThoughtCounterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FC8EBC86AE0CC7F990A933A /* Pods_ThoughtCounterTests.framework */; };
+		94326AC520D9E98600A5827F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 94326AC420D9E98600A5827F /* GoogleService-Info.plist */; };
 		948E1D6420D7E6250036D011 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948E1D6320D7E6250036D011 /* OnboardingViewController.swift */; };
 		94D8023F20CB254D00EE5076 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D8023E20CB254D00EE5076 /* AppDelegate.swift */; };
 		94D8024420CB254D00EE5076 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94D8024220CB254D00EE5076 /* Main.storyboard */; };
@@ -18,6 +20,8 @@
 		94ECE68920CC6ECD00E6A8D9 /* ThoughtTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94ECE68820CC6ECD00E6A8D9 /* ThoughtTableViewCell.xib */; };
 		94ECE68B20CC6EE200E6A8D9 /* ThoughtTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94ECE68A20CC6EE200E6A8D9 /* ThoughtTableViewCell.swift */; };
 		94ECE68D20CD73D000E6A8D9 /* Thought.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94ECE68C20CD73D000E6A8D9 /* Thought.swift */; };
+		C69445552FD91183795519A1 /* Pods_ThoughtCounterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E881FE4A8D7F154A0995980C /* Pods_ThoughtCounterUITests.framework */; };
+		D7DFED17BB6CA89C9C6388A1 /* Pods_ThoughtCounter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD9AAEE8B7B9B275CECB29E4 /* Pods_ThoughtCounter.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +42,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3FC8EBC86AE0CC7F990A933A /* Pods_ThoughtCounterTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThoughtCounterTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6351F842EF3B1D35800B81B1 /* Pods-ThoughtCounter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThoughtCounter.release.xcconfig"; path = "Pods/Target Support Files/Pods-ThoughtCounter/Pods-ThoughtCounter.release.xcconfig"; sourceTree = "<group>"; };
+		7223FB62AD25CAF2306E6030 /* Pods-ThoughtCounterUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThoughtCounterUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ThoughtCounterUITests/Pods-ThoughtCounterUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		7A1E411E0337B6C94880E515 /* Pods-ThoughtCounterUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThoughtCounterUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ThoughtCounterUITests/Pods-ThoughtCounterUITests.release.xcconfig"; sourceTree = "<group>"; };
+		94326AC420D9E98600A5827F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		948E1D6320D7E6250036D011 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		94D8023B20CB254D00EE5076 /* ThoughtCounter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThoughtCounter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94D8023E20CB254D00EE5076 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +64,11 @@
 		94ECE68820CC6ECD00E6A8D9 /* ThoughtTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThoughtTableViewCell.xib; sourceTree = "<group>"; };
 		94ECE68A20CC6EE200E6A8D9 /* ThoughtTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThoughtTableViewCell.swift; sourceTree = "<group>"; };
 		94ECE68C20CD73D000E6A8D9 /* Thought.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thought.swift; sourceTree = "<group>"; };
+		A07F7C3AFB362B3590CE2E89 /* Pods-ThoughtCounterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThoughtCounterTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ThoughtCounterTests/Pods-ThoughtCounterTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B63D4A428C61FBCE2A1BC14C /* Pods-ThoughtCounter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThoughtCounter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ThoughtCounter/Pods-ThoughtCounter.debug.xcconfig"; sourceTree = "<group>"; };
+		B9FDBFF746A082AB99FF3076 /* Pods-ThoughtCounterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThoughtCounterTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ThoughtCounterTests/Pods-ThoughtCounterTests.release.xcconfig"; sourceTree = "<group>"; };
+		BD9AAEE8B7B9B275CECB29E4 /* Pods_ThoughtCounter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThoughtCounter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E881FE4A8D7F154A0995980C /* Pods_ThoughtCounterUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThoughtCounterUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7DFED17BB6CA89C9C6388A1 /* Pods_ThoughtCounter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				461C95C9F6B67D8EB2D09AB8 /* Pods_ThoughtCounterTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,12 +92,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C69445552FD91183795519A1 /* Pods_ThoughtCounterUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		311D58DC0554F516C2D78013 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BD9AAEE8B7B9B275CECB29E4 /* Pods_ThoughtCounter.framework */,
+				3FC8EBC86AE0CC7F990A933A /* Pods_ThoughtCounterTests.framework */,
+				E881FE4A8D7F154A0995980C /* Pods_ThoughtCounterUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6DBF2FEEA963DB05B3179135 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B63D4A428C61FBCE2A1BC14C /* Pods-ThoughtCounter.debug.xcconfig */,
+				6351F842EF3B1D35800B81B1 /* Pods-ThoughtCounter.release.xcconfig */,
+				A07F7C3AFB362B3590CE2E89 /* Pods-ThoughtCounterTests.debug.xcconfig */,
+				B9FDBFF746A082AB99FF3076 /* Pods-ThoughtCounterTests.release.xcconfig */,
+				7223FB62AD25CAF2306E6030 /* Pods-ThoughtCounterUITests.debug.xcconfig */,
+				7A1E411E0337B6C94880E515 /* Pods-ThoughtCounterUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		941294DB20D203370076B88F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +156,8 @@
 				94D8025220CB254F00EE5076 /* ThoughtCounterTests */,
 				94D8025D20CB254F00EE5076 /* ThoughtCounterUITests */,
 				94D8023C20CB254D00EE5076 /* Products */,
+				6DBF2FEEA963DB05B3179135 /* Pods */,
+				311D58DC0554F516C2D78013 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -139,6 +181,7 @@
 				94D8024520CB254F00EE5076 /* Assets.xcassets */,
 				94D8024720CB254F00EE5076 /* LaunchScreen.storyboard */,
 				94D8024A20CB254F00EE5076 /* Info.plist */,
+				94326AC420D9E98600A5827F /* GoogleService-Info.plist */,
 			);
 			path = ThoughtCounter;
 			sourceTree = "<group>";
@@ -168,9 +211,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 94D8026320CB254F00EE5076 /* Build configuration list for PBXNativeTarget "ThoughtCounter" */;
 			buildPhases = (
+				571F3859022887D4919EEE9E /* [CP] Check Pods Manifest.lock */,
 				94D8023720CB254D00EE5076 /* Sources */,
 				94D8023820CB254D00EE5076 /* Frameworks */,
 				94D8023920CB254D00EE5076 /* Resources */,
+				37D7F0F82095EBC5849607D3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -185,6 +230,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 94D8026620CB254F00EE5076 /* Build configuration list for PBXNativeTarget "ThoughtCounterTests" */;
 			buildPhases = (
+				6397518A1FB6125B3DAA439D /* [CP] Check Pods Manifest.lock */,
 				94D8024B20CB254F00EE5076 /* Sources */,
 				94D8024C20CB254F00EE5076 /* Frameworks */,
 				94D8024D20CB254F00EE5076 /* Resources */,
@@ -203,6 +249,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 94D8026920CB254F00EE5076 /* Build configuration list for PBXNativeTarget "ThoughtCounterUITests" */;
 			buildPhases = (
+				B1C002523CDAFFF967CA3571 /* [CP] Check Pods Manifest.lock */,
 				94D8025620CB254F00EE5076 /* Sources */,
 				94D8025720CB254F00EE5076 /* Frameworks */,
 				94D8025820CB254F00EE5076 /* Resources */,
@@ -267,6 +314,7 @@
 			files = (
 				94D8024920CB254F00EE5076 /* LaunchScreen.storyboard in Resources */,
 				94D8024620CB254F00EE5076 /* Assets.xcassets in Resources */,
+				94326AC520D9E98600A5827F /* GoogleService-Info.plist in Resources */,
 				94D8024420CB254D00EE5076 /* Main.storyboard in Resources */,
 				94ECE68920CC6ECD00E6A8D9 /* ThoughtTableViewCell.xib in Resources */,
 			);
@@ -287,6 +335,83 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		37D7F0F82095EBC5849607D3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ThoughtCounter/Pods-ThoughtCounter-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ThoughtCounter/Pods-ThoughtCounter-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		571F3859022887D4919EEE9E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ThoughtCounter-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6397518A1FB6125B3DAA439D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ThoughtCounterTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B1C002523CDAFFF967CA3571 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ThoughtCounterUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		94D8023720CB254D00EE5076 /* Sources */ = {
@@ -468,15 +593,13 @@
 		};
 		94D8026420CB254F00EE5076 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B63D4A428C61FBCE2A1BC14C /* Pods-ThoughtCounter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4Y3GGL46D2;
 				INFOPLIST_FILE = ThoughtCounter/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.johnbogil.ThoughtCounter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -486,15 +609,13 @@
 		};
 		94D8026520CB254F00EE5076 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6351F842EF3B1D35800B81B1 /* Pods-ThoughtCounter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4Y3GGL46D2;
 				INFOPLIST_FILE = ThoughtCounter/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.johnbogil.ThoughtCounter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -504,17 +625,14 @@
 		};
 		94D8026720CB254F00EE5076 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A07F7C3AFB362B3590CE2E89 /* Pods-ThoughtCounterTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4Y3GGL46D2;
 				INFOPLIST_FILE = ThoughtCounterTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = johnbogil.ThoughtCounterTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -525,17 +643,14 @@
 		};
 		94D8026820CB254F00EE5076 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B9FDBFF746A082AB99FF3076 /* Pods-ThoughtCounterTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4Y3GGL46D2;
 				INFOPLIST_FILE = ThoughtCounterTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = johnbogil.ThoughtCounterTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -546,16 +661,13 @@
 		};
 		94D8026A20CB254F00EE5076 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7223FB62AD25CAF2306E6030 /* Pods-ThoughtCounterUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4Y3GGL46D2;
 				INFOPLIST_FILE = ThoughtCounterUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = johnbogil.ThoughtCounterUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -566,16 +678,13 @@
 		};
 		94D8026B20CB254F00EE5076 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A1E411E0337B6C94880E515 /* Pods-ThoughtCounterUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4Y3GGL46D2;
 				INFOPLIST_FILE = ThoughtCounterUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = johnbogil.ThoughtCounterUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
