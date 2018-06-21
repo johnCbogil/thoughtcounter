@@ -11,12 +11,17 @@ import UIKit
 class ThoughtDetailViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    let dateCellIdentifier = ""
+    let dateCellIdentifier = "DateTableViewCell"
     var thought: Thought?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        configureTableView()
+    }
+    
+    fileprivate func configureTableView() {
+        tableView.register(UINib(nibName: dateCellIdentifier, bundle: nil), forCellReuseIdentifier: dateCellIdentifier)
         tableView.delegate = self
         tableView.dataSource = self
     }

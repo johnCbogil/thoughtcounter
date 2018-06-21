@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -17,7 +18,31 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="d8Z-ow-vvf" id="GWB-wy-1Cd">
                 <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pfi-6g-yBe">
+                        <rect key="frame" x="16" y="11" width="77" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6eC-yC-gHw">
+                        <rect key="frame" x="315" y="11" width="44" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Pfi-6g-yBe" firstAttribute="top" secondItem="GWB-wy-1Cd" secondAttribute="topMargin" id="HBO-Of-lZl"/>
+                    <constraint firstItem="Pfi-6g-yBe" firstAttribute="baseline" secondItem="6eC-yC-gHw" secondAttribute="baseline" id="Ius-q1-82C"/>
+                    <constraint firstItem="6eC-yC-gHw" firstAttribute="trailing" secondItem="GWB-wy-1Cd" secondAttribute="trailingMargin" id="a00-k9-qoB"/>
+                    <constraint firstItem="Pfi-6g-yBe" firstAttribute="leading" secondItem="GWB-wy-1Cd" secondAttribute="leadingMargin" id="bLd-1S-EuV"/>
+                </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="countLabel" destination="6eC-yC-gHw" id="3nE-37-TEW"/>
+                <outlet property="dateLabel" destination="Pfi-6g-yBe" id="PC0-2K-NaI"/>
+            </connections>
             <point key="canvasLocation" x="28" y="14"/>
         </tableViewCell>
     </objects>

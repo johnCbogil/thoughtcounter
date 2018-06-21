@@ -9,7 +9,10 @@
 import UIKit
 
 class DateTableViewCell: UITableViewCell {
-
+    
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var countLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
