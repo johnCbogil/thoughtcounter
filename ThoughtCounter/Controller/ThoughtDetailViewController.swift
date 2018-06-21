@@ -24,6 +24,7 @@ class ThoughtDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "Stats"
         configureTableView()
     }
     
@@ -40,10 +41,9 @@ class ThoughtDetailViewController: UIViewController {
         
         // CREATE A DICT OF DATES AND COUNTS
         let dateCounts = listOfDates.reduce(into: [String: Int]()) { dict, date in
-            let year = Calendar.current.component(.year, from: date)
-            let month = Calendar.current.component(.month, from: date)
-            let day = Calendar.current.component(.day, from: date)
-            let key = "\(year)-\(month)-\(day)"
+            let formatter = DateFormatter()
+            formatter.dateStyle = .long
+            let key = formatter.string(from: date)
             dict[key, default: 0] += 1
         }
         
@@ -71,6 +71,10 @@ extension ThoughtDetailViewController: UITableViewDelegate, UITableViewDataSourc
         cell.dateLabel.text = dateCount.dateString
         cell.countLabel.text = String(dateCount.count)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
 }
