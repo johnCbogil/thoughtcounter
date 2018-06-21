@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,16 +20,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gEI-Lf-ZcV">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="447"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Press the + button to add a thought. Swipe right on a thought to increase the count." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mp1-GH-j6A">
+                                <rect key="frame" x="16" y="519" width="343" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="Ts0-t7-ybY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="gEI-Lf-ZcV" firstAttribute="leading" secondItem="tTi-ND-aOO" secondAttribute="leading" id="TFV-4u-ybl"/>
-                            <constraint firstItem="tTi-ND-aOO" firstAttribute="bottom" secondItem="gEI-Lf-ZcV" secondAttribute="bottom" id="Xw5-SR-53I"/>
-                            <constraint firstItem="gEI-Lf-ZcV" firstAttribute="top" secondItem="tTi-ND-aOO" secondAttribute="top" id="g9y-rP-sjd"/>
-                            <constraint firstItem="tTi-ND-aOO" firstAttribute="trailing" secondItem="gEI-Lf-ZcV" secondAttribute="trailing" id="mrH-VY-ReQ"/>
+                            <constraint firstAttribute="bottom" secondItem="Mp1-GH-j6A" secondAttribute="bottom" constant="20" symbolic="YES" id="2hq-Ne-OWn"/>
+                            <constraint firstItem="gEI-Lf-ZcV" firstAttribute="centerX" secondItem="Mp1-GH-j6A" secondAttribute="centerX" id="93w-CS-KlU"/>
+                            <constraint firstItem="gEI-Lf-ZcV" firstAttribute="leading" secondItem="o8d-Pz-SiG" secondAttribute="leading" id="EAs-Ab-CQZ"/>
+                            <constraint firstItem="Mp1-GH-j6A" firstAttribute="top" secondItem="gEI-Lf-ZcV" secondAttribute="bottom" constant="8" id="Jp5-c1-nXC"/>
+                            <constraint firstAttribute="trailing" secondItem="gEI-Lf-ZcV" secondAttribute="trailing" id="L7S-Ij-BeQ"/>
+                            <constraint firstItem="gEI-Lf-ZcV" firstAttribute="top" secondItem="tTi-ND-aOO" secondAttribute="top" id="UM0-Bi-3ND"/>
+                            <constraint firstItem="Mp1-GH-j6A" firstAttribute="leading" secondItem="o8d-Pz-SiG" secondAttribute="leadingMargin" id="zUD-nH-j3d"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tTi-ND-aOO"/>
                     </view>
