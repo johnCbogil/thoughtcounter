@@ -26,7 +26,6 @@ class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate, Sav
         getThoughts()
         
         NotificationCenter.default.addObserver(self, selector: #selector(updateThoughtCountWhenAppBecomesActive), name: NSNotification.Name(rawValue: "updateThoughtCount"), object: nil)
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
