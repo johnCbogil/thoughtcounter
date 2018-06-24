@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate, SaveThoughtsDelegate, UpdateThoughtCountDelegate {
+class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate, SaveThoughtsDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addThoughtButton: UIBarButtonItem!
@@ -24,8 +24,9 @@ class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate, Sav
         configureNavBar()
         configureTableView()
         getThoughts()
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.updateThoughtCountDelegate = self
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(updateThoughtCountWhenAppBecomesActive), name: NSNotification.Name(rawValue: "updateThoughtCount"), object: nil)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -77,7 +78,7 @@ class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate, Sav
         }
     }
     
-    func updateThoughtCount() {
+    @objc func updateThoughtCountWhenAppBecomesActive() {
         tableView.reloadData()
     }
     
