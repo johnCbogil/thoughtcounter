@@ -26,10 +26,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if launchedBefore  {
             print("Not first launch.")
-            initialViewController = storyboard.instantiateViewController(withIdentifier: "ThoughtsViewController")
+            initialViewController = storyboard.instantiateViewController(withIdentifier: "PageViewController")
         }
         else {
-            initialViewController = storyboard.instantiateViewController(withIdentifier: "OnboardingViewController")
+            initialViewController = storyboard.instantiateViewController(withIdentifier: "PageViewController")
         }
         
         let navigationController = UINavigationController(rootViewController: initialViewController)

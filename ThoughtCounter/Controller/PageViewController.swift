@@ -29,15 +29,12 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
         
 //        self.setViewControllers([listOfViewControllers[0]] as [OnboardingViewController], direction: UIPageViewControllerNavigationDirection.forward, animated: false, completion: nil)
         self.setViewControllers([getViewControllerAtIndex(index: 0)] as [UIViewController], direction: UIPageViewControllerNavigationDirection.forward, animated: false, completion: nil)
-
-        
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         let pageContent: OnboardingViewController = viewController as! OnboardingViewController
         var index = pageContent.index
-        if ((index == 0) || (index == NSNotFound))
-        {
+        if ((index == 0) || (index == NSNotFound)) {
             return nil
         }
         index -= 1
@@ -47,14 +44,12 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         let pageContent: OnboardingViewController = viewController as! OnboardingViewController
         var index = pageContent.index
-        if (index == NSNotFound)
-        {
+        if (index == NSNotFound) {
             return nil;
         }
         
         index += 1
-        if (index == questionsArray.count)
-        {
+        if (index == questionsArray.count) {
             return nil;
         }
         return getViewControllerAtIndex(index: index)
@@ -62,9 +57,7 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
     
     func getViewControllerAtIndex(index: NSInteger) -> OnboardingViewController {
         // Create a new view controller and pass suitable data.
-        let pageContentViewController = self.storyboard?.instantiateViewController(withIdentifier: "PageContentViewController") as! OnboardingViewController
-        pageContentViewController.questionLabel.text = "\(questionsArray[index])"
-        pageContentViewController.answerLabel.text = "\(answersArray[index])"
+        let pageContentViewController = self.storyboard?.instantiateViewController(withIdentifier: "OnboardingViewController") as! OnboardingViewController
         pageContentViewController.index = index
         return pageContentViewController
     }
