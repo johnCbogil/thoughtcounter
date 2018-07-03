@@ -38,7 +38,7 @@ class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate, Sav
         title = "Today's Thought Count"
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         let infoButton = UIButton(type: .infoLight)
-        infoButton.addTarget(self, action: #selector(getInfoAction), for: .touchUpInside)
+        infoButton.addTarget(self, action: #selector(presentOnboarding), for: .touchUpInside)
         let infoBarButtonItem = UIBarButtonItem(customView: infoButton)
         navigationItem.leftBarButtonItem = infoBarButtonItem
     }
@@ -81,9 +81,9 @@ class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate, Sav
         tableView.reloadData()
     }
     
-    @objc fileprivate func getInfoAction() {
+    @objc fileprivate func presentOnboarding() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "OnboardingViewController")
+        let vc = storyboard.instantiateViewController(withIdentifier: "PageViewController")
         navigationController?.present(vc, animated: true, completion: nil)
         print("Display info vc, need to find a solution here")
     }

@@ -12,12 +12,19 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
     
     var listOfViewControllers = [OnboardingViewController]()
     let pageCount = 3
+    var pageControl = UIPageControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         dataSource = self
+        delegate = self
         
+        configureViewControllers()
+        configurePageControl()
+    }
+    
+    fileprivate func configureViewControllers() {
         let vc1 = storyboard?.instantiateViewController(withIdentifier: "OnboardingViewController") as! OnboardingViewController
         vc1.index = 0
         let vc2 = storyboard?.instantiateViewController(withIdentifier: "OnboardingViewController") as! OnboardingViewController
@@ -25,8 +32,17 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
         let vc3 = storyboard?.instantiateViewController(withIdentifier: "OnboardingViewController") as! OnboardingViewController
         vc3.index = 2
         listOfViewControllers.append(contentsOf: [vc1,vc2,vc3])
-        
         setViewControllers([getViewControllerAtIndex(index: 0)] as [UIViewController], direction: UIPageViewControllerNavigationDirection.forward, animated: false, completion: nil)
+    }
+    
+    func configurePageControl() {
+        pageControl = UIPageControl(frame: CGRect(x: 0,y: UIScreen.main.bounds.maxY - 40,width: UIScreen.main.bounds.width,height: 50))
+        self.pageControl.numberOfPages = listOfViewControllers.count
+        self.pageControl.currentPage = 0
+        self.pageControl.tintColor = .blue
+        self.pageControl.pageIndicatorTintColor = .lightGray
+        self.pageControl.currentPageIndicatorTintColor = .blue
+        self.view.addSubview(pageControl)
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
@@ -47,7 +63,7 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
         }
         
         index += 1
-        if (index == pageCount) {
+        if (index == listOfViewControllers.count) {
             return nil;
         }
         return getViewControllerAtIndex(index: index)
@@ -58,5 +74,10 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
         let pageContentViewController = self.storyboard?.instantiateViewController(withIdentifier: "OnboardingViewController") as! OnboardingViewController
         pageContentViewController.index = index
         return pageContentViewController
+    }
+    
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        let pageContentViewController = pageViewController.viewControllers![0] as! OnboardingViewController
+        pageControl.currentPage = pageContentViewController.index
     }
 }
