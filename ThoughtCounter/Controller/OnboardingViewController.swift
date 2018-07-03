@@ -28,6 +28,12 @@ class OnboardingViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = true
+        if index == 2 {
+            getStartedButton.isHidden = false
+        }
+        else {
+            getStartedButton.isHidden = true
+        }
     }
     
     @IBAction func getStarted(_ sender: Any) {
