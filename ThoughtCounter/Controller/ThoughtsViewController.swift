@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import Instabug
 
 class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate, SaveThoughtsDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addThoughtButton: UIBarButtonItem!
+    @IBOutlet weak var sendFeedbackButton: UIButton!
     
     var listOfThoughts = [Thought]()
     let thoughtCell = "ThoughtTableViewCell"
@@ -86,6 +88,9 @@ class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate, Sav
         let vc = storyboard.instantiateViewController(withIdentifier: "PageViewController")
         navigationController?.present(vc, animated: true, completion: nil)
         print("Display info vc, need to find a solution here")
+    }
+    @IBAction func sendFeedback(_ sender: Any) {
+        Instabug.invoke()
     }
 }
 
