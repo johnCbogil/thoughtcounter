@@ -26,14 +26,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if launchedBefore  {
             print("Not first launch.")
-            initialViewController = storyboard.instantiateViewController(withIdentifier: "PageViewController")
+            initialViewController = storyboard.instantiateViewController(withIdentifier: "NavigationController")
+            self.window?.rootViewController = initialViewController
         }
         else {
             initialViewController = storyboard.instantiateViewController(withIdentifier: "PageViewController")
+            let navigationController = UINavigationController(rootViewController: initialViewController)
+            self.window?.rootViewController = navigationController
+
         }
         
-        let navigationController = UINavigationController(rootViewController: initialViewController)
-        self.window?.rootViewController = navigationController
         self.window?.makeKeyAndVisible()
         return true
     }
