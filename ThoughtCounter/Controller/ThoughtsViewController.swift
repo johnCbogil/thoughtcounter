@@ -29,6 +29,7 @@ class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate {
         
         NotificationCenter.default.addObserver(self, selector: #selector(updateThoughtCountWhenAppBecomesActive), name: NSNotification.Name(rawValue: "updateThoughtCount"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(saveThoughts), name: NSNotification.Name(rawValue: "saveThoughts"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(deleteThought), name: NSNotification.Name(rawValue: "deleteThought"), object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -80,6 +81,18 @@ class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate {
         }
     }
     
+    @objc func deleteThought(notification:Notification) {
+        if let userInfo = notification.userInfo {
+            let thought = userInfo["thought"] as! Thought
+            if let index = listOfThoughts.index(of: thought) {
+                listOfThoughts.remove(at: index)
+                tableView.reloadData()
+                saveThoughts()
+                dismiss(animated: true, completion: nil)
+            }
+        }
+    }
+    
     @objc func updateThoughtCountWhenAppBecomesActive() {
         tableView.reloadData()
     }
@@ -90,6 +103,7 @@ class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate {
         navigationController?.present(vc, animated: true, completion: nil)
         print("Display info vc, need to find a solution here")
     }
+    
     @IBAction func sendFeedback(_ sender: Any) {
         Instabug.invoke()
     }

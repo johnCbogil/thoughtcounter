@@ -62,15 +62,19 @@ class ThoughtTableViewCell: UITableViewCell, UITextFieldDelegate {
             }
             countLabel.text = String(todaysCount)
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "saveThoughts"), object: nil, userInfo: nil)
-
         }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-        thought?.title = textField.text
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "saveThoughts"), object: nil, userInfo: nil)
-
+        guard let text = textField.text else {return true}
+        if text.count > 0 {
+            thought?.title = textField.text
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "saveThoughts"), object: nil, userInfo: nil)
+        }
+        else {
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "deleteThought"), object: nil, userInfo: ["thought": self.thought])
+        }
         return true
     }
 }

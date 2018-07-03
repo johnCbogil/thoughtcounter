@@ -60,14 +60,8 @@ class ThoughtDetailViewController: UIViewController {
     }
     
     @IBAction func deleteThought(_ sender: Any) {
-        let alertController = UIAlertController(title: "Delete Thought", message: "This feature not yet implemented.", preferredStyle: .alert)
-        
-        let action1 = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
-            print("You've pressed default");
-        }
-
-        alertController.addAction(action1)
-        self.present(alertController, animated: true, completion: nil)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "deleteThought"), object: nil, userInfo: ["thought": self.thought!])
+        navigationController?.popViewController(animated: true)
     }
 }
 
