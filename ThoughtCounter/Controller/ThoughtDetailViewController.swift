@@ -14,17 +14,20 @@ class ThoughtDetailViewController: UIViewController {
     let dateCellIdentifier = "DateTableViewCell"
     var thought: Thought?
     var listOfFormattedDates = [DateCount]()
+    @IBOutlet weak var thoughtTextView: UITextView!
+    @IBOutlet weak var deleteThoughtButton: UIButton!
     
     struct DateCount {
         var dateString: String
         var count: Int
     }
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "Stats"
+        thoughtTextView.text = thought?.title
+        thoughtTextView.delegate = self
         configureTableView()
     }
     
@@ -54,6 +57,33 @@ class ThoughtDetailViewController: UIViewController {
             array.append(dateCountStruct)
         }
         return array
+    }
+    
+    @IBAction func deleteThought(_ sender: Any) {
+        let alertController = UIAlertController(title: "Delete Thought", message: "This feature not yet implemented.", preferredStyle: .alert)
+        
+        let action1 = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+            print("You've pressed default");
+        }
+
+        alertController.addAction(action1)
+        self.present(alertController, animated: true, completion: nil)
+    }
+}
+
+extension ThoughtDetailViewController: UITextViewDelegate {
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        thought?.title = textView.text
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "saveThoughts"), object: nil, userInfo: nil)
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if(text == "\n") {
+            textView.resignFirstResponder()
+            return false
+        }
+        return true
     }
 }
 

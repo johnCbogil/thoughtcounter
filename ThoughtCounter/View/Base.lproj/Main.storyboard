@@ -82,24 +82,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mTc-Ts-9cc">
-                                <rect key="frame" x="0.0" y="49" width="375" height="618"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mTc-Ts-9cc">
+                                <rect key="frame" x="0.0" y="228" width="375" height="318"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Stats" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V34-Nj-5iw">
-                                <rect key="frame" x="16" y="20" width="343" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ySU-Dr-kt7">
+                                <rect key="frame" x="16" y="617" width="107" height="30"/>
+                                <state key="normal" title="Delete Thought"/>
+                                <connections>
+                                    <action selector="deleteThought:" destination="IyX-i9-iPG" eventType="touchUpInside" id="arN-SZ-5Jp"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="OpI-lX-1Rk">
+                                <rect key="frame" x="16" y="20" width="343" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="343" id="FsK-Kc-rea"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="ySU-Dr-kt7" secondAttribute="bottom" constant="20" symbolic="YES" id="NJM-QC-kpx"/>
+                            <constraint firstItem="OpI-lX-1Rk" firstAttribute="leading" secondItem="b9a-f8-uGH" secondAttribute="leading" constant="16" id="NPR-0z-N2g"/>
+                            <constraint firstItem="mTc-Ts-9cc" firstAttribute="top" secondItem="OpI-lX-1Rk" secondAttribute="bottom" constant="8" symbolic="YES" id="WQR-bo-xTP"/>
+                            <constraint firstItem="mTc-Ts-9cc" firstAttribute="leading" secondItem="b9a-f8-uGH" secondAttribute="leading" id="dBI-kb-3R7"/>
+                            <constraint firstItem="mTc-Ts-9cc" firstAttribute="trailing" secondItem="b9a-f8-uGH" secondAttribute="trailing" id="jPp-0F-4vk"/>
+                            <constraint firstItem="b9a-f8-uGH" firstAttribute="trailing" secondItem="OpI-lX-1Rk" secondAttribute="trailing" constant="16" id="rv2-Pc-uUe"/>
+                            <constraint firstItem="OpI-lX-1Rk" firstAttribute="top" secondItem="b9a-f8-uGH" secondAttribute="top" id="tRo-LW-R10"/>
+                            <constraint firstItem="ySU-Dr-kt7" firstAttribute="top" secondItem="mTc-Ts-9cc" secondAttribute="bottom" constant="71" id="yLK-In-GLW"/>
+                            <constraint firstItem="ySU-Dr-kt7" firstAttribute="leading" secondItem="OpI-lX-1Rk" secondAttribute="leading" id="z4Q-gb-Fce"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="b9a-f8-uGH"/>
                     </view>
                     <connections>
+                        <outlet property="deleteThoughtButton" destination="ySU-Dr-kt7" id="5nc-Zb-WmV"/>
                         <outlet property="tableView" destination="mTc-Ts-9cc" id="7bW-8t-Che"/>
+                        <outlet property="thoughtTextView" destination="OpI-lX-1Rk" id="eJy-ay-d3r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0qE-oj-DJK" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -9,7 +9,7 @@
 import UIKit
 import Instabug
 
-class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate, SaveThoughtsDelegate {
+class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addThoughtButton: UIBarButtonItem!
@@ -28,6 +28,7 @@ class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate, Sav
         getThoughts()
         
         NotificationCenter.default.addObserver(self, selector: #selector(updateThoughtCountWhenAppBecomesActive), name: NSNotification.Name(rawValue: "updateThoughtCount"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(saveThoughts), name: NSNotification.Name(rawValue: "saveThoughts"), object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -63,7 +64,7 @@ class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate, Sav
         topCell.textField.becomeFirstResponder()
     }
     
-    func saveThoughts() {
+    @objc func saveThoughts() {
         let encodedData: Data = NSKeyedArchiver.archivedData(withRootObject: listOfThoughts)
         userDefaults.set(encodedData, forKey: listOfThoughtsKey)
         print("Saving \(listOfThoughts.count) thoughts")
@@ -103,7 +104,6 @@ extension ThoughtsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: thoughtCell, for: indexPath) as! ThoughtTableViewCell
         let thought = listOfThoughts[indexPath.row]
-        cell.saveThoughtsDelegate = self
         cell.configureWithThought(thought: thought)
         cell.selectionStyle = .none
         return cell
