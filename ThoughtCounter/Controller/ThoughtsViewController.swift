@@ -52,7 +52,6 @@ class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.tableFooterView = UIView()
-        tableView.isScrollEnabled = false
     }
     
     @IBAction func addThought(_ sender: Any) {
