@@ -24,7 +24,7 @@ class ThoughtDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         title = "Stats"
         thoughtTextView.text = thought?.title
         thoughtTextView.delegate = self
@@ -56,12 +56,30 @@ class ThoughtDetailViewController: UIViewController {
             let dateCountStruct = DateCount.init(dateString: date, count: count)
             array.append(dateCountStruct)
         }
+        
+        // SORT ARRAY BY DATE
+        array.sort(by: { $0.dateString.compare($1.dateString) == .orderedDescending })
+
         return array
     }
     
     @IBAction func deleteThought(_ sender: Any) {
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "deleteThought"), object: nil, userInfo: ["thought": self.thought!])
-        navigationController?.popViewController(animated: true)
+        
+        let alertController = UIAlertController(title: "Delete Thought", message: "Are you sure you would like to delete this thoguht? Your stats will be permanently lost.", preferredStyle: .alert)
+        
+        let nevermindAction = UIAlertAction(title: "Nevermind", style: .default) { (action:UIAlertAction) in
+            print("You've pressed default");
+        }
+        
+        let deleteThoughtAction = UIAlertAction(title: "Delete Thought", style: .destructive) { (action:UIAlertAction) in
+            print("You've pressed the destructive");
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "deleteThought"), object: nil, userInfo: ["thought": self.thought!])
+            self.navigationController?.popViewController(animated: true)
+        }
+        
+        alertController.addAction(deleteThoughtAction)
+        alertController.addAction(nevermindAction)
+        self.present(alertController, animated: true, completion: nil)
     }
 }
 
