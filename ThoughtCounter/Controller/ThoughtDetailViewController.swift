@@ -24,15 +24,18 @@ class ThoughtDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         
-        let date1 = Date()
-        let date2 = Date(timeIntervalSinceNow: -200000)
-        let date3 = Date(timeIntervalSinceNow: -205000)
-        let date4 = Date()
-        let date5 = Date(timeIntervalSinceNow: 205000)
+        // FOR TESTING MULTIPLE DATES //
         
-        let listOfDates = [date1, date2, date3, date4, date5]
-        thought?.listOfOccurrences.append(contentsOf: listOfDates)
+//        let date1 = Date()
+//        let date2 = Date(timeIntervalSinceNow: -200000)
+//        let date3 = Date(timeIntervalSinceNow: -205000)
+//        let date4 = Date()
+//        let date5 = Date(timeIntervalSinceNow: 205000)
+//
+//        let listOfDates = [date1, date2, date3, date4, date5]
+//        thought?.listOfOccurrences.append(contentsOf: listOfDates)
 
         title = "Stats"
         thoughtTextView.text = thought?.title

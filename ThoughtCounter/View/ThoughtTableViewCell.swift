@@ -20,7 +20,12 @@ class ThoughtTableViewCell: UITableViewCell, UITextFieldDelegate {
         textField.delegate = self
         let rightSwipe = UISwipeGestureRecognizer.init(target: self, action: #selector(increaseCount))
         rightSwipe.direction = .right
-        self.addGestureRecognizer(rightSwipe)
+        let leftSwipe = UISwipeGestureRecognizer.init(target: self, action: #selector(decreaseCount))
+        leftSwipe.direction = .left
+        
+        addGestureRecognizer(rightSwipe)
+        addGestureRecognizer(leftSwipe)
+        
         
         todaysCount = 0
         if let thought = thought {
@@ -47,22 +52,38 @@ class ThoughtTableViewCell: UITableViewCell, UITextFieldDelegate {
     }
     
     @objc func increaseCount() {
-        let generator = UIImpactFeedbackGenerator(style: .heavy)
-        generator.prepare()
-        generator.impactOccurred()
-        todaysCount = 0
+        generateHapticFeedback()
+        //        todaysCount = 0
         print("increase count")
         if let thought = thought {
             let currentDate = Date()
             thought.listOfOccurrences.append(currentDate)
-            for date in thought.listOfOccurrences {
-                if Calendar.current.isDateInToday(date) {
-                    todaysCount += 1
-                }
-            }
+            
+            todaysCount += 1
+            
             countLabel.text = String(todaysCount)
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "saveThoughts"), object: nil, userInfo: nil)
         }
+    }
+    
+    @objc func decreaseCount() {
+        if let thought = thought {
+            if thought.listOfOccurrences.count > 0 {
+                generateHapticFeedback()
+                print("decrease count")
+                thought.listOfOccurrences.removeLast()
+                todaysCount -= 1
+            }
+        }
+        countLabel.text = String(todaysCount)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "saveThoughts"), object: nil, userInfo: nil)
+    }
+    
+    
+    fileprivate func generateHapticFeedback() {
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        generator.prepare()
+        generator.impactOccurred()
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

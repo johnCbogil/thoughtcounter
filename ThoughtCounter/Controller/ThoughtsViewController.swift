@@ -35,11 +35,13 @@ class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate, UIT
             addThought(self)
         }
         let tapGestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(ThoughtsViewController.hideKeyboard))
+        tapGestureRecognizer.cancelsTouchesInView = false
         tableView.addGestureRecognizer(tapGestureRecognizer)
     }
     
     @objc func hideKeyboard() {
-        tableView.endEditing(true)        
+        tableView.endEditing(true)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,7 +51,7 @@ class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate, UIT
     }
     
     fileprivate func configureNavBar() {
-        title = "Today's Thought Count"
+        title = "Today"
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         let infoButton = UIButton(type: .infoLight)
         infoButton.addTarget(self, action: #selector(presentOnboarding), for: .touchUpInside)
@@ -72,7 +74,9 @@ class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate, UIT
         tableView.reloadData()
         let visibleCells = tableView.visibleCells as! [ThoughtTableViewCell]
         let topCell = visibleCells[topOfList]
+        if listOfThoughts.count > 1 {
         topCell.textField.becomeFirstResponder()
+        }
     }
     
     @objc func saveThoughts() {
