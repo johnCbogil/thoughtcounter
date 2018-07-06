@@ -24,6 +24,15 @@ class ThoughtDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let date1 = Date()
+        let date2 = Date(timeIntervalSinceNow: -200000)
+        let date3 = Date(timeIntervalSinceNow: -205000)
+        let date4 = Date()
+        let date5 = Date(timeIntervalSinceNow: 205000)
+        
+        let listOfDates = [date1, date2, date3, date4, date5]
+        thought?.listOfOccurrences.append(contentsOf: listOfDates)
 
         title = "Stats"
         thoughtTextView.text = thought?.title
@@ -65,7 +74,7 @@ class ThoughtDetailViewController: UIViewController {
     
     @IBAction func deleteThought(_ sender: Any) {
         
-        let alertController = UIAlertController(title: "Delete Thought", message: "Are you sure you would like to delete this thoguht? Your stats will be permanently lost.", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Delete", message: "Are you sure you would like to delete this thought? Your stats will be permanently lost.", preferredStyle: .alert)
         
         let nevermindAction = UIAlertAction(title: "Nevermind", style: .default) { (action:UIAlertAction) in
             print("You've pressed default");

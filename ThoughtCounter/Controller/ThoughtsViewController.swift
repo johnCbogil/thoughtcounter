@@ -9,7 +9,7 @@
 import UIKit
 import Instabug
 
-class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate {
+class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate, UITextFieldDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addThoughtButton: UIBarButtonItem!
@@ -30,6 +30,16 @@ class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(updateThoughtCountWhenAppBecomesActive), name: NSNotification.Name(rawValue: "updateThoughtCount"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(saveThoughts), name: NSNotification.Name(rawValue: "saveThoughts"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(deleteThought), name: NSNotification.Name(rawValue: "deleteThought"), object: nil)
+        
+        if listOfThoughts.count == 0 {
+            addThought(self)
+        }
+        let tapGestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(ThoughtsViewController.hideKeyboard))
+        tableView.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    @objc func hideKeyboard() {
+        tableView.endEditing(true)        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -52,6 +62,7 @@ class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.tableFooterView = UIView()
+        tableView.keyboardDismissMode = .interactive;
     }
     
     @IBAction func addThought(_ sender: Any) {

@@ -26,7 +26,7 @@
                                     <constraint firstAttribute="height" constant="409" id="W7B-eo-8Qe"/>
                                 </constraints>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Press the + button to add a thought. Swipe right on a thought to increase the count." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mp1-GH-j6A">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe right on a thought to increase the count." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mp1-GH-j6A">
                                 <rect key="frame" x="16" y="473" width="343" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="Ts0-t7-ybY"/>

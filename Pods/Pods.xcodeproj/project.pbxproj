@@ -124,6 +124,7 @@
 
 /* Begin PBXFileReference section */
 		00D10C3E47F148E89CCBD3AC06B40A87 /* FIRAnalyticsConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRAnalyticsConfiguration.h; path = Firebase/Core/Public/FIRAnalyticsConfiguration.h; sourceTree = "<group>"; };
+		060334BE5CD135BD8CCA36B01FA90640 /* InstabugCore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = InstabugCore.h; path = InstabugCore.framework/Headers/InstabugCore.h; sourceTree = "<group>"; };
 		0881B33F2A4C168BB0BB9023DB2E1451 /* Pods-ThoughtCounterTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ThoughtCounterTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		09B3DF2AFE1AD52987DC6F2EAE9EE3E5 /* FIRLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRLogger.h; path = Firebase/Core/Private/FIRLogger.h; sourceTree = "<group>"; };
 		0A6C0113512B4AA8F22AFC5AE086613D /* Pods-ThoughtCounter-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ThoughtCounter-resources.sh"; sourceTree = "<group>"; };
@@ -140,27 +141,34 @@
 		1CC2F2E84C7BB969AFAAEE6CE12DD9F2 /* Pods-ThoughtCounter-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ThoughtCounter-umbrella.h"; sourceTree = "<group>"; };
 		21E66982A2A3B479AF5F4C9C6AFCE2BF /* Pods-ThoughtCounterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ThoughtCounterTests.release.xcconfig"; sourceTree = "<group>"; };
 		25D2E5C8401BB73A25C07D82AB8D076F /* Pods-ThoughtCounterUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ThoughtCounterUITests.release.xcconfig"; sourceTree = "<group>"; };
+		2A4AA2EEE02DF98AB18BFB57CAF6028E /* IBGBugReporting.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IBGBugReporting.h; path = Instabug.framework/Headers/IBGBugReporting.h; sourceTree = "<group>"; };
 		31CEE173C8DC51C5BEDF88EAC97EF275 /* FIRAppAssociationRegistration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRAppAssociationRegistration.m; path = Firebase/Core/FIRAppAssociationRegistration.m; sourceTree = "<group>"; };
 		33F8B8489D4EB942CBD8EF06F23AFAA7 /* FIRApp.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRApp.m; path = Firebase/Core/FIRApp.m; sourceTree = "<group>"; };
 		3689A254217A39731D8CEC7C02FE0476 /* Pods-ThoughtCounter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ThoughtCounter.debug.xcconfig"; sourceTree = "<group>"; };
+		38AD17CE1D52CC0908D280F0395F8131 /* IBGTypes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IBGTypes.h; path = InstabugCore.framework/Headers/IBGTypes.h; sourceTree = "<group>"; };
 		42D4CB76F65CD6ADDB599D0C45AD7640 /* pb_decode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = pb_decode.h; sourceTree = "<group>"; };
 		47532DC394B1E94685AEC8185C312F20 /* Pods-ThoughtCounterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ThoughtCounterTests.debug.xcconfig"; sourceTree = "<group>"; };
+		478E59448FC41A8FD654BCC57A7413AE /* IBGCrashReporting.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IBGCrashReporting.h; path = Instabug.framework/Headers/IBGCrashReporting.h; sourceTree = "<group>"; };
 		4F3DA8F23B45244DBE1730D24F9FA763 /* GoogleToolboxForMac.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GoogleToolboxForMac.xcconfig; sourceTree = "<group>"; };
 		5138FD096E028B621C6D7AB9BB94EE4B /* Pods-ThoughtCounterUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ThoughtCounterUITests-acknowledgements.plist"; sourceTree = "<group>"; };
 		52A1368861F6A1BDC6E67861FD0DA5C7 /* Pods-ThoughtCounterTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ThoughtCounterTests-dummy.m"; sourceTree = "<group>"; };
 		52EDD4057550275BCCB4997E200B2526 /* Pods-ThoughtCounterUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ThoughtCounterUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		532341CE574C3304FF83EC3D6CF4D96B /* nanopb-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "nanopb-prefix.pch"; sourceTree = "<group>"; };
+		540E8A1409246672AE4211B94B63FA15 /* IBGFeatureRequests.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IBGFeatureRequests.h; path = Instabug.framework/Headers/IBGFeatureRequests.h; sourceTree = "<group>"; };
 		56DAE3910FD1DC1B4714A9A95D3B69F3 /* FIRBundleUtil.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRBundleUtil.m; path = Firebase/Core/FIRBundleUtil.m; sourceTree = "<group>"; };
 		56F2DCC53C0F180D08567C42912616C6 /* Pods-ThoughtCounterUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ThoughtCounterUITests-umbrella.h"; sourceTree = "<group>"; };
 		578E3C88FB4B63535F519B389275398D /* Pods-ThoughtCounter-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ThoughtCounter-acknowledgements.plist"; sourceTree = "<group>"; };
 		587DAC664481B9725E9E63AE9087955C /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstanceID.framework; path = Frameworks/FirebaseInstanceID.framework; sourceTree = "<group>"; };
+		5A721B7DA36C2F37742F7A5B3819D12A /* Instabug.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Instabug.h; path = Instabug.framework/Headers/Instabug.h; sourceTree = "<group>"; };
 		5E3BCCF038CC386A96FBF414B468E903 /* FIRConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRConfiguration.h; path = Firebase/Core/Public/FIRConfiguration.h; sourceTree = "<group>"; };
 		5FCB5CFC5CE1342D2E42B40431F62E43 /* nanopb.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = nanopb.xcconfig; sourceTree = "<group>"; };
 		601F42DFD841A905B60A3EEF7C181BB8 /* FIRNetworkConstants.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRNetworkConstants.m; path = Firebase/Core/FIRNetworkConstants.m; sourceTree = "<group>"; };
 		69AF5F44C72468C332869F06B328EA5A /* Pods-ThoughtCounterUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ThoughtCounterUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		6BC49BE31B00A8353CDAE289B775DA2D /* Pods-ThoughtCounter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ThoughtCounter.release.xcconfig"; sourceTree = "<group>"; };
 		6C8E37A4683C055C839ADFCEEA240F6D /* Pods_ThoughtCounterUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ThoughtCounterUITests.framework; path = "Pods-ThoughtCounterUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6DA81C45595FE0F7984ED817610749F6 /* InstabugCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = InstabugCore.framework; sourceTree = "<group>"; };
 		6DC12AB6D97C6F9DB53730D9A516C1B1 /* FIRReachabilityChecker+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "FIRReachabilityChecker+Internal.h"; path = "Firebase/Core/Private/FIRReachabilityChecker+Internal.h"; sourceTree = "<group>"; };
+		6F1008AFEC1288EE34CED875CB1002BA /* IBGReport.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IBGReport.h; path = InstabugCore.framework/Headers/IBGReport.h; sourceTree = "<group>"; };
 		6F27F821019E470B52459B686A811F43 /* FirebaseCore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FirebaseCore.h; path = Firebase/Core/Public/FirebaseCore.h; sourceTree = "<group>"; };
 		709007992C5AC5C31E9E35F4306BAD27 /* GoogleToolboxForMac-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GoogleToolboxForMac-dummy.m"; sourceTree = "<group>"; };
 		71B6ECE6B62A376E160FE2A762FC7D48 /* nanopb-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "nanopb-umbrella.h"; sourceTree = "<group>"; };
@@ -184,7 +192,6 @@
 		97D7E984AA2ED06FC886024282B47207 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		9ABEF1C71C01696735C7FDE6A54489E6 /* FirebaseCore.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = FirebaseCore.modulemap; sourceTree = "<group>"; };
 		9B949AF6193297477CD28E010A4FA525 /* FIRNetworkMessageCode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRNetworkMessageCode.h; path = Firebase/Core/Private/FIRNetworkMessageCode.h; sourceTree = "<group>"; };
-		9C734A146981BC7A70ED0BC3E20F9CF6 /* IBGTypes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IBGTypes.h; path = InstabugCore.framework/Headers/IBGTypes.h; sourceTree = "<group>"; };
 		9F64125FB912120C7E7B328ED2179C29 /* FIRNetworkConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRNetworkConstants.h; path = Firebase/Core/Private/FIRNetworkConstants.h; sourceTree = "<group>"; };
 		A033DD03AA2891555F6309A4B17DD271 /* FIRConfiguration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRConfiguration.m; path = Firebase/Core/FIRConfiguration.m; sourceTree = "<group>"; };
 		A414EF36F7FD768EC8D878AB96CBB27E /* nanopb.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = nanopb.modulemap; sourceTree = "<group>"; };
@@ -214,8 +221,9 @@
 		CFF3B7703E30250BE4D191F1CD37A5A1 /* GTMDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
 		D199A976F66547E11DFAFDE9298CCA9C /* Pods-ThoughtCounterUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ThoughtCounterUITests.modulemap"; sourceTree = "<group>"; };
 		D2D51F29A4332AAF36356230ACF2A6A4 /* FirebaseCore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FirebaseCore.xcconfig; sourceTree = "<group>"; };
+		D4B3FD7A0C946E7B8B59991673AD3ABE /* Instabug.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Instabug.framework; sourceTree = "<group>"; };
 		D67C631132891643E2EDE71F0FFD9C74 /* GTMNSData+zlib.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "GTMNSData+zlib.m"; path = "Foundation/GTMNSData+zlib.m"; sourceTree = "<group>"; };
-		D7365B5BFCF0040CFFC171D75D504C97 /* InstabugCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = InstabugCore.framework; sourceTree = "<group>"; };
+		D6E1E120C191A4D9E3801873122776F1 /* IBGNetworkLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IBGNetworkLogger.h; path = InstabugCore.framework/Headers/IBGNetworkLogger.h; sourceTree = "<group>"; };
 		D737FEA9EFA8758EB090B72009D1DE51 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D89B290EBE44C76F09FC4861639E15CE /* FIRAppInternal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRAppInternal.h; path = Firebase/Core/Private/FIRAppInternal.h; sourceTree = "<group>"; };
 		DAD024799D2186AA9BA108238159FE69 /* FIRAppEnvironmentUtil.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRAppEnvironmentUtil.h; path = Firebase/Core/third_party/FIRAppEnvironmentUtil.h; sourceTree = "<group>"; };
@@ -223,10 +231,10 @@
 		DCC2E8574D748F962F9EAAD7CEDB9439 /* FIRAppAssociationRegistration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRAppAssociationRegistration.h; path = Firebase/Core/Private/FIRAppAssociationRegistration.h; sourceTree = "<group>"; };
 		DD3B067DA428D074F1EC9EC856D1D5D8 /* Pods-ThoughtCounter-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ThoughtCounter-acknowledgements.markdown"; sourceTree = "<group>"; };
 		E0075A2E273CDFEE588CE96A608A49E4 /* FIRErrorCode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRErrorCode.h; path = Firebase/Core/Private/FIRErrorCode.h; sourceTree = "<group>"; };
+		E12D3D4A960C296DCF8B8317B24B6F70 /* IBGLog.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IBGLog.h; path = Instabug.framework/Headers/IBGLog.h; sourceTree = "<group>"; };
 		E2DDFB9D4FF96E8D66266775048A486A /* FirebaseCore-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FirebaseCore-dummy.m"; sourceTree = "<group>"; };
-		E67E9E746E57BC480F35B096E23C399D /* Instabug.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Instabug.framework; sourceTree = "<group>"; };
+		E5F2670AE38C2AAEBA5D8ADB9286D426 /* IBGSurvey.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IBGSurvey.h; path = Instabug.framework/Headers/IBGSurvey.h; sourceTree = "<group>"; };
 		E6BF47E8F880248BACDA59A685C48B4D /* pb_decode.c */ = {isa = PBXFileReference; includeInIndex = 1; path = pb_decode.c; sourceTree = "<group>"; };
-		E8D2F7A1D74D21824EFEC5649FC3F7D2 /* Instabug.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Instabug.h; path = Instabug.framework/Headers/Instabug.h; sourceTree = "<group>"; };
 		EACAF078495701F5542E586C6637DEF7 /* Pods-ThoughtCounter-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ThoughtCounter-frameworks.sh"; sourceTree = "<group>"; };
 		EC483461CE158A886DFDA5A111C5F656 /* GoogleToolboxForMac-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GoogleToolboxForMac-prefix.pch"; sourceTree = "<group>"; };
 		ED6598C3EE3511FE0034D04B82BD34F9 /* GoogleToolboxForMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = GoogleToolboxForMac.framework; path = GoogleToolboxForMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -234,7 +242,7 @@
 		F08E573F1501A33E3C7A176B9E3B2D22 /* GoogleToolboxForMac.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = GoogleToolboxForMac.modulemap; sourceTree = "<group>"; };
 		F2AF9EC704AAD470CAC8FE0D05A5430B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
 		F504789BBC02250396B7AD37BF02EAE3 /* FIRAppEnvironmentUtil.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRAppEnvironmentUtil.m; path = Firebase/Core/third_party/FIRAppEnvironmentUtil.m; sourceTree = "<group>"; };
-		F7503EA290BCD7A170CD7B0EF2D8E73E /* InstabugCore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = InstabugCore.h; path = InstabugCore.framework/Headers/InstabugCore.h; sourceTree = "<group>"; };
+		F90A9C2A756B90716CA8DFDD6C1BB3F4 /* IBGSurveys.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IBGSurveys.h; path = Instabug.framework/Headers/IBGSurveys.h; sourceTree = "<group>"; };
 		FDB643095B96DA332535DDBF26FBB1ED /* FIRBundleUtil.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRBundleUtil.h; path = Firebase/Core/Private/FIRBundleUtil.h; sourceTree = "<group>"; };
 		FFAAD4C23800062621834A33B7FD7808 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -350,6 +358,18 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		23AD7B9CD8F9D3E18CA62DFD7A7FBCB1 /* InstabugCore */ = {
+			isa = PBXGroup;
+			children = (
+				D6E1E120C191A4D9E3801873122776F1 /* IBGNetworkLogger.h */,
+				6F1008AFEC1288EE34CED875CB1002BA /* IBGReport.h */,
+				38AD17CE1D52CC0908D280F0395F8131 /* IBGTypes.h */,
+				060334BE5CD135BD8CCA36B01FA90640 /* InstabugCore.h */,
+				5CBEC169D4C5A551D57B6230FC9F08C1 /* Frameworks */,
+			);
+			name = InstabugCore;
+			sourceTree = "<group>";
+		};
 		25756ABE6E8423B0C7AE68FBD14533DF /* Pods-ThoughtCounterTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -433,12 +453,35 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		5CBEC169D4C5A551D57B6230FC9F08C1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6DA81C45595FE0F7984ED817610749F6 /* InstabugCore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		629B9C04341BB295D0CE9A63F8AC4680 /* CoreOnly */ = {
 			isa = PBXGroup;
 			children = (
 				91983BDECE4B544D4FABCF179428A904 /* Firebase.h */,
 			);
 			name = CoreOnly;
+			sourceTree = "<group>";
+		};
+		65B7DD6B73D6376D3E7EBCED8DAE5696 /* Instabug */ = {
+			isa = PBXGroup;
+			children = (
+				2A4AA2EEE02DF98AB18BFB57CAF6028E /* IBGBugReporting.h */,
+				478E59448FC41A8FD654BCC57A7413AE /* IBGCrashReporting.h */,
+				540E8A1409246672AE4211B94B63FA15 /* IBGFeatureRequests.h */,
+				E12D3D4A960C296DCF8B8317B24B6F70 /* IBGLog.h */,
+				E5F2670AE38C2AAEBA5D8ADB9286D426 /* IBGSurvey.h */,
+				F90A9C2A756B90716CA8DFDD6C1BB3F4 /* IBGSurveys.h */,
+				5A721B7DA36C2F37742F7A5B3819D12A /* Instabug.h */,
+				EB200C4F8319907E2A683CADADEEDC2A /* Frameworks */,
+			);
+			name = Instabug;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -473,33 +516,6 @@
 			path = "../Target Support Files/nanopb";
 			sourceTree = "<group>";
 		};
-		A9DC744875C3BB2C6EB4208DBF0FC62D /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				E67E9E746E57BC480F35B096E23C399D /* Instabug.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		AFFEC2755B3076B428B0376C84F2DBC1 /* InstabugCore */ = {
-			isa = PBXGroup;
-			children = (
-				9C734A146981BC7A70ED0BC3E20F9CF6 /* IBGTypes.h */,
-				F7503EA290BCD7A170CD7B0EF2D8E73E /* InstabugCore.h */,
-				F8121DD65C63775DB38899EEDF8D72D1 /* Frameworks */,
-			);
-			name = InstabugCore;
-			sourceTree = "<group>";
-		};
-		B757094DE60EEC4E8804A73507D88745 /* Instabug */ = {
-			isa = PBXGroup;
-			children = (
-				E8D2F7A1D74D21824EFEC5649FC3F7D2 /* Instabug.h */,
-				A9DC744875C3BB2C6EB4208DBF0FC62D /* Frameworks */,
-			);
-			name = Instabug;
-			sourceTree = "<group>";
-		};
 		C81A4494A23F00679B25D8E8DA74EC09 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -508,7 +524,7 @@
 				00E2A9D07746B689347869BE349CDA79 /* FirebaseCore */,
 				C9BFDE4CCE36AEBC7829EF137EB13244 /* FirebaseInstanceID */,
 				2991EED828C771BBEF06532ED7C0ECF4 /* GoogleToolboxForMac */,
-				E928FCCD729066CEEA74B171432F0432 /* Instabug */,
+				D99D119A480986E434D7AF81C1DE2649 /* Instabug */,
 				DE50621BA53AC326CF3FBD29D4CE698F /* nanopb */,
 			);
 			name = Pods;
@@ -530,6 +546,16 @@
 				D67C631132891643E2EDE71F0FFD9C74 /* GTMNSData+zlib.m */,
 			);
 			name = "NSData+zlib";
+			sourceTree = "<group>";
+		};
+		D99D119A480986E434D7AF81C1DE2649 /* Instabug */ = {
+			isa = PBXGroup;
+			children = (
+				65B7DD6B73D6376D3E7EBCED8DAE5696 /* Instabug */,
+				23AD7B9CD8F9D3E18CA62DFD7A7FBCB1 /* InstabugCore */,
+			);
+			name = Instabug;
+			path = Instabug;
 			sourceTree = "<group>";
 		};
 		DE50621BA53AC326CF3FBD29D4CE698F /* nanopb */ = {
@@ -577,14 +603,12 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		E928FCCD729066CEEA74B171432F0432 /* Instabug */ = {
+		EB200C4F8319907E2A683CADADEEDC2A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B757094DE60EEC4E8804A73507D88745 /* Instabug */,
-				AFFEC2755B3076B428B0376C84F2DBC1 /* InstabugCore */,
+				D4B3FD7A0C946E7B8B59991673AD3ABE /* Instabug.framework */,
 			);
-			name = Instabug;
-			path = Instabug;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		EBB6035EB660C48E140D1E9BBF1994D2 /* Support Files */ = {
@@ -617,14 +641,6 @@
 			);
 			name = "Pods-ThoughtCounterUITests";
 			path = "Target Support Files/Pods-ThoughtCounterUITests";
-			sourceTree = "<group>";
-		};
-		F8121DD65C63775DB38899EEDF8D72D1 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				D7365B5BFCF0040CFFC171D75D504C97 /* InstabugCore.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		F974FB8E9F532AE29886658E903FD7D1 /* Pods-ThoughtCounter */ = {
