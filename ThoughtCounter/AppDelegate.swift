@@ -19,7 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FirebaseApp.configure()
         Instabug.start(withToken: "62c2c28bca77c97d9b2acabe5bddb525", invocationEvents: [.none])
-
         Instabug.welcomeMessageMode = .disabled
 
 

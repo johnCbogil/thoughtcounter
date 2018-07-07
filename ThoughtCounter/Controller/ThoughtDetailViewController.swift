@@ -79,18 +79,16 @@ class ThoughtDetailViewController: UIViewController {
         
         let alertController = UIAlertController(title: "Delete", message: "Are you sure you would like to delete this thought? Your stats will be permanently lost.", preferredStyle: .alert)
         
-        let nevermindAction = UIAlertAction(title: "Nevermind", style: .default) { (action:UIAlertAction) in
-            print("You've pressed default");
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default) { (action:UIAlertAction) in
         }
         
         let deleteThoughtAction = UIAlertAction(title: "Delete Thought", style: .destructive) { (action:UIAlertAction) in
-            print("You've pressed the destructive");
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "deleteThought"), object: nil, userInfo: ["thought": self.thought!])
             self.navigationController?.popViewController(animated: true)
         }
         
         alertController.addAction(deleteThoughtAction)
-        alertController.addAction(nevermindAction)
+        alertController.addAction(cancelAction)
         self.present(alertController, animated: true, completion: nil)
     }
 }

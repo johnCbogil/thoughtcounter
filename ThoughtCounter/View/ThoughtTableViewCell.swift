@@ -94,7 +94,7 @@ class ThoughtTableViewCell: UITableViewCell, UITextFieldDelegate {
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "saveThoughts"), object: nil, userInfo: nil)
         }
         else {
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "deleteThought"), object: nil, userInfo: ["thought": self.thought])
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "deleteThought"), object: nil, userInfo: ["thought": thought])
         }
         return true
     }
