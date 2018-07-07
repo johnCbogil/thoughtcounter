@@ -119,7 +119,7 @@ class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate, UIT
     }
     
     @IBAction func sendFeedback(_ sender: Any) {
-        Instabug.invoke()
+        BugReporting.invoke()
     }
 }
 
