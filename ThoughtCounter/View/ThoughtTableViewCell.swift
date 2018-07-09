@@ -8,77 +8,71 @@
 
 import UIKit
 
+struct ThoughtTableViewCellModel {
+    var title: String
+    var count: Int
+    
+    init(title: String, count: Int) {
+        self.title = title
+        self.count = count
+    }
+}
+
+
+
 class ThoughtTableViewCell: UITableViewCell, UITextFieldDelegate {
     
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var countLabel: UILabel!
-    var thought: Thought?
-    var todaysCount = 0
+    private var todaysCount = 0
+    
+    public var updateCountBlock: ((Int)->Void)?
+    public var updateThoughtTitleBlock: ((String)->Void)?
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        textField.delegate = self
+        
+        self.textField.delegate = self
+        self.configureGestureRecognizers()
+    }
+    
+    fileprivate func configureGestureRecognizers() {
         let rightSwipe = UISwipeGestureRecognizer.init(target: self, action: #selector(increaseCount))
         rightSwipe.direction = .right
         let leftSwipe = UISwipeGestureRecognizer.init(target: self, action: #selector(decreaseCount))
         leftSwipe.direction = .left
         
-        addGestureRecognizer(rightSwipe)
-        addGestureRecognizer(leftSwipe)
-        
-        
-        todaysCount = 0
-        if let thought = thought {
-            for date in thought.listOfOccurrences {
-                if Calendar.current.isDateInToday(date) {
-                    todaysCount += 1
-                }
-            }
-            countLabel.text = String(todaysCount)
-        }
+        self.addGestureRecognizer(rightSwipe)
+        self.addGestureRecognizer(leftSwipe)
     }
     
-    func configureWithThought(thought:Thought) {
-        self.thought = thought
-        textField.text = thought.title
-        
-        todaysCount = 0
-        for date in thought.listOfOccurrences {
-            if Calendar.current.isDateInToday(date) {
-                todaysCount += 1
-            }
-        }
-        countLabel.text = String(todaysCount)
+    public func configureWithThought(cellModel: ThoughtTableViewCellModel) {
+        self.todaysCount = cellModel.count
+        self.textField.text = cellModel.title
+        self.countLabel.text = "\(self.todaysCount)"
     }
     
     @objc func increaseCount() {
-        generateHapticFeedback()
-        //        todaysCount = 0
-        print("increase count")
-        if let thought = thought {
-            let currentDate = Date()
-            thought.listOfOccurrences.append(currentDate)
-            
-            todaysCount += 1
-            
-            countLabel.text = String(todaysCount)
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "saveThoughts"), object: nil, userInfo: nil)
-        }
+        self.updateCount(1)
     }
     
     @objc func decreaseCount() {
-        if let thought = thought {
-            if thought.listOfOccurrences.count > 0 {
-                generateHapticFeedback()
-                print("decrease count")
-                thought.listOfOccurrences.removeLast()
-                todaysCount -= 1
-            }
-        }
-        countLabel.text = String(todaysCount)
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "saveThoughts"), object: nil, userInfo: nil)
+        if self.todaysCount == 0 { return }
+        
+        self.updateCount(-1)
     }
     
+    private func updateCount(_ count: Int) {
+        self.generateHapticFeedback()
+        
+        // Update the thought model
+        self.updateCountBlock?(count)
+        
+        // Update the cell's UI
+        self.todaysCount += count
+        self.countLabel.text = "\(self.todaysCount)"
+    }
     
     fileprivate func generateHapticFeedback() {
         let generator = UIImpactFeedbackGenerator(style: .heavy)
@@ -88,14 +82,14 @@ class ThoughtTableViewCell: UITableViewCell, UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-        guard let text = textField.text else {return true}
-        if text.count > 0 {
-            thought?.title = textField.text
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "saveThoughts"), object: nil, userInfo: nil)
-        }
-        else {
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "deleteThought"), object: nil, userInfo: ["thought": thought])
-        }
+        guard let text = textField.text else { return true }
+        self.updateThoughtTitleBlock?(text)
         return true
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.updateThoughtTitleBlock = nil
+        self.updateCountBlock = nil
     }
 }
