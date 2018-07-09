@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ThoughtTableViewCellModel {
+struct ThoughtTableViewCellModel {
     var title: String
     var count: Int
     
@@ -17,6 +17,8 @@ class ThoughtTableViewCellModel {
         self.count = count
     }
 }
+
+
 
 class ThoughtTableViewCell: UITableViewCell, UITextFieldDelegate {
     
@@ -27,10 +29,15 @@ class ThoughtTableViewCell: UITableViewCell, UITextFieldDelegate {
     public var updateCountBlock: ((Int)->Void)?
     public var updateThoughtTitleBlock: ((String)->Void)?
     
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
         self.textField.delegate = self
+        self.configureGestureRecognizers()
+    }
+    
+    fileprivate func configureGestureRecognizers() {
         let rightSwipe = UISwipeGestureRecognizer.init(target: self, action: #selector(increaseCount))
         rightSwipe.direction = .right
         let leftSwipe = UISwipeGestureRecognizer.init(target: self, action: #selector(decreaseCount))
@@ -59,7 +66,7 @@ class ThoughtTableViewCell: UITableViewCell, UITextFieldDelegate {
     private func updateCount(_ count: Int) {
         self.generateHapticFeedback()
         
-        // Update the actual thought model
+        // Update the thought model
         self.updateCountBlock?(count)
         
         // Update the cell's UI

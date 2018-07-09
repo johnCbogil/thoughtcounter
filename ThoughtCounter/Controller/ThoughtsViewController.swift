@@ -9,7 +9,7 @@
 import UIKit
 import Instabug
 
-class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate, UITextFieldDelegate {
+class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate, UITextFieldDelegate, DeleteThoughtDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addThoughtButton: UIBarButtonItem!
@@ -27,10 +27,8 @@ class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate, UIT
         configureTableView()
         getThoughts()
         
+        // TODO: RENAME THIS NAME
         NotificationCenter.default.addObserver(self, selector: #selector(updateThoughtCountWhenAppBecomesActive), name: NSNotification.Name(rawValue: "updateThoughtCount"), object: nil)
-        //NotificationCenter.default.addObserver(self, selector: #selector(saveThoughts), name: NSNotification.Name(rawValue: "saveThoughts"), object: nil)
-        // NOTE: probably still needed until detail VC is no longer using notifications
-        //NotificationCenter.default.addObserver(self, selector: #selector(deleteThought), name: NSNotification.Name(rawValue: "deleteThought"), object: nil)
         
         if listOfThoughts.count == 0 {
             addThought(self)
@@ -42,7 +40,6 @@ class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate, UIT
     
     @objc func hideKeyboard() {
         tableView.endEditing(true)
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -147,7 +144,6 @@ extension ThoughtsViewController: UITableViewDataSource, UITableViewDelegate {
         }.count
         let cellModel = ThoughtTableViewCellModel(title: thought.title ?? "", count: todaysCount)
         cell.configureWithThought(cellModel: cellModel)
-        
         cell.updateCountBlock = { [weak thought, weak self] count in
             guard let strongSelf = self, let strongThought = thought else { return }
             if count == 1 {
@@ -176,6 +172,7 @@ extension ThoughtsViewController: UITableViewDataSource, UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         let detailVC = storyboard?.instantiateViewController(withIdentifier: "ThoughtDetailViewController") as! ThoughtDetailViewController
         detailVC.thought = listOfThoughts[indexPath.row]
+        detailVC.deleteThoughtDelegate = self
         navigationController?.pushViewController(detailVC, animated: true)
     }
     

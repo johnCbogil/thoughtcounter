@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol DeleteThoughtDelegate {
+    func deleteThought(thought:Thought)
+}
+
 class ThoughtDetailViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
@@ -16,6 +20,9 @@ class ThoughtDetailViewController: UIViewController {
     var listOfFormattedDates = [DateCount]()
     @IBOutlet weak var thoughtTextView: UITextView!
     @IBOutlet weak var deleteThoughtButton: UIButton!
+    
+    var deleteThoughtDelegate:DeleteThoughtDelegate!
+
     
     struct DateCount {
         var dateString: String
@@ -83,8 +90,10 @@ class ThoughtDetailViewController: UIViewController {
         }
         
         let deleteThoughtAction = UIAlertAction(title: "Delete Thought", style: .destructive) { (action:UIAlertAction) in
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "deleteThought"), object: nil, userInfo: ["thought": self.thought!])
-            self.navigationController?.popViewController(animated: true)
+            if let strongThought = self.thought {
+                self.deleteThoughtDelegate.deleteThought(thought: strongThought)
+                self.navigationController?.popViewController(animated: true)
+            }
         }
         
         alertController.addAction(deleteThoughtAction)
