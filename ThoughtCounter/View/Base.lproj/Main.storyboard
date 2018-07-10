@@ -36,10 +36,20 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o4S-Br-nku">
-                                <rect key="frame" x="16" y="617" width="343" height="30"/>
+                                <rect key="frame" x="180" y="617" width="179" height="30"/>
                                 <state key="normal" title="Send Feedback..."/>
                                 <connections>
                                     <action selector="sendFeedback:" destination="SMl-a6-uSq" eventType="touchUpInside" id="OMo-vv-8h6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zlB-Yy-mfj">
+                                <rect key="frame" x="16" y="622" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="ImO-CD-VWa"/>
+                                </constraints>
+                                <state key="normal" image="LockIcon"/>
+                                <connections>
+                                    <action selector="authenticate:" destination="SMl-a6-uSq" eventType="touchUpInside" id="ph5-HL-k6r"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -48,11 +58,14 @@
                             <constraint firstItem="Mp1-GH-j6A" firstAttribute="trailing" secondItem="o4S-Br-nku" secondAttribute="trailing" id="80E-dZ-osm"/>
                             <constraint firstItem="gEI-Lf-ZcV" firstAttribute="centerX" secondItem="Mp1-GH-j6A" secondAttribute="centerX" id="93w-CS-KlU"/>
                             <constraint firstItem="gEI-Lf-ZcV" firstAttribute="leading" secondItem="o8d-Pz-SiG" secondAttribute="leading" id="EAs-Ab-CQZ"/>
+                            <constraint firstItem="zlB-Yy-mfj" firstAttribute="bottom" secondItem="o4S-Br-nku" secondAttribute="bottom" id="JIP-au-ick"/>
                             <constraint firstAttribute="trailing" secondItem="gEI-Lf-ZcV" secondAttribute="trailing" id="L7S-Ij-BeQ"/>
                             <constraint firstItem="gEI-Lf-ZcV" firstAttribute="top" secondItem="tTi-ND-aOO" secondAttribute="top" id="UM0-Bi-3ND"/>
+                            <constraint firstItem="zlB-Yy-mfj" firstAttribute="top" secondItem="Mp1-GH-j6A" secondAttribute="bottom" constant="21" id="Xnx-xk-3b4"/>
                             <constraint firstItem="Mp1-GH-j6A" firstAttribute="top" secondItem="gEI-Lf-ZcV" secondAttribute="bottom" id="aVo-6m-OLQ"/>
                             <constraint firstAttribute="bottom" secondItem="o4S-Br-nku" secondAttribute="bottom" constant="20" symbolic="YES" id="qeF-dr-FZL"/>
-                            <constraint firstItem="Mp1-GH-j6A" firstAttribute="leading" secondItem="o4S-Br-nku" secondAttribute="leading" id="s1u-dv-1qH"/>
+                            <constraint firstItem="Mp1-GH-j6A" firstAttribute="leading" secondItem="o4S-Br-nku" secondAttribute="leading" constant="-164" id="s1u-dv-1qH"/>
+                            <constraint firstItem="zlB-Yy-mfj" firstAttribute="leading" secondItem="Mp1-GH-j6A" secondAttribute="leading" id="sz2-Zt-cRE"/>
                             <constraint firstItem="Mp1-GH-j6A" firstAttribute="leading" secondItem="o8d-Pz-SiG" secondAttribute="leadingMargin" id="zUD-nH-j3d"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tTi-ND-aOO"/>
@@ -66,6 +79,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="addThoughtButton" destination="ati-tt-aMt" id="u2E-bL-aXP"/>
+                        <outlet property="authenticateButton" destination="zlB-Yy-mfj" id="D4g-Gy-eLX"/>
                         <outlet property="sendFeedbackButton" destination="o4S-Br-nku" id="1nf-rS-TbP"/>
                         <outlet property="tableView" destination="gEI-Lf-ZcV" id="gzT-LI-Ctj"/>
                     </connections>
@@ -215,6 +229,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="LockIcon" width="100" height="100"/>
         <image name="TrashIcon" width="100" height="100"/>
     </resources>
 </document>
