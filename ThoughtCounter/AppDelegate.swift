@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Firebase
 import Instabug
 
 @UIApplicationMain
@@ -17,7 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        FirebaseApp.configure()
         Instabug.start(withToken: "62c2c28bca77c97d9b2acabe5bddb525", invocationEvents: [.none])
         Instabug.welcomeMessageMode = .disabled
 

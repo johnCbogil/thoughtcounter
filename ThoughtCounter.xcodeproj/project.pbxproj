@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		461C95C9F6B67D8EB2D09AB8 /* Pods_ThoughtCounterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FC8EBC86AE0CC7F990A933A /* Pods_ThoughtCounterTests.framework */; };
 		942106E820DFFBE300B1B6BC /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942106E720DFFBE300B1B6BC /* PageViewController.swift */; };
-		94326AC520D9E98600A5827F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 94326AC420D9E98600A5827F /* GoogleService-Info.plist */; };
 		946F076820F578E600FDF7BF /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946F076720F578E600FDF7BF /* AuthViewController.swift */; };
 		947A768920DAA835007B2DAE /* ThoughtDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947A768820DAA835007B2DAE /* ThoughtDetailViewController.swift */; };
 		947A768B20DAAA47007B2DAE /* DateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947A768A20DAAA47007B2DAE /* DateTableViewCell.swift */; };
@@ -52,7 +51,6 @@
 		7223FB62AD25CAF2306E6030 /* Pods-ThoughtCounterUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThoughtCounterUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ThoughtCounterUITests/Pods-ThoughtCounterUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7A1E411E0337B6C94880E515 /* Pods-ThoughtCounterUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThoughtCounterUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ThoughtCounterUITests/Pods-ThoughtCounterUITests.release.xcconfig"; sourceTree = "<group>"; };
 		942106E720DFFBE300B1B6BC /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
-		94326AC420D9E98600A5827F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		946F076720F578E600FDF7BF /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		947A768820DAA835007B2DAE /* ThoughtDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThoughtDetailViewController.swift; sourceTree = "<group>"; };
 		947A768A20DAAA47007B2DAE /* DateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTableViewCell.swift; sourceTree = "<group>"; };
@@ -196,7 +194,6 @@
 				94D8024520CB254F00EE5076 /* Assets.xcassets */,
 				94D8024720CB254F00EE5076 /* LaunchScreen.storyboard */,
 				94D8024A20CB254F00EE5076 /* Info.plist */,
-				94326AC420D9E98600A5827F /* GoogleService-Info.plist */,
 			);
 			path = ThoughtCounter;
 			sourceTree = "<group>";
@@ -330,7 +327,6 @@
 				94D8024920CB254F00EE5076 /* LaunchScreen.storyboard in Resources */,
 				947A768D20DAAA5F007B2DAE /* DateTableViewCell.xib in Resources */,
 				94D8024620CB254F00EE5076 /* Assets.xcassets in Resources */,
-				94326AC520D9E98600A5827F /* GoogleService-Info.plist in Resources */,
 				94D8024420CB254D00EE5076 /* Main.storyboard in Resources */,
 				94ECE68920CC6ECD00E6A8D9 /* ThoughtTableViewCell.xib in Resources */,
 			);
@@ -360,21 +356,13 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ThoughtCounter/Pods-ThoughtCounter-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${PODS_ROOT}/Instabug/Instabug.framework",
 				"${PODS_ROOT}/Instabug/Instabug.framework.dSYM",
-				"${PODS_ROOT}/Instabug/InstabugCore.framework",
-				"${PODS_ROOT}/Instabug/InstabugCore.framework.dSYM",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Instabug.framework",
 				"${DWARF_DSYM_FOLDER_PATH}/Instabug.framework.dSYM",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/InstabugCore.framework",
-				"${DWARF_DSYM_FOLDER_PATH}/InstabugCore.framework.dSYM",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -627,10 +615,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4Y3GGL46D2;
 				INFOPLIST_FILE = ThoughtCounter/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.johnbogil.ThoughtCounter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -646,10 +631,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4Y3GGL46D2;
 				INFOPLIST_FILE = ThoughtCounter/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.johnbogil.ThoughtCounter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -666,11 +648,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4Y3GGL46D2;
 				INFOPLIST_FILE = ThoughtCounterTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = johnbogil.ThoughtCounterTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -688,11 +666,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4Y3GGL46D2;
 				INFOPLIST_FILE = ThoughtCounterTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = johnbogil.ThoughtCounterTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -709,11 +683,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4Y3GGL46D2;
 				INFOPLIST_FILE = ThoughtCounterUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = johnbogil.ThoughtCounterUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -730,11 +700,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4Y3GGL46D2;
 				INFOPLIST_FILE = ThoughtCounterUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = johnbogil.ThoughtCounterUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
