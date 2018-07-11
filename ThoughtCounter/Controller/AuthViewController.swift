@@ -14,6 +14,11 @@ class AuthViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+    authenticate(self)
+        
+    }
+    
+    @IBAction func authenticate(_ sender: Any) {
         // 1
         let context = LAContext()
         var error: NSError?
@@ -40,9 +45,5 @@ class AuthViewController: UIViewController {
         } else {
             // no biometry
         }
-    }
-    
-    @IBAction func authenticate(_ sender: Any) {
-        
     }
 }

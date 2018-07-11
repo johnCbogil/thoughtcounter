@@ -33,7 +33,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o4S-Br-nku">
-                                <rect key="frame" x="16" y="617" width="343" height="30"/>
+                                <rect key="frame" x="16" y="617" width="119" height="30"/>
                                 <state key="normal" title="Send Feedback..."/>
                                 <connections>
                                     <action selector="sendFeedback:" destination="SMl-a6-uSq" eventType="touchUpInside" id="OMo-vv-8h6"/>
@@ -44,7 +44,7 @@
                         <constraints>
                             <constraint firstItem="gEI-Lf-ZcV" firstAttribute="centerX" secondItem="Mp1-GH-j6A" secondAttribute="centerX" id="5Go-bX-bof"/>
                             <constraint firstAttribute="trailing" secondItem="gEI-Lf-ZcV" secondAttribute="trailing" id="D8w-hj-fXa"/>
-                            <constraint firstItem="Mp1-GH-j6A" firstAttribute="trailing" secondItem="o4S-Br-nku" secondAttribute="trailing" id="IBK-t7-xk5"/>
+                            <constraint firstItem="Mp1-GH-j6A" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="o4S-Br-nku" secondAttribute="trailing" id="IBK-t7-xk5"/>
                             <constraint firstItem="gEI-Lf-ZcV" firstAttribute="leading" secondItem="o8d-Pz-SiG" secondAttribute="leading" id="IjV-US-Fhp"/>
                             <constraint firstAttribute="bottom" secondItem="o4S-Br-nku" secondAttribute="bottom" constant="20" symbolic="YES" id="VXL-BW-vOX"/>
                             <constraint firstItem="Mp1-GH-j6A" firstAttribute="leading" secondItem="o4S-Br-nku" secondAttribute="leading" id="X7a-Ym-pJT"/>
@@ -70,7 +70,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xrf-KE-IGa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="512.79999999999995" y="131.78410794602701"/>
+            <point key="canvasLocation" x="-764" y="130"/>
         </scene>
         <!--Auth View Controller-->
         <scene sceneID="47d-cB-pYA">
@@ -102,7 +102,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="usW-PL-jQD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-231.19999999999999" y="131.78410794602701"/>
+            <point key="canvasLocation" x="-1217" y="132"/>
         </scene>
         <!--Thought Detail View Controller-->
         <scene sceneID="lt2-up-bId">
@@ -122,8 +122,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ySU-Dr-kt7">
                                 <rect key="frame" x="16" y="622" width="25" height="25"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="25" id="cym-OJ-MGR"/>
-                                    <constraint firstAttribute="height" constant="25" id="k9g-hX-ytP"/>
+                                    <constraint firstAttribute="height" constant="25" id="ajW-mW-ZAM"/>
                                 </constraints>
                                 <state key="normal" title="Delete Thought" image="TrashIcon"/>
                                 <connections>
@@ -143,15 +142,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="b9a-f8-uGH" firstAttribute="trailing" secondItem="ySU-Dr-kt7" secondAttribute="trailing" constant="334" id="79y-lO-j9d"/>
-                            <constraint firstAttribute="bottom" secondItem="ySU-Dr-kt7" secondAttribute="bottom" constant="20" symbolic="YES" id="NJM-QC-kpx"/>
+                            <constraint firstItem="ySU-Dr-kt7" firstAttribute="leading" secondItem="OpI-lX-1Rk" secondAttribute="leading" id="Ljc-ab-nH5"/>
+                            <constraint firstItem="b9a-f8-uGH" firstAttribute="trailing" secondItem="ySU-Dr-kt7" secondAttribute="trailing" constant="334" id="MyL-xj-gwI"/>
                             <constraint firstItem="OpI-lX-1Rk" firstAttribute="leading" secondItem="b9a-f8-uGH" secondAttribute="leading" constant="16" id="NPR-0z-N2g"/>
                             <constraint firstItem="mTc-Ts-9cc" firstAttribute="top" secondItem="OpI-lX-1Rk" secondAttribute="bottom" constant="8" symbolic="YES" id="QLF-a3-kA7"/>
+                            <constraint firstAttribute="bottom" secondItem="ySU-Dr-kt7" secondAttribute="bottom" constant="20" symbolic="YES" id="aR3-mr-HNC"/>
                             <constraint firstItem="mTc-Ts-9cc" firstAttribute="centerX" secondItem="OpI-lX-1Rk" secondAttribute="centerX" id="cyM-Du-xcm"/>
                             <constraint firstItem="mTc-Ts-9cc" firstAttribute="leading" secondItem="doT-ht-zlA" secondAttribute="leading" id="f02-Tu-dlo"/>
                             <constraint firstItem="b9a-f8-uGH" firstAttribute="trailing" secondItem="OpI-lX-1Rk" secondAttribute="trailing" constant="16" id="rv2-Pc-uUe"/>
                             <constraint firstItem="OpI-lX-1Rk" firstAttribute="top" secondItem="b9a-f8-uGH" secondAttribute="top" id="tRo-LW-R10"/>
-                            <constraint firstItem="ySU-Dr-kt7" firstAttribute="leading" secondItem="OpI-lX-1Rk" secondAttribute="leading" id="z4Q-gb-Fce"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="b9a-f8-uGH"/>
                     </view>
@@ -163,7 +162,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0qE-oj-DJK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1217" y="125"/>
+            <point key="canvasLocation" x="-309" y="119"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="IQh-0Q-Ywm">
@@ -223,7 +222,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qgy-8H-nIA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1748" y="120.98950524737631"/>
+            <point key="canvasLocation" x="-2155" y="126"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dbM-BW-WaG">
@@ -241,7 +240,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kTD-fU-9qC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1025" y="132"/>
+            <point key="canvasLocation" x="-1696" y="132"/>
         </scene>
     </scenes>
     <resources>
