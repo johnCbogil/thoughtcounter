@@ -10,6 +10,7 @@
 		461C95C9F6B67D8EB2D09AB8 /* Pods_ThoughtCounterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FC8EBC86AE0CC7F990A933A /* Pods_ThoughtCounterTests.framework */; };
 		942106E820DFFBE300B1B6BC /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942106E720DFFBE300B1B6BC /* PageViewController.swift */; };
 		94326AC520D9E98600A5827F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 94326AC420D9E98600A5827F /* GoogleService-Info.plist */; };
+		946F076820F578E600FDF7BF /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946F076720F578E600FDF7BF /* AuthViewController.swift */; };
 		947A768920DAA835007B2DAE /* ThoughtDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947A768820DAA835007B2DAE /* ThoughtDetailViewController.swift */; };
 		947A768B20DAAA47007B2DAE /* DateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947A768A20DAAA47007B2DAE /* DateTableViewCell.swift */; };
 		947A768D20DAAA5F007B2DAE /* DateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 947A768C20DAAA5F007B2DAE /* DateTableViewCell.xib */; };
@@ -52,6 +53,7 @@
 		7A1E411E0337B6C94880E515 /* Pods-ThoughtCounterUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThoughtCounterUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ThoughtCounterUITests/Pods-ThoughtCounterUITests.release.xcconfig"; sourceTree = "<group>"; };
 		942106E720DFFBE300B1B6BC /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		94326AC420D9E98600A5827F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		946F076720F578E600FDF7BF /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		947A768820DAA835007B2DAE /* ThoughtDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThoughtDetailViewController.swift; sourceTree = "<group>"; };
 		947A768A20DAAA47007B2DAE /* DateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTableViewCell.swift; sourceTree = "<group>"; };
 		947A768C20DAAA5F007B2DAE /* DateTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DateTableViewCell.xib; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				94D8026C20CB299A00EE5076 /* ThoughtsViewController.swift */,
 				947A768820DAA835007B2DAE /* ThoughtDetailViewController.swift */,
 				942106E720DFFBE300B1B6BC /* PageViewController.swift */,
+				946F076720F578E600FDF7BF /* AuthViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -446,6 +449,7 @@
 				948E1D6420D7E6250036D011 /* OnboardingViewController.swift in Sources */,
 				94D8023F20CB254D00EE5076 /* AppDelegate.swift in Sources */,
 				94ECE68B20CC6EE200E6A8D9 /* ThoughtTableViewCell.swift in Sources */,
+				946F076820F578E600FDF7BF /* AuthViewController.swift in Sources */,
 				942106E820DFFBE300B1B6BC /* PageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
