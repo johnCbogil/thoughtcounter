@@ -24,14 +24,14 @@ class AuthViewController: UIViewController {
         var error: NSError?
         
         if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
-            let reason = "Identify yourself!"
+            let reason = "Privacy is a human right."
             
             context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) {
                 [unowned self] (success, authenticationError) in
                 
                 DispatchQueue.main.async {
                     if success {
-                        let thoughtsVC = self.storyboard!.instantiateViewController(withIdentifier: "ThoughtsViewController") as! ThoughtsViewController
+                        let thoughtsVC = self.storyboard!.instantiateViewController(withIdentifier: ThoughtsViewController.identifier) as! ThoughtsViewController
                         if let nav = self.navigationController {
                             DispatchQueue.main.async {
                                 nav.pushViewController(thoughtsVC, animated: true)

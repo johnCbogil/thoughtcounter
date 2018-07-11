@@ -9,7 +9,7 @@
 import UIKit
 import Instabug
 
-class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate, UITextFieldDelegate, DeleteThoughtDelegate {
+class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate, UITextFieldDelegate, DeleteThoughtDelegate, UITextViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addThoughtButton: UIBarButtonItem!
@@ -74,7 +74,7 @@ class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate, UIT
         let visibleCells = tableView.visibleCells as! [ThoughtTableViewCell]
         let topCell = visibleCells[topOfList]
         if listOfThoughts.count > 1 {
-        topCell.textField.becomeFirstResponder()
+            topCell.textView.becomeFirstResponder()
         }
     }
     

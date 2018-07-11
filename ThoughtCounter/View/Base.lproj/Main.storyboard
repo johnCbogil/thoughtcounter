@@ -70,7 +70,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xrf-KE-IGa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-764" y="130"/>
+            <point key="canvasLocation" x="324" y="132"/>
         </scene>
         <!--Auth View Controller-->
         <scene sceneID="47d-cB-pYA">
@@ -102,7 +102,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="usW-PL-jQD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1217" y="132"/>
+            <point key="canvasLocation" x="-316" y="132"/>
         </scene>
         <!--Thought Detail View Controller-->
         <scene sceneID="lt2-up-bId">
@@ -162,7 +162,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0qE-oj-DJK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-309" y="119"/>
+            <point key="canvasLocation" x="1009" y="117"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="IQh-0Q-Ywm">
@@ -188,13 +188,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KKH-c2-tqa">
-                                <rect key="frame" x="16" y="308" width="343" height="24"/>
+                                <rect key="frame" x="16" y="117" width="343" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Answer" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uOx-Aa-a07">
-                                <rect key="frame" x="16" y="340.5" width="343" height="20.5"/>
+                                <rect key="frame" x="16" y="149.5" width="343" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -202,7 +202,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="KKH-c2-tqa" firstAttribute="top" secondItem="nez-lc-WvO" secondAttribute="top" constant="288" id="3I8-ae-I9L"/>
+                            <constraint firstItem="KKH-c2-tqa" firstAttribute="top" secondItem="nez-lc-WvO" secondAttribute="top" constant="97" id="3I8-ae-I9L"/>
                             <constraint firstItem="nez-lc-WvO" firstAttribute="trailing" secondItem="uOx-Aa-a07" secondAttribute="trailing" constant="16" id="9AN-8y-IZQ"/>
                             <constraint firstItem="Ob2-k5-uUC" firstAttribute="leading" secondItem="nez-lc-WvO" secondAttribute="leading" constant="16" id="D7n-zR-2az"/>
                             <constraint firstItem="nez-lc-WvO" firstAttribute="trailing" secondItem="Ob2-k5-uUC" secondAttribute="trailing" constant="16" id="LLZ-bj-nd4"/>
@@ -222,7 +222,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qgy-8H-nIA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2155" y="126"/>
+            <point key="canvasLocation" x="-1766" y="132"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dbM-BW-WaG">
@@ -240,7 +240,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kTD-fU-9qC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1696" y="132"/>
+            <point key="canvasLocation" x="-1052" y="132"/>
         </scene>
     </scenes>
     <resources>

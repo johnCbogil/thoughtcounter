@@ -20,9 +20,9 @@ struct ThoughtTableViewCellModel {
 
 
 
-class ThoughtTableViewCell: UITableViewCell, UITextFieldDelegate {
+class ThoughtTableViewCell: UITableViewCell, UITextViewDelegate {
     
-    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var countLabel: UILabel!
     private var todaysCount = 0
     
@@ -33,7 +33,9 @@ class ThoughtTableViewCell: UITableViewCell, UITextFieldDelegate {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        self.textField.delegate = self
+        self.textView.delegate = self
+        self.textView.layer.borderWidth = 1
+        self.textView.layer.borderColor = UIColor.black.cgColor
         self.configureGestureRecognizers()
     }
     
@@ -49,7 +51,7 @@ class ThoughtTableViewCell: UITableViewCell, UITextFieldDelegate {
     
     public func configureWithThought(cellModel: ThoughtTableViewCellModel) {
         self.todaysCount = cellModel.count
-        self.textField.text = cellModel.title
+        self.textView.text = cellModel.title
         self.countLabel.text = "\(self.todaysCount)"
     }
     
