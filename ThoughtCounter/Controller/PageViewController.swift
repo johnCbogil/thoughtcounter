@@ -13,6 +13,7 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
     var listOfViewControllers = [OnboardingViewController]()
     let pageCount = 3
     var pageControl = UIPageControl()
+    static let identifier = "PageViewController"
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -19,6 +19,7 @@ class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate, UIT
     let thoughtCell = "ThoughtTableViewCell"
     let listOfThoughtsKey = "ListOfThoughts"
     let userDefaults = UserDefaults.standard
+    static let identifier = "ThoughtsViewController"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -120,7 +121,7 @@ class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate, UIT
     
     @objc fileprivate func presentOnboarding() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "PageViewController")
+        let vc = storyboard.instantiateViewController(withIdentifier: PageViewController.identifier)
         navigationController?.present(vc, animated: true, completion: nil)
         print("Display info vc, need to find a solution here")
     }
@@ -170,7 +171,7 @@ extension ThoughtsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let detailVC = storyboard?.instantiateViewController(withIdentifier: "ThoughtDetailViewController") as! ThoughtDetailViewController
+        let detailVC = storyboard?.instantiateViewController(withIdentifier: ThoughtDetailViewController.identifier) as! ThoughtDetailViewController
         detailVC.thought = listOfThoughts[indexPath.row]
         detailVC.deleteThoughtDelegate = self
         navigationController?.pushViewController(detailVC, animated: true)

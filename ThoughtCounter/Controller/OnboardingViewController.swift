@@ -37,7 +37,7 @@ class OnboardingViewController: UIViewController {
     }
     
     @IBAction func getStarted(_ sender: Any) {
-        let thoughtsVC = self.storyboard!.instantiateViewController(withIdentifier: "ThoughtsViewController") as! ThoughtsViewController
+        let thoughtsVC = self.storyboard!.instantiateViewController(withIdentifier: ThoughtsViewController.identifier) as! ThoughtsViewController
         navigationController?.pushViewController(thoughtsVC, animated: true)
         UserDefaults.standard.set(true, forKey: "launchedBefore")
         dismiss(animated: true, completion: nil)

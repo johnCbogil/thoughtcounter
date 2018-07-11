@@ -12,6 +12,7 @@ class DateTableViewCell: UITableViewCell {
     
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var countLabel: UILabel!
+    static let identifier = "DateTableViewCell"
     
     override func awakeFromNib() {
         super.awakeFromNib()

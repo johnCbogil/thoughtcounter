@@ -15,7 +15,7 @@ protocol DeleteThoughtDelegate {
 class ThoughtDetailViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    let dateCellIdentifier = "DateTableViewCell"
+    static let identifier = "ThoughtDetailViewController"
     var thought: Thought?
     var listOfFormattedDates = [DateCount]()
     @IBOutlet weak var thoughtTextView: UITextView!
@@ -54,7 +54,7 @@ class ThoughtDetailViewController: UIViewController {
         if let thought = thought {
             listOfFormattedDates = formatListOfDates(listOfDates: thought.listOfOccurrences)
         }
-        tableView.register(UINib(nibName: dateCellIdentifier, bundle: nil), forCellReuseIdentifier: dateCellIdentifier)
+        tableView.register(UINib(nibName: DateTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: DateTableViewCell.identifier)
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -125,7 +125,7 @@ extension ThoughtDetailViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: dateCellIdentifier, for: indexPath) as! DateTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: DateTableViewCell.identifier, for: indexPath) as! DateTableViewCell
         let dateCount = listOfFormattedDates[indexPath.row]
         cell.dateLabel.text = dateCount.dateString
         cell.countLabel.text = String(dateCount.count)
