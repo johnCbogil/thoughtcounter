@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        Instabug.start(withToken: "62c2c28bca77c97d9b2acabe5bddb525", invocationEvents: [.none])
+        Instabug.start(withToken: "b5a64c87be0f284196dac7212728d50f", invocationEvents: [.none])
         Instabug.welcomeMessageMode = .disabled
         FirebaseApp.configure()
 
