@@ -34,7 +34,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             initialViewController = storyboard.instantiateViewController(withIdentifier: "PageViewController")
             let navigationController = UINavigationController(rootViewController: initialViewController)
             self.window?.rootViewController = navigationController
-
         }
         
         self.window?.makeKeyAndVisible()

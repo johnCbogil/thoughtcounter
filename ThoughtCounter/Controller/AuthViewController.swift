@@ -10,25 +10,29 @@ import UIKit
 import LocalAuthentication
 
 class AuthViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-    authenticate(self)
+        
+        authenticate(self)
         
     }
     
-    @IBAction func authenticate(_ sender: Any) {
-        // 1
+    @IBAction func authenticate(_ sender: Any) {        
         let context = LAContext()
-        var error: NSError?
+        var error:NSError?
         
-        if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
-            let reason = "Privacy is a human right."
+        // edit line - deviceOwnerAuthentication
+        guard context.canEvaluatePolicy(.deviceOwnerAuthentication, error: &error) else {
+            //showAlertViewIfNoBiometricSensorHasBeenDetected()
+            return
+        }
+        
+        // edit line - deviceOwnerAuthentication
+        if context.canEvaluatePolicy(.deviceOwnerAuthentication, error: &error) {
             
-            context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) {
-                [unowned self] (success, authenticationError) in
-                
+            // edit line - deviceOwnerAuthentication
+            context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: "Privacy is a human right.", reply: { (success, error) in
                 DispatchQueue.main.async {
                     if success {
                         let thoughtsVC = self.storyboard!.instantiateViewController(withIdentifier: ThoughtsViewController.identifier) as! ThoughtsViewController
@@ -37,13 +41,11 @@ class AuthViewController: UIViewController {
                                 nav.pushViewController(thoughtsVC, animated: true)
                             }
                         }
-                    } else {
-                        // error
                     }
                 }
-            }
-        } else {
-            // no biometry
+            })
+        }else {
+            // self.showAlertWith(title: "Error", message: (errorPointer?.localizedDescription)!)
         }
     }
 }
