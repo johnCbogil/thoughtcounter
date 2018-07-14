@@ -8,6 +8,7 @@
 
 import UIKit
 import Instabug
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         Instabug.start(withToken: "62c2c28bca77c97d9b2acabe5bddb525", invocationEvents: [.none])
         Instabug.welcomeMessageMode = .disabled
-
+        FirebaseApp.configure()
 
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")

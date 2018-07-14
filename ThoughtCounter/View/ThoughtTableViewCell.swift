@@ -82,11 +82,15 @@ class ThoughtTableViewCell: UITableViewCell, UITextViewDelegate {
         generator.impactOccurred()
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        guard let text = textField.text else { return true }
-        self.updateThoughtTitleBlock?(text)
-        return true
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if(text == "\n") {
+            contentView.endEditing(true)
+            self.updateThoughtTitleBlock?(textView.text)
+            return false
+        }
+        else {
+            return true
+        }
     }
     
     override func prepareForReuse() {

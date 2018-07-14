@@ -7,7 +7,7 @@ target 'ThoughtCounter' do
 
   # Pods for ThoughtCounter
   pod 'Instabug'
-
+  pod 'Firebase/Core'
 
 
   target 'ThoughtCounterTests' do
