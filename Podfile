@@ -8,6 +8,7 @@ target 'ThoughtCounter' do
   # Pods for ThoughtCounter
   pod 'Instabug'
   pod 'Firebase/Core'
+  pod 'UITextView+Placeholder'
 
 
   target 'ThoughtCounterTests' do

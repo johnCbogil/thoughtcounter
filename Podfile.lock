@@ -22,10 +22,12 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
+  - "UITextView+Placeholder (1.2.1)"
 
 DEPENDENCIES:
   - Firebase/Core
   - Instabug
+  - "UITextView+Placeholder"
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -36,6 +38,7 @@ SPEC REPOS:
     - GoogleToolboxForMac
     - Instabug
     - nanopb
+    - "UITextView+Placeholder"
 
 SPEC CHECKSUMS:
   Firebase: d66f4f29c23f22d96808d9abc174d81d8eee968f
@@ -45,7 +48,8 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 91c824d21e85b31c2aae9bb011c5027c9b4e738f
   Instabug: 5db1aa557d6d2d0a1ecf607c9efee5d8f41dcb15
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  "UITextView+Placeholder": 0c3efd97f37ea64bde7f34cc6e90fe02e87b3909
 
-PODFILE CHECKSUM: bce95e1061ce2c0a751dce1a656c07a8ae011106
+PODFILE CHECKSUM: 686e2274daf7b453a2789984e2f96b9bc28f9b04
 
 COCOAPODS: 1.5.0

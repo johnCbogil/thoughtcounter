@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UITextView_Placeholder;
 
 struct ThoughtTableViewCellModel {
     var title: String
@@ -29,14 +30,19 @@ class ThoughtTableViewCell: UITableViewCell, UITextViewDelegate {
     public var updateCountBlock: ((Int)->Void)?
     public var updateThoughtTitleBlock: ((String)->Void)?
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        configureTextView()
+        
+        self.configureGestureRecognizers()
+    }
+    
+    fileprivate func configureTextView() {
         self.textView.delegate = self
         self.textView.layer.borderWidth = 1
         self.textView.layer.borderColor = UIColor.black.cgColor
-        self.configureGestureRecognizers()
+        self.textView.placeholder = "placeholder"
     }
     
     fileprivate func configureGestureRecognizers() {
