@@ -19,8 +19,6 @@ struct ThoughtTableViewCellModel {
     }
 }
 
-
-
 class ThoughtTableViewCell: UITableViewCell, UITextViewDelegate {
     
     @IBOutlet weak var textView: UITextView!
@@ -33,8 +31,7 @@ class ThoughtTableViewCell: UITableViewCell, UITextViewDelegate {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        configureTextView()
-        
+        self.configureTextView()
         self.configureGestureRecognizers()
     }
     
@@ -42,7 +39,7 @@ class ThoughtTableViewCell: UITableViewCell, UITextViewDelegate {
         self.textView.delegate = self
         self.textView.layer.borderWidth = 1
         self.textView.layer.borderColor = UIColor.black.cgColor
-        self.textView.placeholder = "placeholder"
+        self.textView.placeholder = "What's on your mind?"
     }
     
     fileprivate func configureGestureRecognizers() {
@@ -71,6 +68,7 @@ class ThoughtTableViewCell: UITableViewCell, UITextViewDelegate {
         self.updateCount(-1)
     }
     
+    // TODO CHANGE THIS NAME TO REFLECT COUNT AND TEXT
     private func updateCount(_ count: Int) {
         self.generateHapticFeedback()
         
@@ -97,6 +95,10 @@ class ThoughtTableViewCell: UITableViewCell, UITextViewDelegate {
         else {
             return true
         }
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        self.updateThoughtTitleBlock?(textView.text)        
     }
     
     override func prepareForReuse() {
