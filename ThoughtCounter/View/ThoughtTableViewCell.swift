@@ -39,7 +39,7 @@ class ThoughtTableViewCell: UITableViewCell, UITextViewDelegate {
         self.textView.delegate = self
         self.textView.layer.borderWidth = 1
         self.textView.layer.borderColor = UIColor.black.cgColor
-        self.textView.placeholder = "What's on your mind?"
+        self.textView.placeholder = "Add thought here?"
     }
     
     fileprivate func configureGestureRecognizers() {
