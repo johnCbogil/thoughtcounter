@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		461C95C9F6B67D8EB2D09AB8 /* Pods_ThoughtCounterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FC8EBC86AE0CC7F990A933A /* Pods_ThoughtCounterTests.framework */; };
+		94121262210FADD400CF690F /* ThoughtViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94121261210FADD400CF690F /* ThoughtViewModel.swift */; };
 		942106E820DFFBE300B1B6BC /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942106E720DFFBE300B1B6BC /* PageViewController.swift */; };
 		946F076820F578E600FDF7BF /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946F076720F578E600FDF7BF /* AuthViewController.swift */; };
 		947A768920DAA835007B2DAE /* ThoughtDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947A768820DAA835007B2DAE /* ThoughtDetailViewController.swift */; };
@@ -51,6 +52,7 @@
 		6351F842EF3B1D35800B81B1 /* Pods-ThoughtCounter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThoughtCounter.release.xcconfig"; path = "Pods/Target Support Files/Pods-ThoughtCounter/Pods-ThoughtCounter.release.xcconfig"; sourceTree = "<group>"; };
 		7223FB62AD25CAF2306E6030 /* Pods-ThoughtCounterUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThoughtCounterUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ThoughtCounterUITests/Pods-ThoughtCounterUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7A1E411E0337B6C94880E515 /* Pods-ThoughtCounterUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThoughtCounterUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ThoughtCounterUITests/Pods-ThoughtCounterUITests.release.xcconfig"; sourceTree = "<group>"; };
+		94121261210FADD400CF690F /* ThoughtViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThoughtViewModel.swift; sourceTree = "<group>"; };
 		942106E720DFFBE300B1B6BC /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		946F076720F578E600FDF7BF /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		947A768820DAA835007B2DAE /* ThoughtDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThoughtDetailViewController.swift; sourceTree = "<group>"; };
@@ -156,12 +158,13 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		941294DD20D203610076B88F /* Model */ = {
+		941294DD20D203610076B88F /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				94ECE68C20CD73D000E6A8D9 /* Thought.swift */,
+				94121261210FADD400CF690F /* ThoughtViewModel.swift */,
 			);
-			path = Model;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		94D8023220CB254D00EE5076 = {
@@ -191,7 +194,7 @@
 			children = (
 				94CA554120FA56240073F02F /* GoogleService-Info.plist */,
 				94D8023E20CB254D00EE5076 /* AppDelegate.swift */,
-				941294DD20D203610076B88F /* Model */,
+				941294DD20D203610076B88F /* ViewModel */,
 				941294DC20D2034A0076B88F /* View */,
 				941294DB20D203370076B88F /* Controller */,
 				94D8024520CB254F00EE5076 /* Assets.xcassets */,
@@ -444,6 +447,7 @@
 				94ECE68D20CD73D000E6A8D9 /* Thought.swift in Sources */,
 				947A768920DAA835007B2DAE /* ThoughtDetailViewController.swift in Sources */,
 				94D8026D20CB299A00EE5076 /* ThoughtsViewController.swift in Sources */,
+				94121262210FADD400CF690F /* ThoughtViewModel.swift in Sources */,
 				948E1D6420D7E6250036D011 /* OnboardingViewController.swift in Sources */,
 				94D8023F20CB254D00EE5076 /* AppDelegate.swift in Sources */,
 				94ECE68B20CC6EE200E6A8D9 /* ThoughtTableViewCell.swift in Sources */,
@@ -625,7 +629,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4Y3GGL46D2;
 				INFOPLIST_FILE = ThoughtCounter/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.johnbogil.ThoughtCounter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -641,7 +648,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4Y3GGL46D2;
 				INFOPLIST_FILE = ThoughtCounter/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.johnbogil.ThoughtCounter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -658,7 +668,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4Y3GGL46D2;
 				INFOPLIST_FILE = ThoughtCounterTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = johnbogil.ThoughtCounterTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -676,7 +690,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4Y3GGL46D2;
 				INFOPLIST_FILE = ThoughtCounterTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = johnbogil.ThoughtCounterTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -693,7 +711,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4Y3GGL46D2;
 				INFOPLIST_FILE = ThoughtCounterUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = johnbogil.ThoughtCounterUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -710,7 +732,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4Y3GGL46D2;
 				INFOPLIST_FILE = ThoughtCounterUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = johnbogil.ThoughtCounterUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

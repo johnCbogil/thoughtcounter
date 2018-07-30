@@ -9,16 +9,6 @@
 import UIKit
 import UITextView_Placeholder;
 
-struct ThoughtTableViewCellModel {
-    var title: String
-    var count: Int
-    
-    init(title: String, count: Int) {
-        self.title = title
-        self.count = count
-    }
-}
-
 class ThoughtTableViewCell: UITableViewCell, UITextViewDelegate {
     
     @IBOutlet weak var textView: UITextView!
@@ -52,7 +42,7 @@ class ThoughtTableViewCell: UITableViewCell, UITextViewDelegate {
         self.addGestureRecognizer(leftSwipe)
     }
     
-    public func configureWithThought(cellModel: ThoughtTableViewCellModel) {
+    public func configureWithThought(cellModel: ThoughtViewModel) {
         self.todaysCount = cellModel.count
         self.textView.text = cellModel.title
         self.countLabel.text = "\(self.todaysCount)"

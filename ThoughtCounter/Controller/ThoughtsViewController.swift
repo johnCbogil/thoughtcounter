@@ -135,7 +135,7 @@ extension ThoughtsViewController: UITableViewDataSource, UITableViewDelegate {
         let todaysCount = thought.listOfOccurrences.filter { (date) -> Bool in
             return Calendar.current.isDateInToday(date)
         }.count
-        let cellModel = ThoughtTableViewCellModel(title: thought.title ?? "", count: todaysCount)
+        let cellModel = ThoughtViewModel(title: thought.title ?? "", count: todaysCount)
         cell.configureWithThought(cellModel: cellModel)
         cell.updateCountBlock = { [weak thought, weak self] count in
             guard let strongSelf = self, let strongThought = thought else { return }
