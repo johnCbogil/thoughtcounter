@@ -26,22 +26,21 @@ class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate, UIT
         
         configureNavBar()
         configureTableView()
-        getThoughts()
-        
+        getSavedThoughts()
+        configureGestureRecognizer()
+
         // TODO: RENAME THIS NAME
         NotificationCenter.default.addObserver(self, selector: #selector(updateThoughtCountWhenAppBecomesActive), name: NSNotification.Name(rawValue: "updateThoughtCount"), object: nil)
         
         if listOfThoughts.count == 0 {
             addThought(self)
         }
-        let tapGestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(ThoughtsViewController.hideKeyboard))
-        tapGestureRecognizer.cancelsTouchesInView = false
-        tableView.addGestureRecognizer(tapGestureRecognizer)
     }
     
     @objc func hideKeyboard() {
         tableView.endEditing(true)
     }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -66,6 +65,12 @@ class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate, UIT
         tableView.keyboardDismissMode = .interactive;
     }
     
+    fileprivate func configureGestureRecognizer() {
+        let tapGestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(ThoughtsViewController.hideKeyboard))
+        tapGestureRecognizer.cancelsTouchesInView = false
+        tableView.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
     @IBAction func addThought(_ sender: Any) {
         let newThought = Thought.init(title: "")
         let topOfList = 0
@@ -85,24 +90,12 @@ class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate, UIT
         userDefaults.synchronize()
     }
     
-    fileprivate func getThoughts() {
+    fileprivate func getSavedThoughts() {
         if let decodedData = userDefaults.object(forKey: listOfThoughtsKey) as! Data? {
             listOfThoughts = NSKeyedUnarchiver.unarchiveObject(with: decodedData) as! [Thought]
             tableView.reloadData()
             print("Getting \(listOfThoughts.count) thoughts")
             userDefaults.synchronize()
-        }
-    }
-    
-    @objc func deleteThought(notification:Notification) {
-        if let userInfo = notification.userInfo {
-            let thought = userInfo["thought"] as! Thought
-            if let index = listOfThoughts.index(of: thought) {
-                listOfThoughts.remove(at: index)
-                tableView.reloadData()
-                saveThoughts()
-                dismiss(animated: true, completion: nil)
-            }
         }
     }
     
@@ -123,7 +116,6 @@ class ThoughtsViewController: UIViewController, UIGestureRecognizerDelegate, UIT
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: PageViewController.identifier)
         navigationController?.present(vc, animated: true, completion: nil)
-        print("Display info vc, need to find a solution here")
     }
     
     @IBAction func sendFeedback(_ sender: Any) {
