@@ -132,11 +132,10 @@ extension ThoughtsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: thoughtCell, for: indexPath) as! ThoughtTableViewCell
         let thought = listOfThoughts[indexPath.row]
-        let todaysCount = thought.listOfOccurrences.filter { (date) -> Bool in
-            return Calendar.current.isDateInToday(date)
-        }.count
-        let cellModel = ThoughtViewModel(title: thought.title ?? "", count: todaysCount)
-        cell.configureWithThought(cellModel: cellModel)
+        let cellModel = ThoughtViewModel.init(thought: thought)
+        cell.configureWithThoughtViewModel(cellModel: cellModel)
+        
+        // TODO: SEE IF I CAN MOVE THIS UPDATE LOGIC INTO THE VIEWMODEL
         cell.updateCountBlock = { [weak thought, weak self] count in
             guard let strongSelf = self, let strongThought = thought else { return }
             if count == 1 {

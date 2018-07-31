@@ -42,7 +42,7 @@ class ThoughtTableViewCell: UITableViewCell, UITextViewDelegate {
         self.addGestureRecognizer(leftSwipe)
     }
     
-    public func configureWithThought(cellModel: ThoughtViewModel) {
+    public func configureWithThoughtViewModel(cellModel: ThoughtViewModel) {
         self.todaysCount = cellModel.count
         self.textView.text = cellModel.title
         self.countLabel.text = "\(self.todaysCount)"

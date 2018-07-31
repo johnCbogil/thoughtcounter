@@ -11,9 +11,16 @@ import Foundation
 class ThoughtViewModel {
     var title: String
     var count: Int
-    
-    init(title: String, count: Int) {
-        self.title = title
-        self.count = count
+
+    init(thought:Thought) {
+        if let title = thought.title {
+            self.title = title
+        }
+        else {
+            self.title = ""
+        }
+        self.count = thought.listOfOccurrences.filter { (date) -> Bool in
+            return Calendar.current.isDateInToday(date)
+            }.count
     }
 }
