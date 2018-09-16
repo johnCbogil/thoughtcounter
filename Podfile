@@ -9,7 +9,8 @@ target 'ThoughtCounter' do
   pod 'Instabug'
   pod 'Firebase/Core'
   pod 'UITextView+Placeholder'
-
+  pod 'RxSwift'
+  pod 'RxCocoa'
 
   target 'ThoughtCounterTests' do
     inherit! :search_paths
