@@ -11,6 +11,7 @@ target 'ThoughtCounter' do
   pod 'UITextView+Placeholder'
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'Anchors'
 
   target 'ThoughtCounterTests' do
     inherit! :search_paths

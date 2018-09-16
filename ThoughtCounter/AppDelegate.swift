@@ -21,21 +21,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Instabug.welcomeMessageMode = .disabled
         FirebaseApp.configure()
 
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
-        let initialViewController: UIViewController
-        
-        if launchedBefore  {
-            print("Not first launch.")
-            initialViewController = storyboard.instantiateViewController(withIdentifier: "NavigationController")
-            self.window?.rootViewController = initialViewController
+        let frame = UIScreen.main.bounds
+        window = UIWindow(frame: frame)
+
+        let itemsViewControler = RxViewController()
+        if let window = self.window{
+            window.rootViewController = itemsViewControler
+            window.makeKeyAndVisible()
         }
-        else {
-            initialViewController = storyboard.instantiateViewController(withIdentifier: "PageViewController")
-            let navigationController = UINavigationController(rootViewController: initialViewController)
-            self.window?.rootViewController = navigationController
-        }
-        
+
         self.window?.makeKeyAndVisible()
         return true
     }
